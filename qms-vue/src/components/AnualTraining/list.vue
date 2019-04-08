@@ -22,7 +22,7 @@
     >
       <template v-slot:items="props">
         <td class="text-xs-left">
-          <router-link :to="{ path:props.item.id }" >{{ props.item.id }}</router-link>
+          <router-link :to="{ path:'anual-training-plan/'+props.item.id }" >{{ props.item.id }}</router-link>
         </td>
         <td class="text-xs-left"><router-link :to="{ path: 'anual-training-plan/'+ props.item.id }" >{{ props.item.topic }}</router-link></td>
         <td class="text-xs-left">{{ props.item.department_or_person }}</td>

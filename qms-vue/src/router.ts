@@ -15,7 +15,7 @@ import compentencyDetail from './views/Hr/CompentencyDetail.vue';
 import TrrList from './views/Hr/TrainingReqList.vue';
 import TrrDetails from './views/Hr/TrainingReqDetail.vue';
 import anualtraing from './views/Hr/AnualTraining.vue';
-import anualtraingDetails from './views/Hr/AnualTraining.vue';
+import anualtraingDetails from './views/Hr/AnualTrainingDetail.vue';
 import trEvalution from './views/Hr/TrainingEvalution.vue';
 import skillmatrix from './views/Hr/SkillMatrix.vue';
 import skillmatrixDetail from './views/Hr/SkillMatrixDetail.vue';
