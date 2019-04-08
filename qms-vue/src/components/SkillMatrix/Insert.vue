@@ -77,26 +77,10 @@
                             <p class="head"><strong>SKILLS</strong></p>
                         </v-flex>
                         <v-flex md3>
-                          <div class="">
-                          <p class="head">Drawing studying skills :</p>
-                          <p class="head">Usage of general gauges  :</p>
-                          </div>
+                           <v-select class="field-sp" :items="s1" v-model ="drawing" :rules="drawRules" required label="Drawing studing skills" ></v-select>
                         </v-flex>
-                        <v-flex md9>
-                          <div class="radio-list">
-                          <v-radio-group v-model="row" row>
-                            <v-radio label="1" value="radio-1"></v-radio>
-                            <v-radio label="2" value="radio-2"></v-radio>
-                            <v-radio label="3" value="radio-3"></v-radio>
-                            <v-radio label="4" value="radio-4"></v-radio>
-                            <v-radio label="5" value="radio-5"></v-radio>
-                            <v-radio label="6" value="radio-6"></v-radio>
-                            <v-radio label="7" value="radio-7"></v-radio>
-                            <v-radio label="8" value="radio-8"></v-radio>
-                            <v-radio label="9" value="radio-9"></v-radio>
-                            <v-radio label="10" value="radio-10"></v-radio>
-                            </v-radio-group>
-                          </div>
+                        <v-flex md3>
+                           <v-select class="field-sp" :items="s1" v-model ="drawing" :rules="drawRules" required label="Drawing studing skills" ></v-select>
                         </v-flex>
                         </v-layout>
                        </v-flex>
