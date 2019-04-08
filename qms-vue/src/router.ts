@@ -1,6 +1,25 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from './views/Home.vue';
+import Home from './views/Dashboard/Dashboard.vue';
+import Login from './views/Auth/Login.vue';
+import subcategory from './views/Dashboard/SubCategory.vue';
+
+
+//  hr
+import Hrlist from './views/Hr/Hr.vue';
+import Hrdetail from './views/Hr/Hrdetail.vue';
+import EmployeeList from './views/Hr/EmployeeList.vue';
+import EmployeeDetail from './views/Hr/EmployeeDetail.vue';
+import compentency from './views/Hr/Compentency.vue';
+import compentencyDetail from './views/Hr/CompentencyDetail.vue';
+import TrrList from './views/Hr/TrainingReqList.vue';
+import TrrDetails from './views/Hr/TrainingReqDetail.vue';
+import anualtraing from './views/Hr/AnualTraining.vue';
+import anualtraingDetails from './views/Hr/AnualTraining.vue';
+import trEvalution from './views/Hr/TrainingEvalution.vue';
+import skillmatrix from './views/Hr/SkillMatrix.vue';
+import skillmatrixDetail from './views/Hr/SkillMatrixDetail.vue';
+
 
 Vue.use(Router);
 
@@ -10,16 +29,87 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'login',
+      component: Login,
+    },
+    {
+      path: '/dashboard',
       name: 'home',
       component: Home,
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
+      path: '/hr-list',
+      name: 'hrlist',
+      component: Hrlist,
     },
+
+    {
+      path: '/hr-detail/:id',
+      name: 'Hrdetail',
+      component: Hrdetail,
+    },
+    {
+      path: '/hr',
+      name: 'subcategory',
+      component: subcategory,
+    },
+    {
+      path: '/employee',
+      name: 'EmployeeList',
+      component: EmployeeList,
+    },
+    {
+      path: '/employee/:id',
+      name: 'EmployeeDetail',
+      component: EmployeeDetail,
+    },
+    {
+      path: '/compentency-matrix',
+      name: 'compentency',
+      component: compentency,
+    },
+    {
+      path: '/compentency-matrix/:id',
+      name: 'compentencyDetail',
+      component: compentencyDetail,
+    },
+    {
+      path: '/trining-request-register',
+      name: 'TrainingRequestRegisterList',
+      component: TrrList,
+    },
+    {
+      path: '/trining-request-register/:id',
+      name: 'TrainingRequestRegisterDetail',
+      component: TrrDetails,
+    },
+    {
+      path:"/anual-training-plan",
+      name: 'Anual training',
+      component:anualtraing,
+    },
+    {
+      path:"/anual-training-plan/:id",
+      name: 'Anual training details',
+      component:anualtraingDetails,
+    },
+    {
+      path:"/training-evalution-record",
+      name:'Training evalution record',
+      component:trEvalution
+    },
+    {
+      path:"/skill-matrix",
+      name:'Skill matrix',
+      component:skillmatrix
+    },
+    {
+      path:"/skill-matrix/:id",
+      name:'Skill matrix',
+      component:skillmatrixDetail
+    },
+
+
+
   ],
 });
