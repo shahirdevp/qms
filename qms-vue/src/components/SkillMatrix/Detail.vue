@@ -145,7 +145,7 @@
                         <!-- end total value -->
                         <!--total value -->
                         <div class="under-line"></div>
-                         <v-flex xs12 sm12 md12  lg5 offset-lg8>
+                         <v-flex xs12 sm12 md12 >
                             <div class="ap-list">
                            <span class="ap-sp"> <p><strong>Powred By : </strong> <spam> Rishi Nath</spam></p></span>
                             <p><strong>Approved By : </strong> <spam> Shahir KM</spam></p>
@@ -156,10 +156,6 @@
                 </v-card>
             </v-flex>
         </v-layout>
-        </v-card>
-        </v-flex>
-        </v-layout>
-        <!-- Details -->
     </div>
 </template>
 
@@ -341,13 +337,8 @@ export default {
     text-shadow: none;
 
 }
-element {
-
-}
 .ap-list {
-
     padding-top: 15px;
-
 }
 /* end skill-matrix */
 
