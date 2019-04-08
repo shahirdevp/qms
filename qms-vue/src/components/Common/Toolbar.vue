@@ -12,10 +12,10 @@
       <v-list>
         <v-list-tile value="true" v-for="(item, i) in items" :key="i">
             <v-list-tile-action>
-              <v-icon v-html="item.icon"></v-icon>
+              <v-icon v-html="item.icon" ></v-icon>
             </v-list-tile-action>
             <v-list-tile-content>
-              <v-list-tile-title v-text="item.title"></v-list-tile-title>
+              <v-list-tile-title v-text="item.title" class="black--text"></v-list-tile-title>
             </v-list-tile-content>
         </v-list-tile>
       </v-list>
@@ -57,11 +57,51 @@ export default {
       drawer: true,
       fixed: false,
       items: [
-        {
+                {
           icon: "dashboard",
           title: "Dashboard",
-          link: "dashboard"
-        }
+          link: "dashboard",
+        },
+        {
+          icon: "person",
+          title: "Hr",
+          link: "hr"
+        },
+        {
+          icon: "local_library",
+          title: "Emplooyee Data",
+          link: "emplooyee-data"
+        },
+                {
+          icon: "iso",
+          title: "Compentency Matrix",
+          link: "compentency-matrix"
+        },
+        {
+          icon: "sync",
+          title: "Training Request",
+          link: "training-request"
+        },
+                {
+          icon: "beenhere",
+          title: "Annual Training",
+          link: "annual-training"
+        },
+                {
+          icon: "insert_drive_file",
+          title: "Training Attendance",
+          link: "training-attendance"
+        },
+                {
+          icon: "merge_type",
+          title: "Training Evaluation",
+          link: "training-evaluation"
+        },
+                {
+          icon: "insert_chart_outlined",
+          title: "Skill Matrix",
+          link: "skill-matrx"
+        },
       ],
       miniVariant: true,
       right: true,
