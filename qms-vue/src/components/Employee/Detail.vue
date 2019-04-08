@@ -326,7 +326,7 @@ export default {
       var parQuery = ts[ts.length - 1];
       var self = this;
       axios
-        .get("http://127.0.0.1:8000/api/v1/hr/employee/" + parQuery)
+        .get(this.$apiUrl+"employee/" + parQuery)
         .then(function(response) {
           self.detail = response.data;
           self.language = [response.data.languages_known]
@@ -351,7 +351,7 @@ export default {
         
         axios({
           method: "put",
-          url: "http://127.0.0.1:8000/api/v1/hr/employee/" + parQuery,
+          url: this.$apiUrl+"/employee/" + parQuery,
           data: {
             name_of_the_Employee: self.detail.name_of_the_Employee,
             address: self.detail.address,
@@ -396,7 +396,7 @@ export default {
         if (result.value) {
           axios
             .delete(
-              "http://127.0.0.1:8000/api/v1/hr/employee/" + parQuery 
+              this.$apiUrl+"employee/" + parQuery 
             )
             .then(function(response) {
               swal({

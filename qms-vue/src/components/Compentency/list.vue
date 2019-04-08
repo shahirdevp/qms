@@ -110,7 +110,7 @@ export default {
     getall() {
       var self = this;
       axios
-        .get("http://127.0.0.1:8000/api/v1/hr/completency")
+        .get(this.$apiUrl+"competency-matrix")
         .then(function(response) {
           self.info = response.data;
         })
@@ -126,7 +126,7 @@ export default {
         
           axios({
               method: "post",
-              url: "http://127.0.0.1:8000/api/v1/hr/completency",
+              url: this.$apiUrl+"competency-matrix",
               data: {
                 position: this.position,
                 education_Background: this.eduBackg,

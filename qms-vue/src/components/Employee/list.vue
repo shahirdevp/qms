@@ -245,7 +245,7 @@ export default {
     getall() {
       var self = this;
       axios
-        .get("http://127.0.0.1:8000/api/v1/hr/employee")
+        .get(this.$apiUrl+"employee")
         .then(function(response) {
           self.tlist = response.data;
         })
@@ -264,7 +264,7 @@ export default {
         });
           axios({
               method: "post",
-              url: "http://127.0.0.1:8000/api/v1/hr/employee",
+              url: this.$apiUrl+"employee",
               data: {
                 name_of_the_Employee: this.ename,
                 address: this.addess,

@@ -111,7 +111,7 @@ export default {
       password: [
         v => !!v || "Password is required",
         v =>
-          (v && v.length > 7) || "The password must be longer than 7 characters"
+          (v && v.length > 5) || "The password must be longer than 5 characters"
       ]
     }
   }),
@@ -122,7 +122,7 @@ export default {
         this.loading = true;
         axios({
           method: "post",
-          url: "http://127.0.0.1:8000/api/v1/auth/",
+          url: this.$apiUrl+"auth/",
           data: {
             username: this.credentials.username,
             password: this.credentials.password

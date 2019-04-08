@@ -128,7 +128,7 @@ export default {
     getall() {
       var self = this;
       axios
-        .get("http://127.0.0.1:8000/api/v1/hr/trining-request-register")
+        .get(this.$apiUrl+"training-request/")
         .then(function(response) {
           self.info = response.data;
         })
@@ -144,7 +144,7 @@ export default {
         
           axios({
               method: "post",
-              url: "http://127.0.0.1:8000/api/v1/hr/trining-request-register",
+              url: this.$apiUrl+"training-request/",
               data: {
                 training_Required: this.trRequired,
                 training_to: this.trTo,

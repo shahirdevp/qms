@@ -97,26 +97,24 @@ export default new Router({
     {
       path:"/training-evalution-record",
       name:'Training evalution record',
-      component:trEvalution
+      component:trEvalution,
     },
     {
       path:"/skill-matrix",
       name:'Skill matrix',
-      component:skillmatrix
+      component:skillmatrix,
     },
     {
       path:"/skill-matrix/:id",
       name:'Skill matrix',
-      component:skillmatrixDetail
+      component:skillmatrixDetail,
     },
     {
       path:"/skill-matrix-insert",
       name:'Skill matrix insert',
-      component:skillmatrixInsert
+      component:skillmatrixInsert,
     },
     
-
-
 
   ],
 });

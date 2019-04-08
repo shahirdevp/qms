@@ -21,8 +21,8 @@
       :rows-per-page-items="[10,20,50]"
     >
       <template v-slot:items="props">
-        <td class="text-xs-left"> <router-link :to="{ path: 'compentency-matrix/'+ props.item.id }" >{{ props.item.id }}</router-link> </td>
-        <td class="text-xs-left"><router-link :to="{ path: 'compentency-matrix/'+ props.item.id }" >{{ props.item.trg_no }}</router-link></td>
+        <td class="text-xs-left"> <router-link :to="{ path: 'training-evalution-record/'+ props.item.id }" >{{ props.item.id }}</router-link> </td>
+        <td class="text-xs-left"><router-link :to="{ path: 'training-evalution-record/'+ props.item.id }" >{{ props.item.trg_no }}</router-link></td>
         <td class="text-xs-left">{{ props.item.training_topic }}</td>
         <td class="text-xs-left">{{ props.item.date_of_trainig }}</td>
         <td class="text-xs-left">{{ props.item.faculty }}</td>
@@ -150,7 +150,7 @@ export default {
     getall() {
       var self = this;
       axios
-        .get("http://127.0.0.1:8000/api/v1/hr/training_evalution")
+        .get(this.$apiUrl+"training-evalution/")
         .then(function(response) {
           self.info = response.data;
         })
@@ -165,7 +165,7 @@ export default {
         var self = this;
           axios({
               method: "post",
-              url: "http://127.0.0.1:8000/api/v1/hr/training_evalution",
+              url: this.$apiUrl+"training-evalution/",
               data: {
                 trg_no: self.trg_no ,  
                 training_topic: self.trainingTopic , 

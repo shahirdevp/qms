@@ -146,7 +146,7 @@ export default {
       var parQuery = ts[ts.length - 1];
       var self = this;
       axios
-        .get("http://127.0.0.1:8000/api/v1/hr/completency/" + parQuery)
+        .get(this.$apiUrl+"training-evalution/" + parQuery)
         .then(function(response) {
           self.detail = response.data;
         })
@@ -165,7 +165,7 @@ export default {
 
         axios({
           method: "put",
-          url: "http://127.0.0.1:8000/api/v1/hr/completency/" + parQuery,
+          url: this.$apiUrl+"training-evalution/" + parQuery,
           data: {
             position: self.detail.position,
             education_Background: self.detail.education_Background,
@@ -204,7 +204,7 @@ export default {
       }).then(result => {
         if (result.value) {
           axios
-            .delete("http://127.0.0.1:8000/api/v1/hr/completency/" + parQuery)
+            .delete(this.$apiUrl+"training-evalution/" + parQuery)
             .then(function(response) {
               swal({
                 title: "Success",

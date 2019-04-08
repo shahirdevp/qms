@@ -123,7 +123,7 @@ export default {
     getall() {
       var self = this;
       axios
-        .get("http://127.0.0.1:8000/api/v1/hr/anual_training")
+        .get(this.$apiUrl+"annual-trainnig")
         .then(function(response) {
           self.info = response.data;
         })
@@ -140,7 +140,7 @@ export default {
           var mnth = this.month.toLowerCase().trim()
           axios({
               method: "post",
-              url: "http://127.0.0.1:8000/api/v1/hr/anual_training",
+              url: this.$apiUrl+"annual-trainnig",
               data: {
                 year: this.year,
                 topic: this.topic,
