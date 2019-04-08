@@ -9,8 +9,8 @@ class hr(models.Model):
      arrovedBy = models.CharField(max_length=50)
      createdOn = models.DateTimeField(auto_now=True)
 
-     # def __str__(self):
-     #    return self.hr_text
+     def __str__(self):
+        return self.hr_required_deg
 
 class employe(models.Model):
      name_of_the_Employee = models.CharField(max_length=50)
@@ -24,8 +24,8 @@ class employe(models.Model):
      position = models.CharField(max_length=50)
      created_On = models.DateTimeField(auto_now=True)
 
-     # def __str__(self):
-     #    return self.employe_text
+     def __str__(self):
+        return self.name_of_the_Employee
 
 class experience(models.Model):
      employe_id = models.CharField(max_length=25)
@@ -34,8 +34,8 @@ class experience(models.Model):
      work_experience = models.IntegerField()
      created_On = models.DateTimeField(auto_now=True)
 
-     # def __str__(self):
-     #    return self.experience_text
+     def __str__(self):
+        return self.employe_id
 
 class competency_Matrix(models.Model):
      position = models.CharField(max_length=75)
@@ -44,8 +44,8 @@ class competency_Matrix(models.Model):
      competency_Requirement = models.CharField(max_length=250)
      created_On = models.DateTimeField(auto_now=True)
 
-     # def __str__(self):
-     #    return self.competency_Matrix_text
+     def __str__(self):
+        return self.position
 
 class training_Request_Register(models.Model):
      training_Required = models.CharField(max_length=150)
@@ -58,8 +58,8 @@ class training_Request_Register(models.Model):
      approved_By = 	models.CharField(max_length=50)
      created_On = models.DateTimeField(auto_now=True)
 
-     # def __str__(self):
-     #    return self.training_Request_Register_text
+     def __str__(self):
+        return self.training_Required
 
 class annual_trainnig(models.Model):
      years = (
@@ -94,8 +94,8 @@ class annual_trainnig(models.Model):
      approved_By = models.CharField(max_length=250)
      created_On = models.DateTimeField(auto_now=True)
 
-     # def __str__(self):
-     #    return self.annual_trainnig_text
+     def __str__(self):
+        return self.topic
 
 # training evalution record
 class training_evalution_record(models.Model):
@@ -118,8 +118,8 @@ class training_evalution_record(models.Model):
      evaluated_By = models.CharField(max_length=50)
      created_On = models.DateTimeField(auto_now=True)
 
-     # def __str__(self):
-     #    return self.training_evalution_record_text
+     def __str__(self):
+        return self.training_evalution_record_text
 
 
 
