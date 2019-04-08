@@ -51,7 +51,7 @@
         <v-layout container>
             <v-flex xs12 sm12 md12>
                 <v-card>
-                   <v-form ref="form">
+                   <v-form ref="form" v-model="valid" id="emp" lazy-validation>
                      <v-layout class="lay-des1" row wrap> 
                         <v-flex xs12>
                             <h3 class="head">INSERT SKILL MATRIX</h3>
@@ -71,6 +71,24 @@
                           <v-select class="field-sp" :items="designation" v-model ="designation" :rules="desiRules" required label="Designation" ></v-select>
                          </div>
                        </v-flex>
+                       
+                       <v-flex md12>
+                            <v-layout row wrap>
+                           <v-flex xs12>
+                            <p class="head"><strong>Scoring Crieteria</strong></p>
+                        </v-flex>
+                        <v-flex md12>
+                         <div class="radio-list head" >
+                               <v-radio-group v-model="row" row>
+                                 <v-radio label="Need training" value="radio-1"></v-radio>
+                                 <v-radio label="Can work alone" value="radio-2"></v-radio>
+                                 <v-radio label="Can work under supervision" value="radio-3"></v-radio>
+                                 <v-radio label="Can work & train other" value="radio-4"></v-radio>
+                                 </v-radio-group>     
+                         </div>
+                        </v-flex>
+                        </v-layout>
+                       </v-flex>
                        <v-flex md12>
                          <v-layout row wrap>
                            <v-flex xs12>
@@ -80,10 +98,48 @@
                            <v-select class="field-sp" :items="s1" v-model ="drawing" :rules="drawRules" required label="Drawing studing skills" ></v-select>
                         </v-flex>
                         <v-flex md3>
-                           <v-select class="field-sp" :items="s1" v-model ="drawing" :rules="drawRules" required label="Drawing studing skills" ></v-select>
+                           <v-select class="field-sp" :items="s1" v-model ="drawing" :rules="drawRules" required label="Usage of general gauges" ></v-select>
+                        </v-flex>
+                        <v-flex md3>
+                           <v-select class="field-sp" :items="s1" v-model ="drawing" :rules="drawRules" required label="Usage of general instruments" ></v-select>
+                        </v-flex>
+                        <v-flex md3>
+                           <v-select class="field-sp" :items="s1" v-model ="drawing" :rules="drawRules" required label="Usage of product specific gauges" ></v-select>
+                        </v-flex>
+                        <v-flex md3>
+                           <v-select class="field-sp" :items="s1" v-model ="drawing" :rules="drawRules" required label="Quality documentation" ></v-select>
+                        </v-flex>
+                        <v-flex md3>
+                           <v-select class="field-sp" :items="s1" v-model ="drawing" :rules="drawRules" required label="CMM operating" ></v-select>
+                        </v-flex>
+                        <v-flex md3>
+                           <v-select class="field-sp" :items="s1" v-model ="drawing" :rules="drawRules" required label="PP Operating" ></v-select>
+                        </v-flex>
+                        <v-flex md3>
+                           <v-select class="field-sp" :items="s1" v-model ="drawing" :rules="drawRules" required label="Basic machining knowledge" ></v-select>
+                        </v-flex>
+                        <v-flex md3>
+                           <v-select class="field-sp" :items="s1" v-model ="drawing" :rules="drawRules" required label="Internal verification skills" ></v-select>
+                        </v-flex>
+                        <v-flex md3>
+                           <v-select class="field-sp" :items="s1" v-model ="drawing" :rules="drawRules" required label="Inspection skill" ></v-select>
+                        </v-flex>
+                        <v-flex md3>
+                           <v-select class="field-sp" :items="s1" v-model ="drawing" :rules="drawRules" required label="Visual inspection skill" ></v-select>
+                        </v-flex>
+                        <v-flex md3>
+                           <v-select class="field-sp" :items="s1" v-model ="drawing" :rules="drawRules" required label="2D height gauge operating" ></v-select>
+                        </v-flex>
+                        <v-flex md3>
+                           <v-select class="field-sp" :items="s1" v-model ="drawing" :rules="drawRules" required label="Operating surface roughness tester" ></v-select>
+                        </v-flex>
+                        <v-flex md3>
+                           <v-select class="field-sp" :items="s1" v-model ="drawing" :rules="drawRules" required label="Microscope Handeling" ></v-select>
                         </v-flex>
                         </v-layout>
                        </v-flex>
+                       <v-btn :disabled="!valid" color="success" @click="validate">Save</v-btn>
+                        <v-btn color="error" @click="reset">cancel</v-btn>
                      </v-layout>
                    </v-form>
                 </v-card>
@@ -114,6 +170,8 @@ export default {
       department:['1','2','3','4','5'],
       // designation
       designation:['D1','D2','D3','D4','D5'],
+      // skills
+      s1:['1','2','3','4','5','6','7','8','9','10'],
 
     };
   },
@@ -135,6 +193,14 @@ export default {
           console.log(error.data);
         });
     },
+          validate () {
+        if (this.$refs.form.validate()) {
+          this.snackbar = true
+        }
+      },
+            reset () {
+        this.$refs.form.reset()
+      },
   
   }
 };
