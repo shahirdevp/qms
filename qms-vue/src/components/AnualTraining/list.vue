@@ -22,7 +22,7 @@
     >
       <template v-slot:items="props">
         <td class="text-xs-left">
-          <router-link :to="{ path: 'anual-training-plan/'+ props.item.id }" >{{ props.item.id }}</router-link>
+          <router-link :to="{ path:props.item.id }" >{{ props.item.id }}</router-link>
         </td>
         <td class="text-xs-left"><router-link :to="{ path: 'anual-training-plan/'+ props.item.id }" >{{ props.item.topic }}</router-link></td>
         <td class="text-xs-left">{{ props.item.department_or_person }}</td>
@@ -140,14 +140,16 @@ export default {
           var mnth = this.month.toLowerCase().trim()
           axios({
               method: "post",
-              url: this.$apiUrl+"annual-trainnig",
+              url: this.$apiUrl+"annual-trainnig/",
               data: {
                 year: this.year,
                 topic: this.topic,
                 department_or_person: this.dep,
                 remarks: this.remark,
                 legend: this.legend,
-                mnth : '1',
+                // mnth : '1',
+                prepard_By : 'sds',
+
                 
               }
             })
