@@ -119,12 +119,37 @@ class training_evalution_record(models.Model):
      created_On = models.DateTimeField(auto_now=True)
 
      def __str__(self):
-        return self.training_evalution_record_text
+        return self.training_topic
 
 
 
+# skill matrix
+class skillmatrix(models.Model):
+     depaertment   = models.CharField(max_length=50)
+     designation   = models.CharField(max_length=100)
+     empId         = models.CharField(max_length=50, blank=True)
+     empName       = models.CharField(max_length=75, blank=True)
+     drawing_studying_skills  =  models.CharField(max_length=75, blank=True)	
+     usage_of_general_gauges  =  models.CharField(max_length=75, blank=True)	
+     usage_of_general_instruments  =  models.CharField(max_length=75, blank=True)	
+     usage_of_product_specific_gauges  =  models.CharField(max_length=75, blank=True)		
+     quality_documentation  =  models.CharField(max_length=75, blank=True)		
+     cmm_operating  =  models.CharField(max_length=75, blank=True)			
+     pp_operating  =  models.CharField(max_length=75, blank=True)		
+     operating_surface_roughness_tester  =  models.CharField(max_length=75, blank=True)			
+     basic_machining_knowledge  =  models.CharField(max_length=75, blank=True)				
+     microscope_handeling  =  models.CharField(max_length=75, blank=True)				
+     internal_verification_skills  =  models.CharField(max_length=75, blank=True)							
+     inspection_skill  =  models.CharField(max_length=75, blank=True)							
+     visual_inspection_skill  =  models.CharField(max_length=75, blank=True)							
+     d_height_gauge_operating  =  models.CharField(max_length=75, blank=True)
+     scoring_crieteria = models.CharField(max_length=75, blank=True)
+     prepredBy = models.CharField(max_length=75, blank=True)
+     approvedBy = models.CharField(max_length=75, blank=True)	
+     created_On = models.DateTimeField(auto_now=True)	 	
 
-
+     def __str__(self):
+            return self.empId																				
 
 
 

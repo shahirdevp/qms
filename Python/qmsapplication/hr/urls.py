@@ -29,6 +29,9 @@ urlpatterns = [
     path('training-evalution/', views.TrainingEvalutionView.as_view()),
     path('training-evalution/<int:pk>/', views.TrainingEvalutionView.as_view()),
 
+    path('skill-matrix/', views.SkillMatrixView.as_view()),
+    path('skill-matrix/<int:pk>/', views.SkillMatrixView.as_view()),
+
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)

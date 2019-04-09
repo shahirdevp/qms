@@ -35,3 +35,9 @@ class TeEvRecordSerializer(serializers.ModelSerializer):
     class Meta:
         model = training_evalution_record
         fields = ('id', 'trg_no', 'training_topic', 'date_of_trainig', 'date_of_join', 'faculty', 'venue', 'name_of_participant', 'score', 'evaluation_criteria', 'Effectiveness_of_Training', 'evaluated_By', 'created_On', )
+
+
+class SkillMatrixSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = skillmatrix
+        fields = ('id', 'depaertment', 'designation', 'empId', 'empName', 'drawing_studying_skills', 'usage_of_general_gauges', 'usage_of_general_instruments', 'usage_of_product_specific_gauges', 'quality_documentation', 'cmm_operating', 'pp_operating', 'operating_surface_roughness_tester', 'basic_machining_knowledge', 'microscope_handeling', 'internal_verification_skills', 'inspection_skill', 'visual_inspection_skill', 'd_height_gauge_operating', 'scoring_crieteria', 'prepredBy', 'approvedBy', 'created_On', )
