@@ -341,7 +341,7 @@ export default {
 }
 .c-right-date {
   display: inline-block;
-  float: right;
+  /* float: right; */
   position: absolute;
   right: 18px;
   top: 25px;
