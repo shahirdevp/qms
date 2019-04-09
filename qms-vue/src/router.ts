@@ -20,8 +20,7 @@ import trEvalution from './views/Hr/TrainingEvalution.vue';
 import skillmatrix from './views/Hr/SkillMatrix.vue';
 import skillmatrixDetail from './views/Hr/SkillMatrixDetail.vue';
 import skillmatrixInsert from './views/Hr/SkillMatrixInsert.vue';
-
-
+import settingdepartment from './views/Setting/Setting.vue';
 Vue.use(Router);
 
 export default new Router({
@@ -113,6 +112,11 @@ export default new Router({
       path:"/skill-matrix-insert",
       name:'Skill matrix insert',
       component:skillmatrixInsert,
+    },
+    {
+      path:"/department",
+      name:'Setting Department',
+      component:settingdepartment,
     },
     
 
