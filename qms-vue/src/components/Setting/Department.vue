@@ -1,162 +1,46 @@
 <template>
-    <div id="empd">
-        <v-layout row wrap class="action-bar">
-            <v-flex xs6>
-                <h3 class="page-name">Skill Matrix Detail</h3>
-            </v-flex>
-            <v-flex xs6>
-                <div class="text-xs-right">
-                    <div :class="{dn : !dn}">
-                            <v-tooltip v-model="show" bottom>
-          <template v-slot:activator="{ on }">
-            <v-btn icon v-on="on" ref="fileInput"  @click.stop="dn = !dn" >
-             <v-icon  color="info">edit</v-icon>
-            </v-btn>
-          </template>
-          <span>Edit</span>
-        </v-tooltip>
-         <v-tooltip v-model="show" bottom>
-          <template v-slot:activator="{ on }">
-            <v-btn icon v-on="on" ref="fileInput"  @click="deleteData()" >
-             <v-icon  color="red">delete</v-icon>
-            </v-btn>
-          </template>
-          <span>Delete</span>
-        </v-tooltip>
-                    </div>
+  <v-layout container>
+    <v-flex xs12 sm6 md4>
+      <v-card>
+        <v-toolbar color="indigo lighten-1" dark v-if="!seen">
+          <v-toolbar-title>Department</v-toolbar-title>
+          <v-spacer></v-spacer>
+          <v-btn icon v-on:click="seen = !seen" v-if="!seen">
+            <v-icon>add</v-icon>
+          </v-btn>
+        </v-toolbar>
 
-                    <div :class="{dn : dn}">
-                            <v-tooltip v-model="show" bottom>
-          <template v-slot:activator="{ on }">
-            <v-btn icon v-on="on" ref="fileInput" @click.stop="dn = !dn" >
-             <v-icon  color="warning">close</v-icon>
-            </v-btn>
-          </template>
-          <span>Cancel</span>
-        </v-tooltip>
-         <v-tooltip v-model="show" bottom>
-          <template v-slot:activator="{ on }">
-            <v-btn icon v-on="on" ref="fileInput" @click="validate()" >
-             <v-icon  color="success">check</v-icon>
-            </v-btn>
-          </template>
-          <span>Save</span>
-        </v-tooltip>
-                    </div>
-                </div>
-            </v-flex>
-        </v-layout>
+        <v-toolbar color="indigo lighten-1" dark v-if="seen">
+          <v-text-field
+            v-model="todo"
+            :append-outer-icon="'close'"
+            @click:append-outer="seen = !seen"
+            :append-icon="'send'"
+            @click:append="savetodolist"
+            class="ff"
+          ></v-text-field>
+          <template slot="append"></template>
+        </v-toolbar>
 
-        <!-- Details-list -->
-        <v-layout container>
-            <v-flex xs12 sm12 md12>
-                <v-card>
-                    <v-layout class="lay-des" row wrap>
-                        <v-flex md3 sm6>
-                            <p><strong>Date : </strong> 05-04-2019</p>
-                        </v-flex>
-                        <v-flex md3 sm6>
-                            <p><strong>Title : </strong> Testing</p>
-                        </v-flex>
-                        <v-flex md3 sm6>
-                            <p><strong>Department : </strong> Ui Designer</p>
-                        </v-flex>
-                        <v-flex md3 sm6>
-                            <p><strong>Designation : </strong> Front End Developer</p>
-                        </v-flex>
-                    </v-layout>
-                    <div class="under-line"></div>
-                    <!-- Dtails -->
-                    <v-layout class="lay-des" row wrap>
-                        <v-flex md6>
-                            <p><strong>S No : </strong>001</p>
-                            <p><strong>Name : </strong>Daniel Martin</p>
-                            <p><strong>Employee ID : </strong>ID2091019</p>
-                            <p><strong>Department : </strong> Ui Designer</p>
-                            <p><strong>Designation : </strong> Front End Developer</p>
-                        </v-flex>
-                        <v-flex md6>
-                            <p><strong>Scroing Crieteria</strong></p>
-                            <ol class="list-scroing">
-                                <li>Need Training</li>
-                                <li>Can Work under supervision</li>
-                                <li>Can Work alone</li>
-                                <li>Can work & Train other</li>
-                            </ol>
-                        </v-flex>
-                    </v-layout>
-                    <div class="under-line"></div>
-                    <v-layout class="lay-des" row wrap>
-                        <v-flex xs12>
-                            <p><strong>SKILLS</strong></p>
-                        </v-flex>
-                         <!--first list-->
-                        <v-flex md6>
-                            <v-layout row>
-                                <v-flex md10>
-                                    <p>Drawing studing skills </p>
-                                    <p>Usage of general gauges </p>
-                                    <p>Usage of general instruments</p>
-                                    <p>Usage of product specific gauges</p>
-                                    <p>Quality documentation</p>
-                                    <p>CMM operating </p>
-                                    <p>PP Operating </p>
-                                </v-flex>
-                                <v-flex md2>
-                                    <p>4</p>
-                                    <p>4</p>
-                                    <p>6</p>
-                                    <p>8</p>
-                                    <p>8</p>
-                                    <p>5</p>
-                                    <p>9</p>
-                                </v-flex>
-                            </v-layout>
-                        </v-flex>
-                        <!--second list-->
-                        <v-flex md6>
-                            <v-layout row>
-                                <v-flex md10>
-                                    <p>Basic machining knowledge</p>
-                                    <p>Internal verification skills</p>
-                                    <p>Inspection skill</p>
-                                    <p>Visual inspection skill</p>
-                                    <p>2D height gauge operating</p>
-                                    <p>Operating surface roughness tester</p>
-                                    <p>Microscope Handeling</p>
-                                </v-flex>
-                                <v-flex md2>
-                                    <p>4</p>
-                                    <p>4</p>
-                                    <p>6</p>
-                                    <p>8</p>
-                                    <p>8</p>
-                                    <p>5</p>
-                                    <p>9</p>
-                                </v-flex>
-                            </v-layout>
-                        </v-flex>
-                        <!--total value -->
-                         <v-flex xs12>
-                            <div class="total-value">
-                            <p><strong>TOTAL : </strong> <span> 22 </span></p>
-                            </div>
-                        </v-flex>
-                        <!-- end total value -->
-                        <!--total value -->
-                        <div class="under-line"></div>
-                         <v-flex xs12 sm12 md12 >
-                            <div class="ap-list">
-                           <span class="ap-sp"> <p><strong>Powred By : </strong> <spam> Rishi Nath</spam></p></span>
-                            <p><strong>Approved By : </strong> <spam> Shahir KM</spam></p>
-                            </div>
-                        </v-flex>
-                        <!-- end total value -->
-                    </v-layout>
-                </v-card>
-            </v-flex>
-        </v-layout>
-    </div>
+        <v-list two-line>
+          <template v-for="(item, index) in todos">
+            <v-list-tile :key="item.title" avatar ripple>
+              <v-list-tile-content>
+                <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+              </v-list-tile-content>
+
+              <v-list-tile-action>
+                <v-btn flat icon color="red" @click="deleteEvent(index)">
+                  <v-icon>close</v-icon>
+                </v-btn>
+              </v-list-tile-action>
+            </v-list-tile>
+            <v-divider v-if="index + 1 < todos.length" :key="index"></v-divider>
+          </template>
+        </v-list>
+      </v-card>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
@@ -166,115 +50,29 @@ import router from "../../router";
 export default {
   data() {
     return {
+      show1: false,
       detail: [],
-      dn: true,
-      //  push to database
-      valid: true,
-      // languages
-
-      // form rules or validation
-      positionRules: [v => !!v || "Employee Id is required"],
-      eduBackgRules: [v => !!v || "Employee Id is required"],
-      expRules: [v => !!v || "Employee Id is required"],
-      competencyRules: [v => !!v || "Employee Id is required"]
+      todos: [{ title: "todo one" }, { title: "todo two" }],
+      todo: "",
+      seen: false,
+      hide: true
     };
   },
-  mounted() {
-    this.getdetails();
-  },
+  mounted() {},
   computed: {},
   methods: {
-    getdetails() {
-      var ts = window.location.pathname.split("/");
-      var parQuery = ts[ts.length - 1];
-      var self = this;
-      axios
-        .get("http://127.0.0.1:8000/api/v1/hr/completency/" + parQuery)
-        .then(function(response) {
-          self.detail = response.data;
-        })
-        .catch(function(error) {
-          console.log(error.data);
-        });
+    savetodolist() {
+      this.todos.push({ title: this.todo });
+      this.todo = "";
     },
-    validate: function() {
-      if (this.$refs.form.validate()) {
-        this.snackbar = true;
-        var self = this;
 
-        var ts = window.location.pathname.split("/");
-        var parQuery = ts[ts.length - 1];
-        var self = this;
-
-        axios({
-          method: "put",
-          url: "http://127.0.0.1:8000/api/v1/hr/completency/" + parQuery,
-          data: {
-            position: self.detail.position,
-            education_Background: self.detail.education_Background,
-            experience: self.detail.experience,
-            competency_Requirement: self.detail.competency_Requirement
-          }
-        })
-          .then(function(response) {
-            self.dn = !response.dn;
-            swal({
-              title: "Success",
-              type: "success",
-              text: "Successfully edited",
-              showConfirmButton: false,
-              showCloseButton: false,
-              timer: 3000
-            });
-          })
-          .catch(function(error) {
-            console.log(error);
-          });
-      }
-    },
-    deleteData() {
-      var ts = window.location.pathname.split("/");
-      var parQuery = ts[ts.length - 1];
-      var self = this;
-      swal({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
-        type: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, delete it!"
-      }).then(result => {
-        if (result.value) {
-          axios
-            .delete("http://127.0.0.1:8000/api/v1/hr/completency/" + parQuery)
-            .then(function(response) {
-              swal({
-                title: "Success",
-                text: "Successfully Delete",
-                type: "success",
-                showConfirmButton: false,
-                showCloseButton: false,
-                timer: 3000
-              });
-              router.push("/compentency-matrix");
-            })
-            .catch(function(error) {
-              swal({
-                type: "error",
-                title: "Oops...",
-                text: "Something went wrong!",
-                showConfirmButton: false,
-                showCloseButton: false,
-                timer: 3000
-              });
-            });
-        }
-      });
+    deleteEvent(index) {
+      this.todos.splice(index, 1);
     }
   }
 };
 </script>
+
 
 
 <style scoped>
@@ -286,59 +84,62 @@ export default {
   column-count: 3;
   column-gap: 15px;
 }
+ .primary--text {
+    color: #fff !important;
+    caret-color: #fff !important;
+}
 </style>
 
 <style>
+.v-list--two-line .v-list__tile {
+  height: 50px !important;
+}
 /*skill-matrix */
+.depart-form {
+  padding: 4px;
+}
 .lay-des {
-    background: #fbfbfb;
-    padding: 30px;
+  background: #fbfbfb;
+  padding: 30px;
 }
 .skill-spac {
-    line-height: 30px;
-    padding: 0px;
-        padding-left: 0px;
-    padding-left: 15px;
+  line-height: 30px;
+  padding: 0px;
+  padding-left: 0px;
+  padding-left: 15px;
 }
 .under-line {
+  border-bottom: 1px dashed #bdbdbd;
 
-    border-bottom: 1px dashed #bdbdbd;
-    
-    width: 100%;
-
+  width: 100%;
 }
 .list-scroing {
-    line-height: 30px;
-    padding: 0px 0px 0px 14px;
+  line-height: 30px;
+  padding: 0px 0px 0px 14px;
 }
 .total-value p {
-    float: right;
-    margin-right: 52px;
-    padding: 5px 25px;
-    border-top: 1px solid;
-    border-bottom: 1px solid;
+  float: right;
+  margin-right: 52px;
+  padding: 5px 25px;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
 }
 .ap-list span {
-
-    float: left;
-    padding-right: 10px;
-
+  float: left;
+  padding-right: 10px;
 }
-::before, ::after {
-
-    text-decoration: inherit;
-    vertical-align: inherit;
-
+::before,
+::after {
+  text-decoration: inherit;
+  vertical-align: inherit;
 }
 ::selection {
-
-    background-color: #b3d4fc;
-    color: #000;
-    text-shadow: none;
-
+  background-color: #b3d4fc;
+  color: #000;
+  text-shadow: none;
 }
 .ap-list {
-    padding-top: 15px;
+  padding-top: 15px;
 }
 /* end skill-matrix */
 
@@ -453,7 +254,7 @@ export default {
   display: none !important;
 }
 /* responsive */
-@media (max-width: 768px){
+@media (max-width: 768px) {
   .total-value p {
     float: right;
     margin-right: 0px;
@@ -462,7 +263,7 @@ export default {
     float: unset;
     padding-right: 0px;
     padding: 5px 10px;
-}
+  }
 }
 </style>
 
