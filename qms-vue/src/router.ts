@@ -21,6 +21,7 @@ import skillmatrix from './views/Hr/SkillMatrix.vue';
 import skillmatrixDetail from './views/Hr/SkillMatrixDetail.vue';
 import skillmatrixInsert from './views/Hr/SkillMatrixInsert.vue';
 import settingdepartment from './views/Setting/Setting.vue';
+import settingenquiry from './views/Setting/SettingEnquiry.vue';
 Vue.use(Router);
 
 export default new Router({
@@ -117,6 +118,11 @@ export default new Router({
       path:"/department",
       name:'Setting Department',
       component:settingdepartment,
+    },
+    {
+      path:"/enquiry-register",
+      name:'Enquiry Register',
+      component:settingenquiry,
     },
     
 
