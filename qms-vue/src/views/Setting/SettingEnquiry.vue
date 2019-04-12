@@ -1,5 +1,6 @@
 <template>
   <div>
+    <tabs/>
     <v-layout row wrap>
       <v-flex xs12>
         <skills/>

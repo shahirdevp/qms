@@ -1,24 +1,49 @@
 <template>
-  <div class>
-    <v-layout row>
-      <v-flex xs12 sm12 md12>
-        <v-layout row wrap class="lay-out-res">
-          <div class="lay-back">
-            <v-flex md10>
-              <h3 class="white--text">Enquiry Register</h3>
-            </v-flex>
-            <v-flex md2>
-              <div class="lls">
-                <v-btn icon color="white" class="bt-l">
-                  <v-icon>edit</v-icon>
+  <div class="">
+    <v-layout row wrap class="action-bar">
+      <v-flex xs6>
+        <h3 class="page-name">Skill Matrix Detail</h3>
+      </v-flex>
+      <v-flex xs6>
+        <div class="text-xs-right">
+          <div :class="{dn : !dn}">
+            <v-tooltip v-model="show" bottom>
+              <template v-slot:activator="{ on }">
+                <v-btn icon v-on="on" ref="fileInput" @click.stop="dn = !dn">
+                  <v-icon color="info">edit</v-icon>
                 </v-btn>
-                <v-btn icon color="error" class="bt-l">
-                  <v-icon>delete</v-icon>
+              </template>
+              <span>Edit</span>
+            </v-tooltip>
+            <v-tooltip v-model="show" bottom>
+              <template v-slot:activator="{ on }">
+                <v-btn icon v-on="on" ref="fileInput" @click="deleteData()">
+                  <v-icon color="red">delete</v-icon>
                 </v-btn>
-              </div>
-            </v-flex>
+              </template>
+              <span>Delete</span>
+            </v-tooltip>
           </div>
-        </v-layout>
+
+          <div :class="{dn : dn}">
+            <v-tooltip v-model="show" bottom>
+              <template v-slot:activator="{ on }">
+                <v-btn icon v-on="on" ref="fileInput" @click.stop="dn = !dn">
+                  <v-icon color="warning">close</v-icon>
+                </v-btn>
+              </template>
+              <span>Cancel</span>
+            </v-tooltip>
+            <v-tooltip v-model="show" bottom>
+              <template v-slot:activator="{ on }">
+                <v-btn icon v-on="on" ref="fileInput" @click="validate()">
+                  <v-icon color="success">check</v-icon>
+                </v-btn>
+              </template>
+              <span>Save</span>
+            </v-tooltip>
+          </div>
+        </div>
       </v-flex>
     </v-layout>
     <!-- detail -->
@@ -27,35 +52,63 @@
         <v-card>
           <v-layout row class="lay-des">
             <v-flex md3>
-              <p><strong>SINO :</strong> 11-04-2019</p>
+              <p>
+                <strong>SINO :</strong> 11-04-2019
+              </p>
             </v-flex>
             <v-flex md3>
-              <p><strong>Date :</strong> 11-04-2019</p>
+              <p>
+                <strong>Date :</strong> 11-04-2019
+              </p>
             </v-flex>
             <v-flex md3>
-              <p><strong>Customer :</strong> 11-04-2019</p>
+              <p>
+                <strong>Customer :</strong> 11-04-2019
+              </p>
             </v-flex>
             <v-flex md3>
-              <p><strong>Contact :</strong> 11-04-2019</p>
+              <p>
+                <strong>Contact :</strong> 11-04-2019
+              </p>
             </v-flex>
           </v-layout>
           <v-layout row wrap>
             <v-flex md6>
               <div class="ees">
-                <p><strong>Line no :</strong> 2</p>
-                <p><strong>Part Namber :</strong> 6</p>
-                <p><strong>Description :</strong> 6</p>
-                <p><strong>Drawing Number :</strong> 11-04-2019</p>
-                <p><strong>Qty :</strong> 11-04-2019</p>
+                <p>
+                  <strong>Line no :</strong> 2
+                </p>
+                <p>
+                  <strong>Part Namber :</strong> 6
+                </p>
+                <p>
+                  <strong>Description :</strong> 6
+                </p>
+                <p>
+                  <strong>Drawing Number :</strong> 11-04-2019
+                </p>
+                <p>
+                  <strong>Qty :</strong> 11-04-2019
+                </p>
               </div>
             </v-flex>
             <v-flex md6>
               <div class="ees">
-                <p><strong>Quotation Ref :</strong> Dummy</p>
-                <p><strong>Status :</strong> Nothing</p>
-                <p><strong>Not In Scope :</strong> 7</p>
-                <p><strong>Awarded :</strong> no awards</p>
-                <p><strong>PO .NO :</strong> number</p>
+                <p>
+                  <strong>Quotation Ref :</strong> Dummy
+                </p>
+                <p>
+                  <strong>Status :</strong> Nothing
+                </p>
+                <p>
+                  <strong>Not In Scope :</strong> 7
+                </p>
+                <p>
+                  <strong>Awarded :</strong> no awards
+                </p>
+                <p>
+                  <strong>PO .NO :</strong> number
+                </p>
               </div>
             </v-flex>
           </v-layout>
@@ -72,6 +125,12 @@ import router from "../../router";
 export default {
   data() {
     return {
+      detail: [],
+      dn: true,
+      //  push to database
+      valid: true,
+      // languages
+
       show1: false,
       detail: [],
       todos: [{ title: "todo one" }, { title: "todo two" }],
@@ -90,6 +149,95 @@ export default {
 
     deleteEvent(index) {
       this.todos.splice(index, 1);
+    },
+
+    getdetails() {
+      var ts = window.location.pathname.split("/");
+      var parQuery = ts[ts.length - 1];
+      var self = this;
+      axios
+        .get("http://127.0.0.1:8000/api/v1/hr/completency/" + parQuery)
+        .then(function(response) {
+          self.detail = response.data;
+        })
+        .catch(function(error) {
+          console.log(error.data);
+        });
+    },
+    validate: function() {
+      if (this.$refs.form.validate()) {
+        this.snackbar = true;
+        var self = this;
+
+        var ts = window.location.pathname.split("/");
+        var parQuery = ts[ts.length - 1];
+        var self = this;
+
+        axios({
+          method: "put",
+          url: "http://127.0.0.1:8000/api/v1/hr/completency/" + parQuery,
+          data: {
+            position: self.detail.position,
+            education_Background: self.detail.education_Background,
+            experience: self.detail.experience,
+            competency_Requirement: self.detail.competency_Requirement
+          }
+        })
+          .then(function(response) {
+            self.dn = !response.dn;
+            swal({
+              title: "Success",
+              type: "success",
+              text: "Successfully edited",
+              showConfirmButton: false,
+              showCloseButton: false,
+              timer: 3000
+            });
+          })
+          .catch(function(error) {
+            console.log(error);
+          });
+      }
+    },
+    deleteData() {
+      var ts = window.location.pathname.split("/");
+      var parQuery = ts[ts.length - 1];
+      var self = this;
+      swal({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+      }).then(result => {
+        if (result.value) {
+          axios
+            .delete("http://127.0.0.1:8000/api/v1/hr/completency/" + parQuery)
+            .then(function(response) {
+              swal({
+                title: "Success",
+                text: "Successfully Delete",
+                type: "success",
+                showConfirmButton: false,
+                showCloseButton: false,
+                timer: 3000
+              });
+              router.push("/compentency-matrix");
+            })
+            .catch(function(error) {
+              swal({
+                type: "error",
+                title: "Oops...",
+                text: "Something went wrong!",
+                showConfirmButton: false,
+                showCloseButton: false,
+                timer: 3000
+              });
+            });
+        }
+      });
     }
   }
 };

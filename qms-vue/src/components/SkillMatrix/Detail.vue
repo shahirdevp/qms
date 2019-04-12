@@ -1,162 +1,195 @@
 <template>
-    <div id="empd">
-        <v-layout row wrap class="action-bar">
-            <v-flex xs6>
-                <h3 class="page-name">Skill Matrix Detail</h3>
-            </v-flex>
-            <v-flex xs6>
-                <div class="text-xs-right">
-                    <div :class="{dn : !dn}">
-                            <v-tooltip v-model="show" bottom>
-          <template v-slot:activator="{ on }">
-            <v-btn icon v-on="on" ref="fileInput"  @click.stop="dn = !dn" >
-             <v-icon  color="info">edit</v-icon>
-            </v-btn>
-          </template>
-          <span>Edit</span>
-        </v-tooltip>
-         <v-tooltip v-model="show" bottom>
-          <template v-slot:activator="{ on }">
-            <v-btn icon v-on="on" ref="fileInput"  @click="deleteData()" >
-             <v-icon  color="red">delete</v-icon>
-            </v-btn>
-          </template>
-          <span>Delete</span>
-        </v-tooltip>
-                    </div>
+  <div id="empd">
+    <v-layout row wrap class="action-bar">
+      <v-flex xs6>
+        <h3 class="page-name">Skill Matrix Detail</h3>
+      </v-flex>
+      <v-flex xs6>
+        <div class="text-xs-right">
+          <div :class="{dn : !dn}">
+            <v-tooltip v-model="show" bottom>
+              <template v-slot:activator="{ on }">
+                <v-btn icon v-on="on" ref="fileInput" @click.stop="dn = !dn">
+                  <v-icon color="info">edit</v-icon>
+                </v-btn>
+              </template>
+              <span>Edit</span>
+            </v-tooltip>
+            <v-tooltip v-model="show" bottom>
+              <template v-slot:activator="{ on }">
+                <v-btn icon v-on="on" ref="fileInput" @click="deleteData()">
+                  <v-icon color="red">delete</v-icon>
+                </v-btn>
+              </template>
+              <span>Delete</span>
+            </v-tooltip>
+          </div>
 
-                    <div :class="{dn : dn}">
-                            <v-tooltip v-model="show" bottom>
-          <template v-slot:activator="{ on }">
-            <v-btn icon v-on="on" ref="fileInput" @click.stop="dn = !dn" >
-             <v-icon  color="warning">close</v-icon>
-            </v-btn>
-          </template>
-          <span>Cancel</span>
-        </v-tooltip>
-         <v-tooltip v-model="show" bottom>
-          <template v-slot:activator="{ on }">
-            <v-btn icon v-on="on" ref="fileInput" @click="validate()" >
-             <v-icon  color="success">check</v-icon>
-            </v-btn>
-          </template>
-          <span>Save</span>
-        </v-tooltip>
-                    </div>
-                </div>
-            </v-flex>
-        </v-layout>
+          <div :class="{dn : dn}">
+            <v-tooltip v-model="show" bottom>
+              <template v-slot:activator="{ on }">
+                <v-btn icon v-on="on" ref="fileInput" @click.stop="dn = !dn">
+                  <v-icon color="warning">close</v-icon>
+                </v-btn>
+              </template>
+              <span>Cancel</span>
+            </v-tooltip>
+            <v-tooltip v-model="show" bottom>
+              <template v-slot:activator="{ on }">
+                <v-btn icon v-on="on" ref="fileInput" @click="validate()">
+                  <v-icon color="success">check</v-icon>
+                </v-btn>
+              </template>
+              <span>Save</span>
+            </v-tooltip>
+          </div>
+        </div>
+      </v-flex>
+    </v-layout>
 
-        <!-- Details-list -->
-        <v-layout container>
+    <!-- Details-list -->
+    <v-layout container>
+      <v-flex xs12 sm12 md12>
+        <v-card>
+          <v-layout class="lay-des" row wrap>
+            <v-flex md3 sm6>
+              <p>
+                <strong>Date :</strong> 05-04-2019
+              </p>
+            </v-flex>
+            <v-flex md3 sm6>
+              <p>
+                <strong>Title :</strong> Testing
+              </p>
+            </v-flex>
+            <v-flex md3 sm6>
+              <p>
+                <strong>Department :</strong> Ui Designer
+              </p>
+            </v-flex>
+            <v-flex md3 sm6>
+              <p>
+                <strong>Designation :</strong> Front End Developer
+              </p>
+            </v-flex>
+          </v-layout>
+          <div class="under-line"></div>
+          <!-- Dtails -->
+          <v-layout class="lay-des" row wrap>
+            <v-flex md6>
+              <p>
+                <strong>S No :</strong>001
+              </p>
+              <p>
+                <strong>Name :</strong>Daniel Martin
+              </p>
+              <p>
+                <strong>Employee ID :</strong>ID2091019
+              </p>
+              <p>
+                <strong>Department :</strong> Ui Designer
+              </p>
+              <p>
+                <strong>Designation :</strong> Front End Developer
+              </p>
+            </v-flex>
+            <v-flex md6>
+              <p>
+                <strong>Scroing Crieteria</strong>
+              </p>
+              <ol class="list-scroing">
+                <li>Need Training</li>
+                <li>Can Work under supervision</li>
+                <li>Can Work alone</li>
+                <li>Can work & Train other</li>
+              </ol>
+            </v-flex>
+          </v-layout>
+          <div class="under-line"></div>
+          <v-layout class="lay-des" row wrap>
+            <v-flex xs12>
+              <p>
+                <strong>SKILLS</strong>
+              </p>
+            </v-flex>
+            <!--first list-->
+            <v-flex md6>
+              <v-layout row>
+                <v-flex md10>
+                  <p>Drawing studing skills</p>
+                  <p>Usage of general gauges</p>
+                  <p>Usage of general instruments</p>
+                  <p>Usage of product specific gauges</p>
+                  <p>Quality documentation</p>
+                  <p>CMM operating</p>
+                  <p>PP Operating</p>
+                </v-flex>
+                <v-flex md2>
+                  <p>4</p>
+                  <p>4</p>
+                  <p>6</p>
+                  <p>8</p>
+                  <p>8</p>
+                  <p>5</p>
+                  <p>9</p>
+                </v-flex>
+              </v-layout>
+            </v-flex>
+            <!--second list-->
+            <v-flex md6>
+              <v-layout row>
+                <v-flex md10>
+                  <p>Basic machining knowledge</p>
+                  <p>Internal verification skills</p>
+                  <p>Inspection skill</p>
+                  <p>Visual inspection skill</p>
+                  <p>2D height gauge operating</p>
+                  <p>Operating surface roughness tester</p>
+                  <p>Microscope Handeling</p>
+                </v-flex>
+                <v-flex md2>
+                  <p>4</p>
+                  <p>4</p>
+                  <p>6</p>
+                  <p>8</p>
+                  <p>8</p>
+                  <p>5</p>
+                  <p>9</p>
+                </v-flex>
+              </v-layout>
+            </v-flex>
+            <!--total value -->
+            <v-flex xs12>
+              <div class="total-value">
+                <p>
+                  <strong>TOTAL :</strong>
+                  <span>22</span>
+                </p>
+              </div>
+            </v-flex>
+            <!-- end total value -->
+            <!--total value -->
+            <div class="under-line"></div>
             <v-flex xs12 sm12 md12>
-                <v-card>
-                    <v-layout class="lay-des" row wrap>
-                        <v-flex md3 sm6>
-                            <p><strong>Date : </strong> 05-04-2019</p>
-                        </v-flex>
-                        <v-flex md3 sm6>
-                            <p><strong>Title : </strong> Testing</p>
-                        </v-flex>
-                        <v-flex md3 sm6>
-                            <p><strong>Department : </strong> Ui Designer</p>
-                        </v-flex>
-                        <v-flex md3 sm6>
-                            <p><strong>Designation : </strong> Front End Developer</p>
-                        </v-flex>
-                    </v-layout>
-                    <div class="under-line"></div>
-                    <!-- Dtails -->
-                    <v-layout class="lay-des" row wrap>
-                        <v-flex md6>
-                            <p><strong>S No : </strong>001</p>
-                            <p><strong>Name : </strong>Daniel Martin</p>
-                            <p><strong>Employee ID : </strong>ID2091019</p>
-                            <p><strong>Department : </strong> Ui Designer</p>
-                            <p><strong>Designation : </strong> Front End Developer</p>
-                        </v-flex>
-                        <v-flex md6>
-                            <p><strong>Scroing Crieteria</strong></p>
-                            <ol class="list-scroing">
-                                <li>Need Training</li>
-                                <li>Can Work under supervision</li>
-                                <li>Can Work alone</li>
-                                <li>Can work & Train other</li>
-                            </ol>
-                        </v-flex>
-                    </v-layout>
-                    <div class="under-line"></div>
-                    <v-layout class="lay-des" row wrap>
-                        <v-flex xs12>
-                            <p><strong>SKILLS</strong></p>
-                        </v-flex>
-                         <!--first list-->
-                        <v-flex md6>
-                            <v-layout row>
-                                <v-flex md10>
-                                    <p>Drawing studing skills </p>
-                                    <p>Usage of general gauges </p>
-                                    <p>Usage of general instruments</p>
-                                    <p>Usage of product specific gauges</p>
-                                    <p>Quality documentation</p>
-                                    <p>CMM operating </p>
-                                    <p>PP Operating </p>
-                                </v-flex>
-                                <v-flex md2>
-                                    <p>4</p>
-                                    <p>4</p>
-                                    <p>6</p>
-                                    <p>8</p>
-                                    <p>8</p>
-                                    <p>5</p>
-                                    <p>9</p>
-                                </v-flex>
-                            </v-layout>
-                        </v-flex>
-                        <!--second list-->
-                        <v-flex md6>
-                            <v-layout row>
-                                <v-flex md10>
-                                    <p>Basic machining knowledge</p>
-                                    <p>Internal verification skills</p>
-                                    <p>Inspection skill</p>
-                                    <p>Visual inspection skill</p>
-                                    <p>2D height gauge operating</p>
-                                    <p>Operating surface roughness tester</p>
-                                    <p>Microscope Handeling</p>
-                                </v-flex>
-                                <v-flex md2>
-                                    <p>4</p>
-                                    <p>4</p>
-                                    <p>6</p>
-                                    <p>8</p>
-                                    <p>8</p>
-                                    <p>5</p>
-                                    <p>9</p>
-                                </v-flex>
-                            </v-layout>
-                        </v-flex>
-                        <!--total value -->
-                         <v-flex xs12>
-                            <div class="total-value">
-                            <p><strong>TOTAL : </strong> <span> 22 </span></p>
-                            </div>
-                        </v-flex>
-                        <!-- end total value -->
-                        <!--total value -->
-                        <div class="under-line"></div>
-                         <v-flex xs12 sm12 md12 >
-                            <div class="ap-list">
-                           <span class="ap-sp"> <p><strong>Powred By : </strong> <spam> Rishi Nath</spam></p></span>
-                            <p><strong>Approved By : </strong> <spam> Shahir KM</spam></p>
-                            </div>
-                        </v-flex>
-                        <!-- end total value -->
-                    </v-layout>
-                </v-card>
+              <div class="ap-list">
+                <span class="ap-sp">
+                  <p>
+                    <strong>Powred By :</strong>
+                    <spam>Rishi Nath</spam>
+                  </p>
+                </span>
+                <p>
+                  <strong>Approved By :</strong>
+                  <spam>Shahir KM</spam>
+                </p>
+              </div>
             </v-flex>
-        </v-layout>
-    </div>
+            <!-- end total value -->
+          </v-layout>
+        </v-card>
+      </v-flex>
+    </v-layout>
+  </div>
 </template>
 
 <script>
@@ -291,54 +324,47 @@ export default {
 <style>
 /*skill-matrix */
 .lay-des {
-    background: #fbfbfb;
-    padding: 30px;
+  background: #fbfbfb;
+  padding: 30px;
 }
 .skill-spac {
-    line-height: 30px;
-    padding: 0px;
-        padding-left: 0px;
-    padding-left: 15px;
+  line-height: 30px;
+  padding: 0px;
+  padding-left: 0px;
+  padding-left: 15px;
 }
 .under-line {
+  border-bottom: 1px dashed #bdbdbd;
 
-    border-bottom: 1px dashed #bdbdbd;
-    
-    width: 100%;
-
+  width: 100%;
 }
 .list-scroing {
-    line-height: 30px;
-    padding: 0px 0px 0px 14px;
+  line-height: 30px;
+  padding: 0px 0px 0px 14px;
 }
 .total-value p {
-    float: right;
-    margin-right: 52px;
-    padding: 5px 25px;
-    border-top: 1px solid;
-    border-bottom: 1px solid;
+  float: right;
+  margin-right: 52px;
+  padding: 5px 25px;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
 }
 .ap-list span {
-
-    float: left;
-    padding-right: 10px;
-
+  float: left;
+  padding-right: 10px;
 }
-::before, ::after {
-
-    text-decoration: inherit;
-    vertical-align: inherit;
-
+::before,
+::after {
+  text-decoration: inherit;
+  vertical-align: inherit;
 }
 ::selection {
-
-    background-color: #b3d4fc;
-    color: #000;
-    text-shadow: none;
-
+  background-color: #b3d4fc;
+  color: #000;
+  text-shadow: none;
 }
 .ap-list {
-    padding-top: 15px;
+  padding-top: 15px;
 }
 /* end skill-matrix */
 
@@ -453,7 +479,7 @@ export default {
   display: none !important;
 }
 /* responsive */
-@media (max-width: 768px){
+@media (max-width: 768px) {
   .total-value p {
     float: right;
     margin-right: 0px;
@@ -462,7 +488,7 @@ export default {
     float: unset;
     padding-right: 0px;
     padding: 5px 10px;
-}
+  }
 }
 </style>
 
