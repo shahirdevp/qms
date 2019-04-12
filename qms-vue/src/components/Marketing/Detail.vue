@@ -2,7 +2,7 @@
   <div class="">
     <v-layout row wrap class="action-bar">
       <v-flex xs6>
-        <h3 class="page-name">Skill Matrix Detail</h3>
+        <h3 class="page-name">Marketing</h3>
       </v-flex>
       <v-flex xs6>
         <div class="text-xs-right">
@@ -24,7 +24,6 @@
               <span>Delete</span>
             </v-tooltip>
           </div>
-
           <div :class="{dn : dn}">
             <v-tooltip v-model="show" bottom>
               <template v-slot:activator="{ on }">
