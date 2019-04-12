@@ -37,7 +37,7 @@ export default {
         { icon : 'announcement', title : 'Compentency Matrix', link : '/compentency-matrix' },
         { icon : 'cached', title : 'Training Request register', link : '/trining-request-register' },
         { icon : 'description', title : 'Annual Training Plan', link : '/anual-training-plan' },
-        { icon : 'donut_small', title : 'Training Attendance', link : '/training-attendance' },
+        // { icon : 'donut_small', title : 'Training Attendance', link : '/training-attendance' },
         { icon : 'donut_small', title : 'Training Evalution Record', link : '/training-evalution-record' },
         { icon : 'donut_small', title : 'Skill Matrix', link : '/skill-matrix' },
       ]

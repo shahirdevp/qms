@@ -22,6 +22,7 @@ import skillmatrixDetail from './views/Hr/SkillMatrixDetail.vue';
 import skillmatrixInsert from './views/Hr/SkillMatrixInsert.vue';
 import settingdepartment from './views/Setting/Setting.vue';
 import settingenquiry from './views/Setting/SettingEnquiry.vue';
+
 Vue.use(Router);
 
 export default new Router({
@@ -85,46 +86,44 @@ export default new Router({
       component: TrrDetails,
     },
     {
-      path:"/anual-training-plan",
+      path: '/anual-training-plan',
       name: 'Anual training',
-      component:anualtraing,
+      component: anualtraing,
     },
     {
-      path:"/anual-training-plan/:id",
+      path: '/anual-training-plan/:id',
       name: 'Anual training details',
-      component:anualtraingDetails,
+      component: anualtraingDetails,
     },
     {
-      path:"/training-evalution-record",
-      name:'Training evalution record',
-      component:trEvalution,
+      path: '/training-evalution-record',
+      name: 'Training evalution record',
+      component: trEvalution,
     },
     {
-      path:"/skill-matrix",
-      name:'Skill matrix',
-      component:skillmatrix,
+      path: '/skill-matrix',
+      name: 'Skill matrix',
+      component: skillmatrix,
     },
     {
-      path:"/skill-matrix/:id",
-      name:'Skill matrix',
-      component:skillmatrixDetail,
+      path: '/skill-matrix/:id',
+      name: 'Skill matrix',
+      component: skillmatrixDetail,
     },
     {
-      path:"/skill-matrix-insert",
-      name:'Skill matrix insert',
-      component:skillmatrixInsert,
+      path: '/skill-matrix-insert',
+      name: 'Skill matrix insert',
+      component: skillmatrixInsert,
     },
     {
-      path:"/department",
-      name:'Setting Department',
-      component:settingdepartment,
+      path: '/department',
+      name: 'Department',
+      component: settingdepartment,
     },
     {
-      path:"/enquiry-register",
-      name:'Enquiry Register',
-      component:settingenquiry,
+      path: '/enquiry-register',
+      name: 'Enquiry Register',
+      component: settingenquiry,
     },
-    
-
   ],
 });
