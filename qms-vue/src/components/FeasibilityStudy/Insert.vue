@@ -2,7 +2,7 @@
   <div id="empd">
     <v-layout row wrap class="action-bar">
       <v-flex xs6>
-        <h3 class="page-name">Marketing</h3>
+        <h3 class="page-name">Feasibility Study</h3>
       </v-flex>
       <v-flex xs6>
         <div class="text-xs-right">
@@ -51,77 +51,180 @@
     <v-layout container>
       <v-flex xs12 sm12 md12>
         <v-card>
+          <v-layout class="lay-des-pad primary" row wrap>
+            <v-flex xs12>
+              <h3 class="head white--text">FEASIBILITY ENQUIRY FORM</h3>
+            </v-flex>
+          </v-layout>
+          <v-stepper v-model="e13" vertical>
+            <v-stepper-step step="1" complete>Name of step 1</v-stepper-step>
+            <v-stepper-content step="1">
+              <!-- <v-card color="grey lighten-1" class="mb-5" height="300px"> -->
+              <v-layout class="white" row wrap>
+                <v-flex md3>
+                  <div class="text-rr">
+                    <label class="lab-for grey--text">S.No</label>
+                    <v-text-field placeholder="Enter your value" outline></v-text-field>
+                  </div>
+                </v-flex>
+                <v-flex md3>
+                  <div class="text-rr">
+                    <label class="lab-for grey--text">Date</label>
+                    <v-text-field placeholder="Enter your value" outline></v-text-field>
+                  </div>
+                </v-flex>
+                <v-flex md3>
+                  <div class="text-rr">
+                    <label class="lab-for grey--text">Req No</label>
+                    <v-text-field placeholder="Enter your value" outline></v-text-field>
+                  </div>
+                </v-flex>
+                <v-flex md3>
+                  <div class="text-rr">
+                    <label class="lab-for grey--text">Line No</label>
+                    <v-text-field placeholder="Enter your value" outline></v-text-field>
+                  </div>
+                </v-flex>
+                <v-flex md3>
+                  <div class="text-rr">
+                    <label class="lab-for grey--text">Feasibility Stydy No</label>
+                    <v-text-field placeholder="Enter your value" outline></v-text-field>
+                  </div>
+                </v-flex>
+                <v-flex md3>
+                  <div class="text-rr">
+                    <label class="lab-for grey--text">Date</label>
+                    <v-text-field placeholder="Enter your value" outline></v-text-field>
+                  </div>
+                </v-flex>
+                <v-flex md3>
+                  <div class="text-rr">
+                    <label class="lab-for grey--text">Product Description</label>
+                    <v-text-field placeholder="Enter your value" outline></v-text-field>
+                  </div>
+                </v-flex>
+                <v-flex md3>
+                  <div class="text-rr">
+                    <label class="lab-for grey--text">Part Number</label>
+                    <v-text-field placeholder="Enter your value" outline></v-text-field>
+                  </div>
+                </v-flex>
+                <v-flex md3>
+                  <div class="text-rr">
+                    <label class="lab-for grey--text">Drawing Number</label>
+                    <v-text-field placeholder="Enter your value" outline></v-text-field>
+                  </div>
+                </v-flex>
+                <v-flex md3>
+                  <div class="text-rr">
+                    <label class="lab-for grey--text">Customer</label>
+                    <v-text-field placeholder="Enter your value" outline></v-text-field>
+                  </div>
+                </v-flex>
+                <v-flex md3>
+                  <div class="text-rr">
+                    <label class="lab-for grey--text">Qty</label>
+                    <v-text-field placeholder="Enter your value" outline></v-text-field>
+                  </div>
+                </v-flex>
+              </v-layout>
+              <v-btn color="primary" @click="e13 = 2">Continue</v-btn>
+              <v-btn flat>Cancel</v-btn>
+            </v-stepper-content>
+
+            <v-stepper-step step="2" complete>Name of step 2</v-stepper-step>
+
+            <v-stepper-content step="2">
+              <v-card color="grey lighten-1" class="mb-5" height="200px"></v-card>
+              <v-btn color="primary" @click="e13 = 3">Continue</v-btn>
+              <v-btn flat>Cancel</v-btn>
+            </v-stepper-content>
+
+            <v-stepper-step :rules="[() => false]" step="3">
+              Ad templates
+              <small>Alert message</small>
+            </v-stepper-step>
+
+            <v-stepper-content step="3">
+              <v-card color="grey lighten-1" class="mb-5" height="200px"></v-card>
+              <v-btn color="primary" @click="e13 = 4">Continue</v-btn>
+              <v-btn flat>Cancel</v-btn>
+            </v-stepper-content>
+
+            <v-stepper-step step="4">View setup instructions</v-stepper-step>
+
+            <v-stepper-content step="4">
+              <v-card color="grey lighten-1" class="mb-5" height="200px"></v-card>
+              <v-btn color="primary" @click="e13 = 1">Continue</v-btn>
+              <v-btn flat>Cancel</v-btn>
+            </v-stepper-content>
+          </v-stepper>
           <v-form ref="form" v-model="valid" id="emp" lazy-validation>
-            <v-layout class="lay-des-pad primary" row  wrap >
-              <v-flex xs12>
-                <h3 class="head white--text">MARKETING ENQUIRY FORM</h3>
-              </v-flex>
-            </v-layout>
             <!-- <div class="under-line"></div> -->
             <v-layout class="lay-des1 white" row wrap>
               <v-flex md3>
                 <div class="text-rr">
-                 <label class="lab-for grey--text">Customer Name</label>
-                  <v-text-field  placeholder="Customer Name" outline></v-text-field>
+                  <label class="lab-for grey--text">Customer Name</label>
+                  <v-text-field placeholder="Customer Name" outline></v-text-field>
                 </div>
               </v-flex>
               <v-flex md3>
                 <div class="text-rr">
-                  <label class="lab-for grey--text" >Contact </label>
+                  <label class="lab-for grey--text">Contact</label>
                   <v-text-field label placeholder="Contact" outline></v-text-field>
                 </div>
               </v-flex>
               <v-flex md3>
                 <div class="text-rr">
-                  <label class="lab-for grey--text" >Line No</label>
-                   <v-text-field label placeholder="Line No" outline></v-text-field>
+                  <label class="lab-for grey--text">Line No</label>
+                  <v-text-field label placeholder="Line No" outline></v-text-field>
                 </div>
               </v-flex>
               <v-flex md3>
                 <div class="text-rr">
-                  <label class="lab-for grey--text" >Part Number </label>
-                   <v-text-field label placeholder="Part Number" outline></v-text-field>
+                  <label class="lab-for grey--text">Part Number</label>
+                  <v-text-field label placeholder="Part Number" outline></v-text-field>
                 </div>
               </v-flex>
               <v-flex md3>
                 <div class="text-rr">
-                  <label class="lab-for grey--text" >Description</label>
-                   <v-text-field label placeholder="Description" outline></v-text-field>
+                  <label class="lab-for grey--text">Description</label>
+                  <v-text-field label placeholder="Description" outline></v-text-field>
                 </div>
               </v-flex>
               <v-flex md3>
                 <div class="text-rr">
-                  <label class="lab-for grey--text" >Drawing Number</label>
-                   <v-text-field label placeholder="Drawing Number" outline></v-text-field>
+                  <label class="lab-for grey--text">Drawing Number</label>
+                  <v-text-field label placeholder="Drawing Number" outline></v-text-field>
                 </div>
               </v-flex>
               <v-flex md3>
                 <div class="text-rr">
-                  <label class="lab-for grey--text" >Qty</label>
-                   <v-text-field label placeholder="Qty" outline></v-text-field>
+                  <label class="lab-for grey--text">Qty</label>
+                  <v-text-field label placeholder="Qty" outline></v-text-field>
                 </div>
               </v-flex>
               <v-flex md3>
                 <div class="text-rr">
-                  <label class="lab-for grey--text" >Quotation Ref</label>
-                   <v-text-field label placeholder="Quotation Ref" outline></v-text-field>
+                  <label class="lab-for grey--text">Quotation Ref</label>
+                  <v-text-field label placeholder="Quotation Ref" outline></v-text-field>
                 </div>
               </v-flex>
               <v-flex md3>
                 <div class="text-rr">
-                  <label class="lab-for grey--text" >Date</label>
-                   <v-text-field label placeholder="Date" outline></v-text-field>
+                  <label class="lab-for grey--text">Date</label>
+                  <v-text-field label placeholder="Date" outline></v-text-field>
                 </div>
               </v-flex>
               <v-flex md3>
                 <div class="text-rr">
-                  <label class="lab-for grey--text" >Status</label>
-                <v-select class="field-sp" :items="s1" outline placeholder="Status"></v-select>
+                  <label class="lab-for grey--text">Status</label>
+                  <v-select class="field-sp" :items="s1" outline placeholder="Status"></v-select>
                 </div>
               </v-flex>
-              <v-flex md12>   
-              <v-btn :disabled="!valid" color="success" @click="validate">Save</v-btn>
-              <v-btn color="error" @click="reset">cancel</v-btn>
+              <v-flex md12>
+                <v-btn :disabled="!valid" color="success" @click="validate">Save</v-btn>
+                <v-btn color="error" @click="reset">cancel</v-btn>
               </v-flex>
             </v-layout>
           </v-form>
@@ -138,12 +241,13 @@ import router from "../../router";
 export default {
   data() {
     return {
+      // step-form
+      e13: 2,
       detail: [],
       dn: true,
       //  push to database
       valid: true,
       // languages
-
       // form rules or validation
       positionRules: [v => !!v || "Employee Id is required"],
       eduBackgRules: [v => !!v || "Employee Id is required"],
@@ -154,7 +258,7 @@ export default {
       // designation
       designation: ["D1", "D2", "D3", "D4", "D5"],
       // skills
-      s1:['Not Awarded','Awarded','Not In Scope','Pending'],
+      s1: ["Not Awarded", "Awarded", "Not In Scope", "Pending"]
     };
   },
   mounted() {
@@ -202,10 +306,10 @@ export default {
 <style>
 /*skill-matrix */
 .text-rr {
-    margin: 5px;
+  margin: 5px;
 }
 .lab-for {
-    font-weight: 600;
+  font-weight: 600;
 }
 .text-rr input {
   margin-top: 10px;
@@ -217,14 +321,14 @@ export default {
   margin: 5px 2px;
 }
 .text-rr .v-select__selections {
-    padding-top: 0px !important;
+  padding-top: 0px !important;
 }
 .text-rr .v-input__append-inner {
-        margin-top: 7px !important;
+  margin-top: 7px !important;
 }
 .under-line {
-    border-bottom: 1px dashed #bdbdbd;
-    width: 100%;
+  border-bottom: 1px dashed #bdbdbd;
+  width: 100%;
 }
 .radio-list .v-input {
   margin: 0px;
@@ -241,10 +345,10 @@ export default {
 }
 .lay-des1 {
   background: #fbfbfb;
- padding: 20px 35px 0px;
+  padding: 30px;
 }
-.lay-des-pad{
-    padding: 10px 25px 5px;
+.lay-des-pad {
+  padding: 10px 25px 5px;
 }
 .field-sp {
   padding: 10px;

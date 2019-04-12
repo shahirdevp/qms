@@ -23,6 +23,10 @@ import skillmatrixInsert from './views/Hr/SkillMatrixInsert.vue';
 import settingdepartment from './views/Setting/Setting.vue';
 import marketingenquiry from './views/Marketing/MarketingEnquiry.vue';
 import marketingenquiryinsert from './views/Marketing/MarketingEnquiryInsert.vue';
+import feasibilitydetail from './views/Marketing/FeasibilityDetail.vue';
+import feasibilityinsert from './views/Marketing/FeasibilityInsert.vue';
+
+
 
 Vue.use(Router);
 
@@ -130,6 +134,16 @@ export default new Router({
       path: '/marketing-enquiry-insert',
       name: 'Marketing Enquiry Insert',
       component: marketingenquiryinsert,
+    },
+    {
+      path: '/feasibility',
+      name: 'Feasibility',
+      component: feasibilitydetail,
+    },
+    {
+      path: '/feasibility-insert',
+      name: 'Feasibility Insert',
+      component: feasibilityinsert,
     },
   ],
 });

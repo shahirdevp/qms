@@ -10,10 +10,10 @@
 </template>
 
 <script>
-import skills from "../../components/Marketing/Insert.vue";
+import skills from "../../components/FeasibilityStudy/Insert.vue";
 import tabs from "../../components/Common/TabsBlock.vue";
 export default {
-  name: "Marketing",
+  name: "Feasibility",
   components: {
     skills,
     tabs

@@ -13,7 +13,7 @@
 import skills from "../../components/Marketing/Detail.vue";
 import tabs from "../../components/Common/TabsBlock.vue";
 export default {
-  name: "Setting",
+  name: "Marketing",
   components: {
     skills,
     tabs

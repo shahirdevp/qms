@@ -1,8 +1,8 @@
 <template>
-  <div class="">
+  <div class>
     <v-layout row wrap class="action-bar">
       <v-flex xs6>
-        <h3 class="page-name">Marketing</h3>
+        <h3 class="page-name">Feasibility Study</h3>
       </v-flex>
       <v-flex xs6>
         <div class="text-xs-right">
@@ -49,66 +49,205 @@
     <v-layout container>
       <v-flex xs12 sm12 md12>
         <v-card>
-          <v-layout row class="lay-des" wrap>
-            <v-flex md3>
+          <v-layout class="lay-des-pad primary" row wrap>
+            <v-flex xs12>
+              <h3 class="head white--text">FEASIBILITY STUDY DETAIL</h3>
+            </v-flex>
+          </v-layout>
+          <!-- <div class="under-line"></div> -->
+          <!-- first list -->
+          <v-layout class="lay-des1 white" row wrap>
+            <v-flex md3 xs12 sm6>
               <p>
-                <strong>SINO :</strong> 11-04-2019
+                <strong>SINO :</strong> 1
               </p>
             </v-flex>
-            <v-flex md3>
+            <v-flex md3 xs12 sm6>
               <p>
                 <strong>Date :</strong> 11-04-2019
               </p>
             </v-flex>
-            <v-flex md3>
+            <v-flex md3 xs12 sm6>
               <p>
-                <strong>Customer :</strong> 11-04-2019
+                <strong>Req No :</strong> 006
               </p>
             </v-flex>
-            <v-flex md3>
+            <v-flex md3 xs12 sm6>
               <p>
-                <strong>Contact :</strong> 11-04-2019
+                <strong>Line No :</strong> 4
+              </p>
+            </v-flex>
+            <v-flex md3 xs12 sm6>
+              <p>
+                <strong>Feasibility Study No :</strong> 4
+              </p>
+            </v-flex>
+            <v-flex md3 xs12 sm6>
+              <p>
+                <strong>Date :</strong> 2-4-2019
+              </p>
+            </v-flex>
+            <v-flex md3 xs12 sm6>
+              <p>
+                <strong>Product Description :</strong> Desired
+              </p>
+            </v-flex>
+            <v-flex md3 xs12 sm6>
+              <p>
+                <strong>Part Number :</strong> 56
+              </p>
+            </v-flex>
+            <v-flex md3 xs12 sm6>
+              <p>
+                <strong>Drawing Number :</strong> 3421
+              </p>
+            </v-flex>
+            <v-flex md3 xs12 sm6>
+              <p>
+                <strong>Customer :</strong> Ravi
+              </p>
+            </v-flex>
+            <v-flex md3 xs12 sm6>
+              <p>
+                <strong>Qty :</strong> 09809
               </p>
             </v-flex>
           </v-layout>
-          <v-layout row wrap>
-            <v-flex md6>
-              <div class="ees">
-                <p>
-                  <strong>Line no :</strong> 2
-                </p>
-                <p>
-                  <strong>Part Namber :</strong> 6
-                </p>
-                <p>
-                  <strong>Description :</strong> 6
-                </p>
-                <p>
-                  <strong>Drawing Number :</strong> 11-04-2019
-                </p>
-                <p>
-                  <strong>Qty :</strong> 11-04-2019
-                </p>
-              </div>
+          <div class="under-line"></div>
+          <!-- second-list -->
+          <v-layout class="lay-des1 grey lighten-4" row wrap>
+            <v-flex xs12>
+              <h3 class>Technical Feasibility :</h3>
+              <br>
             </v-flex>
-            <v-flex md6>
-              <div class="ees">
-                <p>
-                  <strong>Quotation Ref :</strong> Dummy
-                </p>
-                <p>
-                  <strong>Status :</strong> Nothing
-                </p>
-                <p>
-                  <strong>Not In Scope :</strong> 7
-                </p>
-                <p>
-                  <strong>Awarded :</strong> no awards
-                </p>
-                <p>
-                  <strong>PO .NO :</strong> number
-                </p>
-              </div>
+            <v-flex md3>
+              <p>
+                <strong>R/Mtrl :</strong> Yes
+              </p>
+            </v-flex>
+            <v-flex md3>
+              <p>
+                <strong>M/c :</strong> No
+              </p>
+            </v-flex>
+            <v-flex md3>
+              <p>
+                <strong>Tools :</strong> Yes
+              </p>
+            </v-flex>
+            <v-flex md3>
+              <p>
+                <strong>Spl.Process :</strong> No
+              </p>
+            </v-flex>
+            <v-flex md3>
+              <p>
+                <strong>Any CAD req :</strong> Yes
+              </p>
+            </v-flex>
+            <v-flex md3>
+              <p>
+                <strong>Out source :</strong> Yes
+              </p>
+            </v-flex>
+            <v-flex md3>
+              <p>
+                <strong>Suitable man power :</strong> Yes
+              </p>
+            </v-flex>
+            <v-flex md3>
+              <p>
+                <strong>Risk involved :</strong> Yes
+              </p>
+            </v-flex>
+          </v-layout>
+          <div class="under-line"></div>
+          <!-- third-list -->
+          <v-layout class="lay-des1 white" row wrap>
+            <v-flex xs12>
+              <h3 class>Quality Feasibility :</h3>
+              <br>
+            </v-flex>
+            <v-flex md3>
+              <p>
+                <strong>Inst :</strong> Yes
+              </p>
+            </v-flex>
+            <v-flex md3>
+              <p>
+                <strong>Gauge :</strong> No
+              </p>
+            </v-flex>
+            <v-flex md3>
+              <p>
+                <strong>Is FAI required :</strong> Yes
+              </p>
+            </v-flex>
+            <v-flex md3>
+              <p>
+                <strong>Key chare :</strong> No
+              </p>
+            </v-flex>
+            <v-flex md3>
+              <p>
+                <strong>Can AQL be achived :</strong> Yes
+              </p>
+            </v-flex>
+            <v-flex md3>
+              <p>
+                <strong>Ispection as per :</strong> Yes
+              </p>
+            </v-flex>
+          </v-layout>
+          <div class="under-line"></div>
+          <!-- four-list -->
+          <v-layout class="lay-des1 grey lighten-4" row wrap>
+            <v-flex xs12>
+              <h3 class>Marketing Feasibility :</h3>
+              <br>
+            </v-flex>
+            <v-flex md4>
+              <p>
+                <strong>Is any Statuatory & Regulatory Req  :</strong> Yes
+              </p>
+            </v-flex>
+            <v-flex md4>
+              <p>
+                <strong>Delivery Feasibility :</strong> No
+              </p>
+            </v-flex>
+            <v-flex md4>
+              <p>
+                <strong>Is NRE applicable :</strong> Yes
+              </p>
+            </v-flex>
+          </v-layout>
+          <div class="under-line"></div>
+          <!-- five-list -->
+          <v-layout class="lay-des1 " row wrap>
+            <v-flex xs12>
+              <h3 class>Reviewer :</h3>
+              <br>
+            </v-flex>
+            <v-flex md3>
+              <p>
+                <strong>Mkt :</strong> Yes
+              </p>
+            </v-flex>
+            <v-flex md3>
+              <p>
+                <strong>QCD:</strong> No
+              </p>
+            </v-flex>
+            <v-flex md3>
+              <p>
+                <strong>PUR:</strong> Yes
+              </p>
+            </v-flex>
+            <v-flex md3>
+              <p>
+                <strong>PRD:</strong> Yes
+              </p>
             </v-flex>
           </v-layout>
         </v-card>
@@ -290,7 +429,7 @@ export default {
   padding: 25px;
 }
 .ees {
-padding: 20px 25px;
+  padding: 20px 25px;
 }
 
 .c-title {
