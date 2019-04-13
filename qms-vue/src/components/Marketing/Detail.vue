@@ -1,8 +1,8 @@
 <template>
-  <div id="empd">
+  <div class="">
     <v-layout row wrap class="action-bar">
       <v-flex xs6>
-        <h3 class="page-name">Skill Matrix Detail</h3>
+        <h3 class="page-name">Marketing</h3>
       </v-flex>
       <v-flex xs6>
         <div class="text-xs-right">
@@ -24,7 +24,6 @@
               <span>Delete</span>
             </v-tooltip>
           </div>
-
           <div :class="{dn : dn}">
             <v-tooltip v-model="show" bottom>
               <template v-slot:activator="{ on }">
@@ -46,145 +45,71 @@
         </div>
       </v-flex>
     </v-layout>
-
-    <!-- Details-list -->
+    <!-- detail -->
     <v-layout container>
       <v-flex xs12 sm12 md12>
         <v-card>
-          <v-layout class="lay-des" row wrap>
-            <v-flex md3 sm6>
+          <v-layout row class="lay-des" wrap>
+            <v-flex md3>
               <p>
-                <strong>Date :</strong> 05-04-2019
+                <strong>SINO :</strong> 11-04-2019
               </p>
             </v-flex>
-            <v-flex md3 sm6>
+            <v-flex md3>
               <p>
-                <strong>Title :</strong> Testing
+                <strong>Date :</strong> 11-04-2019
               </p>
             </v-flex>
-            <v-flex md3 sm6>
+            <v-flex md3>
               <p>
-                <strong>Department :</strong> Ui Designer
+                <strong>Customer :</strong> 11-04-2019
               </p>
             </v-flex>
-            <v-flex md3 sm6>
+            <v-flex md3>
               <p>
-                <strong>Designation :</strong> Front End Developer
+                <strong>Contact :</strong> 11-04-2019
               </p>
             </v-flex>
           </v-layout>
-          <div class="under-line"></div>
-          <!-- Dtails -->
-          <v-layout class="lay-des" row wrap>
+          <v-layout row wrap>
             <v-flex md6>
-              <p>
-                <strong>S No :</strong>001
-              </p>
-              <p>
-                <strong>Name :</strong>Daniel Martin
-              </p>
-              <p>
-                <strong>Employee ID :</strong>ID2091019
-              </p>
-              <p>
-                <strong>Department :</strong> Ui Designer
-              </p>
-              <p>
-                <strong>Designation :</strong> Front End Developer
-              </p>
-            </v-flex>
-            <v-flex md6>
-              <p>
-                <strong>Scroing Crieteria</strong>
-              </p>
-              <ol class="list-scroing">
-                <li>Need Training</li>
-                <li>Can Work under supervision</li>
-                <li>Can Work alone</li>
-                <li>Can work & Train other</li>
-              </ol>
-            </v-flex>
-          </v-layout>
-          <div class="under-line"></div>
-          <v-layout class="lay-des" row wrap>
-            <v-flex xs12>
-              <p>
-                <strong>SKILLS</strong>
-              </p>
-            </v-flex>
-            <!--first list-->
-            <v-flex md6>
-              <v-layout row>
-                <v-flex md10>
-                  <p>Drawing studing skills</p>
-                  <p>Usage of general gauges</p>
-                  <p>Usage of general instruments</p>
-                  <p>Usage of product specific gauges</p>
-                  <p>Quality documentation</p>
-                  <p>CMM operating</p>
-                  <p>PP Operating</p>
-                </v-flex>
-                <v-flex md2>
-                  <p>4</p>
-                  <p>4</p>
-                  <p>6</p>
-                  <p>8</p>
-                  <p>8</p>
-                  <p>5</p>
-                  <p>9</p>
-                </v-flex>
-              </v-layout>
-            </v-flex>
-            <!--second list-->
-            <v-flex md6>
-              <v-layout row>
-                <v-flex md10>
-                  <p>Basic machining knowledge</p>
-                  <p>Internal verification skills</p>
-                  <p>Inspection skill</p>
-                  <p>Visual inspection skill</p>
-                  <p>2D height gauge operating</p>
-                  <p>Operating surface roughness tester</p>
-                  <p>Microscope Handeling</p>
-                </v-flex>
-                <v-flex md2>
-                  <p>4</p>
-                  <p>4</p>
-                  <p>6</p>
-                  <p>8</p>
-                  <p>8</p>
-                  <p>5</p>
-                  <p>9</p>
-                </v-flex>
-              </v-layout>
-            </v-flex>
-            <!--total value -->
-            <v-flex xs12>
-              <div class="total-value">
+              <div class="ees">
                 <p>
-                  <strong>TOTAL :</strong>
-                  <span>22</span>
+                  <strong>Line no :</strong> 2
+                </p>
+                <p>
+                  <strong>Part Namber :</strong> 6
+                </p>
+                <p>
+                  <strong>Description :</strong> 6
+                </p>
+                <p>
+                  <strong>Drawing Number :</strong> 11-04-2019
+                </p>
+                <p>
+                  <strong>Qty :</strong> 11-04-2019
                 </p>
               </div>
             </v-flex>
-            <!-- end total value -->
-            <!--total value -->
-            <div class="under-line"></div>
-            <v-flex xs12 sm12 md12>
-              <div class="ap-list">
-                <span class="ap-sp">
-                  <p>
-                    <strong>Powred By :</strong>
-                    <spam>Rishi Nath</spam>
-                  </p>
-                </span>
+            <v-flex md6>
+              <div class="ees">
                 <p>
-                  <strong>Approved By :</strong>
-                  <spam>Shahir KM</spam>
+                  <strong>Quotation Ref :</strong> Dummy
+                </p>
+                <p>
+                  <strong>Status :</strong> Nothing
+                </p>
+                <p>
+                  <strong>Not In Scope :</strong> 7
+                </p>
+                <p>
+                  <strong>Awarded :</strong> no awards
+                </p>
+                <p>
+                  <strong>PO .NO :</strong> number
                 </p>
               </div>
             </v-flex>
-            <!-- end total value -->
           </v-layout>
         </v-card>
       </v-flex>
@@ -205,18 +130,26 @@ export default {
       valid: true,
       // languages
 
-      // form rules or validation
-      positionRules: [v => !!v || "Employee Id is required"],
-      eduBackgRules: [v => !!v || "Employee Id is required"],
-      expRules: [v => !!v || "Employee Id is required"],
-      competencyRules: [v => !!v || "Employee Id is required"]
+      show1: false,
+      detail: [],
+      todos: [{ title: "todo one" }, { title: "todo two" }],
+      todo: "",
+      seen: false,
+      hide: true
     };
   },
-  mounted() {
-    this.getdetails();
-  },
+  mounted() {},
   computed: {},
   methods: {
+    savetodolist() {
+      this.todos.push({ title: this.todo });
+      this.todo = "";
+    },
+
+    deleteEvent(index) {
+      this.todos.splice(index, 1);
+    },
+
     getdetails() {
       var ts = window.location.pathname.split("/");
       var parQuery = ts[ts.length - 1];
@@ -310,6 +243,7 @@ export default {
 </script>
 
 
+
 <style scoped>
 .two-column {
   column-count: 2;
@@ -319,54 +253,45 @@ export default {
   column-count: 3;
   column-gap: 15px;
 }
-</style>
-
-<style>
 /*skill-matrix */
 .lay-des {
   background: #fbfbfb;
-  padding: 30px;
+  padding: 20px 25px 0px 25px;
+  border-bottom: 1px dashed gray;
 }
-.skill-spac {
-  line-height: 30px;
-  padding: 0px;
-  padding-left: 0px;
-  padding-left: 15px;
+.lay-out-res {
+  background: #1976d2;
+  padding: 25px;
 }
-.under-line {
-  border-bottom: 1px dashed #bdbdbd;
+.bt-l {
+  margin: 0px 10px;
+}
 
-  width: 100%;
-}
-.list-scroing {
-  line-height: 30px;
-  padding: 0px 0px 0px 14px;
-}
-.total-value p {
-  float: right;
-  margin-right: 52px;
-  padding: 5px 25px;
-  border-top: 1px solid;
-  border-bottom: 1px solid;
-}
 .ap-list span {
   float: left;
   padding-right: 10px;
 }
-::before,
-::after {
-  text-decoration: inherit;
-  vertical-align: inherit;
+.lay-back {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  display: inline-flex;
 }
-::selection {
-  background-color: #b3d4fc;
-  color: #000;
-  text-shadow: none;
-}
-.ap-list {
-  padding-top: 15px;
-}
+
 /* end skill-matrix */
+</style>
+
+<style>
+.v-list--two-line .v-list__tile {
+  height: 50px !important;
+}
+.ee {
+  background: #f3f3f3;
+  padding: 25px;
+}
+.ees {
+padding: 20px 25px;
+}
 
 .c-title {
   font-size: 20px;
