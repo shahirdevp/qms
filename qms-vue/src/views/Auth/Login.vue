@@ -134,7 +134,6 @@ export default {
             router.push("/dashboard");
           })
           .catch(e => {
-            // console.log(e);
 
             this.loading = false;
             swal({
