@@ -135,6 +135,7 @@ export default new Router({
       name: 'Marketing Enquiry Insert',
       component: marketingenquiryinsert,
     },
+    
     {
       path: '/feasibility',
       name: 'Feasibility',
