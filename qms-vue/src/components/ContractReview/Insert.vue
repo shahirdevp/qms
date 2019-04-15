@@ -2,7 +2,7 @@
   <div id="empd">
     <v-layout row wrap class="action-bar">
       <v-flex xs6>
-        <h3 class="page-name">Feasibility Study</h3>
+        <h3 class="page-name">Order / Contract Review Report</h3>
       </v-flex>
       <v-flex xs6>
         <div class="text-xs-right">
@@ -53,7 +53,7 @@
         <v-card>
           <v-layout class="lay-des-pad grey lighten-3" row wrap>
             <v-flex xs12>
-              <h3 class="head black--text">FEASIBILITY ENQUIRY FORM</h3>
+              <h3 class="head black--text">CONTRACT REVIEW  FORM</h3>
             </v-flex>
           </v-layout>
           <v-form ref="form" class="lay-des1 white" v-model="valid" id="emp" lazy-validation>
@@ -61,26 +61,26 @@
             <v-layout class="white" row wrap>
               <v-flex md3>
                 <div class="text-rr">
-                  <label class="lab-for black--text">RFQ NO</label>
-                  <v-text-field placeholder="Enter number" outline></v-text-field>
+                  <label class="lab-for black--text">Customer Order / Contract</label>
+                  <v-text-field placeholder="Enter the value" outline></v-text-field>
                 </div>
               </v-flex>
               <v-flex md3>
                 <div class="text-rr">
-                  <label class="lab-for black--text">Line No</label>
-                  <v-text-field label placeholder="Enter Line Number" outline></v-text-field>
+                  <label class="lab-for black--text">Agreed Delivery Date</label>
+                  <v-text-field label placeholder="Agreed Delivery Date" outline></v-text-field>
                 </div>
               </v-flex>
               <v-flex md3>
                 <div class="text-rr">
-                  <label class="lab-for black--text">Feasibility Study No</label>
-                  <v-text-field label placeholder="Feasibility study" outline></v-text-field>
+                  <label class="lab-for black--text">Date</label>
+                  <v-text-field label placeholder="Date" outline></v-text-field>
                 </div>
               </v-flex>
               <v-flex md3>
                 <div class="text-rr">
-                  <label class="lab-for black--text">Product Description</label>
-                  <v-text-field label placeholder="Product Description" outline></v-text-field>
+                  <label class="lab-for black--text">Customer</label>
+                  <v-text-field label placeholder="Customer" outline></v-text-field>
                 </div>
               </v-flex>
               <v-flex md3>
@@ -103,8 +103,8 @@
               </v-flex>
               <v-flex md3>
                 <div class="text-rr">
-                  <label class="lab-for black--text">Quotation Ref</label>
-                  <v-text-field label placeholder="Quotation Ref" outline></v-text-field>
+                  <label class="lab-for black--text">Description</label>
+                  <v-text-field label placeholder="Description" outline></v-text-field>
                 </div>
               </v-flex>
             </v-layout>
@@ -114,7 +114,7 @@
                 <v-layout row wrap>
                   <v-flex md12>
                     <div class="text-rr">
-                      <h4 class="black--text pad20">Technicall Feasibility</h4>
+                      <h4 class="black--text pad20">Production Feasibility</h4>
                     </div>
                   </v-flex>
                 </v-layout>

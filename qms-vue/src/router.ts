@@ -25,6 +25,8 @@ import marketingenquiry from './views/Marketing/MarketingEnquiry.vue';
 import marketingenquiryinsert from './views/Marketing/MarketingEnquiryInsert.vue';
 import feasibilitydetail from './views/Marketing/FeasibilityDetail.vue';
 import feasibilityinsert from './views/Marketing/FeasibilityInsert.vue';
+import contractreview from './views/Marketing/ContractReviewDetail.vue';
+import contractreviewinsert from './views/Marketing/ContractReviewInsert.vue';
 
 
 
@@ -146,6 +148,17 @@ export default new Router({
       name: 'Feasibility Insert',
       component: feasibilityinsert,
     },
+    {
+      path: '/contract-review',
+      name: 'Contract Review',
+      component:contractreview,
+    },
+    {
+      path: '/contract-review-insert',
+      name: 'Contract Review Insert',
+      component:contractreviewinsert,
+    },
+    
   ],
 });
 
