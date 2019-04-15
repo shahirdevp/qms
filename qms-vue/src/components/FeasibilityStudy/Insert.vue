@@ -7,7 +7,7 @@
       <v-flex xs6>
         <div class="text-xs-right">
           <div :class="{dn : !dn}">
-            <v-tooltip v-model="show" bottom>
+            <v-tooltip bottom>
               <template v-slot:activator="{ on }">
                 <v-btn icon v-on="on" ref="fileInput" @click.stop="dn = !dn">
                   <v-icon color="info">edit</v-icon>
@@ -15,7 +15,7 @@
               </template>
               <span>Edit</span>
             </v-tooltip>
-            <v-tooltip v-model="show" bottom>
+            <v-tooltip bottom>
               <template v-slot:activator="{ on }">
                 <v-btn icon v-on="on" ref="fileInput" @click="deleteData()">
                   <v-icon color="red">delete</v-icon>
@@ -26,7 +26,7 @@
           </div>
 
           <div :class="{dn : dn}">
-            <v-tooltip v-model="show" bottom>
+            <v-tooltip bottom>
               <template v-slot:activator="{ on }">
                 <v-btn icon v-on="on" ref="fileInput" @click.stop="dn = !dn">
                   <v-icon color="warning">close</v-icon>
@@ -34,7 +34,7 @@
               </template>
               <span>Cancel</span>
             </v-tooltip>
-            <v-tooltip v-model="show" bottom>
+            <v-tooltip bottom>
               <template v-slot:activator="{ on }">
                 <v-btn icon v-on="on" ref="fileInput" @click="validate()">
                   <v-icon color="success">check</v-icon>
@@ -51,182 +51,249 @@
     <v-layout container>
       <v-flex xs12 sm12 md12>
         <v-card>
-          <v-layout class="lay-des-pad primary" row wrap>
+          <v-layout class="lay-des-pad grey lighten-3" row wrap>
             <v-flex xs12>
-              <h3 class="head white--text">FEASIBILITY ENQUIRY FORM</h3>
+              <h3 class="head black--text">FEASIBILITY ENQUIRY FORM</h3>
             </v-flex>
           </v-layout>
-          <v-stepper v-model="e13" vertical>
-            <v-stepper-step step="1" complete>Name of step 1</v-stepper-step>
-            <v-stepper-content step="1">
-              <!-- <v-card color="grey lighten-1" class="mb-5" height="300px"> -->
-              <v-layout class="white" row wrap>
-                <v-flex md3>
-                  <div class="text-rr">
-                    <label class="lab-for grey--text">S.No</label>
-                    <v-text-field placeholder="Enter your value" outline></v-text-field>
-                  </div>
-                </v-flex>
-                <v-flex md3>
-                  <div class="text-rr">
-                    <label class="lab-for grey--text">Date</label>
-                    <v-text-field placeholder="Enter your value" outline></v-text-field>
-                  </div>
-                </v-flex>
-                <v-flex md3>
-                  <div class="text-rr">
-                    <label class="lab-for grey--text">Req No</label>
-                    <v-text-field placeholder="Enter your value" outline></v-text-field>
-                  </div>
-                </v-flex>
-                <v-flex md3>
-                  <div class="text-rr">
-                    <label class="lab-for grey--text">Line No</label>
-                    <v-text-field placeholder="Enter your value" outline></v-text-field>
-                  </div>
-                </v-flex>
-                <v-flex md3>
-                  <div class="text-rr">
-                    <label class="lab-for grey--text">Feasibility Stydy No</label>
-                    <v-text-field placeholder="Enter your value" outline></v-text-field>
-                  </div>
-                </v-flex>
-                <v-flex md3>
-                  <div class="text-rr">
-                    <label class="lab-for grey--text">Date</label>
-                    <v-text-field placeholder="Enter your value" outline></v-text-field>
-                  </div>
-                </v-flex>
-                <v-flex md3>
-                  <div class="text-rr">
-                    <label class="lab-for grey--text">Product Description</label>
-                    <v-text-field placeholder="Enter your value" outline></v-text-field>
-                  </div>
-                </v-flex>
-                <v-flex md3>
-                  <div class="text-rr">
-                    <label class="lab-for grey--text">Part Number</label>
-                    <v-text-field placeholder="Enter your value" outline></v-text-field>
-                  </div>
-                </v-flex>
-                <v-flex md3>
-                  <div class="text-rr">
-                    <label class="lab-for grey--text">Drawing Number</label>
-                    <v-text-field placeholder="Enter your value" outline></v-text-field>
-                  </div>
-                </v-flex>
-                <v-flex md3>
-                  <div class="text-rr">
-                    <label class="lab-for grey--text">Customer</label>
-                    <v-text-field placeholder="Enter your value" outline></v-text-field>
-                  </div>
-                </v-flex>
-                <v-flex md3>
-                  <div class="text-rr">
-                    <label class="lab-for grey--text">Qty</label>
-                    <v-text-field placeholder="Enter your value" outline></v-text-field>
-                  </div>
-                </v-flex>
-              </v-layout>
-              <v-btn color="primary" @click="e13 = 2">Continue</v-btn>
-              <v-btn flat>Cancel</v-btn>
-            </v-stepper-content>
-
-            <v-stepper-step step="2" complete>Name of step 2</v-stepper-step>
-
-            <v-stepper-content step="2">
-              <v-card color="grey lighten-1" class="mb-5" height="200px"></v-card>
-              <v-btn color="primary" @click="e13 = 3">Continue</v-btn>
-              <v-btn flat>Cancel</v-btn>
-            </v-stepper-content>
-
-            <v-stepper-step :rules="[() => false]" step="3">
-              Ad templates
-              <small>Alert message</small>
-            </v-stepper-step>
-
-            <v-stepper-content step="3">
-              <v-card color="grey lighten-1" class="mb-5" height="200px"></v-card>
-              <v-btn color="primary" @click="e13 = 4">Continue</v-btn>
-              <v-btn flat>Cancel</v-btn>
-            </v-stepper-content>
-
-            <v-stepper-step step="4">View setup instructions</v-stepper-step>
-
-            <v-stepper-content step="4">
-              <v-card color="grey lighten-1" class="mb-5" height="200px"></v-card>
-              <v-btn color="primary" @click="e13 = 1">Continue</v-btn>
-              <v-btn flat>Cancel</v-btn>
-            </v-stepper-content>
-          </v-stepper>
-          <v-form ref="form" v-model="valid" id="emp" lazy-validation>
+          <v-form ref="form" class="lay-des1 white" v-model="valid" id="emp" lazy-validation>
             <!-- <div class="under-line"></div> -->
-            <v-layout class="lay-des1 white" row wrap>
+            <v-layout class="white" row wrap>
               <v-flex md3>
                 <div class="text-rr">
-                  <label class="lab-for grey--text">Customer Name</label>
-                  <v-text-field placeholder="Customer Name" outline></v-text-field>
+                  <label class="lab-for black--text">RFQ NO</label>
+                  <v-text-field placeholder="Enter number" outline></v-text-field>
                 </div>
               </v-flex>
               <v-flex md3>
                 <div class="text-rr">
-                  <label class="lab-for grey--text">Contact</label>
-                  <v-text-field label placeholder="Contact" outline></v-text-field>
+                  <label class="lab-for black--text">Line No</label>
+                  <v-text-field label placeholder="Enter Line Number" outline></v-text-field>
                 </div>
               </v-flex>
               <v-flex md3>
                 <div class="text-rr">
-                  <label class="lab-for grey--text">Line No</label>
-                  <v-text-field label placeholder="Line No" outline></v-text-field>
+                  <label class="lab-for black--text">Feasibility Study No</label>
+                  <v-text-field label placeholder="Feasibility study" outline></v-text-field>
                 </div>
               </v-flex>
               <v-flex md3>
                 <div class="text-rr">
-                  <label class="lab-for grey--text">Part Number</label>
+                  <label class="lab-for black--text">Product Description</label>
+                  <v-text-field label placeholder="Product Description" outline></v-text-field>
+                </div>
+              </v-flex>
+              <v-flex md3>
+                <div class="text-rr">
+                  <label class="lab-for black--text">Part Number</label>
                   <v-text-field label placeholder="Part Number" outline></v-text-field>
                 </div>
               </v-flex>
               <v-flex md3>
                 <div class="text-rr">
-                  <label class="lab-for grey--text">Description</label>
-                  <v-text-field label placeholder="Description" outline></v-text-field>
-                </div>
-              </v-flex>
-              <v-flex md3>
-                <div class="text-rr">
-                  <label class="lab-for grey--text">Drawing Number</label>
+                  <label class="lab-for black--text">Drawing Number</label>
                   <v-text-field label placeholder="Drawing Number" outline></v-text-field>
                 </div>
               </v-flex>
               <v-flex md3>
                 <div class="text-rr">
-                  <label class="lab-for grey--text">Qty</label>
-                  <v-text-field label placeholder="Qty" outline></v-text-field>
+                  <label class="lab-for black--text">Qty</label>
+                  <v-text-field label placeholder="Enter Qty" outline></v-text-field>
                 </div>
               </v-flex>
               <v-flex md3>
                 <div class="text-rr">
-                  <label class="lab-for grey--text">Quotation Ref</label>
+                  <label class="lab-for black--text">Quotation Ref</label>
                   <v-text-field label placeholder="Quotation Ref" outline></v-text-field>
                 </div>
               </v-flex>
-              <v-flex md3>
-                <div class="text-rr">
-                  <label class="lab-for grey--text">Date</label>
-                  <v-text-field label placeholder="Date" outline></v-text-field>
-                </div>
-              </v-flex>
-              <v-flex md3>
-                <div class="text-rr">
-                  <label class="lab-for grey--text">Status</label>
-                  <v-select class="field-sp" :items="s1" outline placeholder="Status"></v-select>
-                </div>
-              </v-flex>
-              <v-flex md12>
-                <v-btn :disabled="!valid" color="success" @click="validate">Save</v-btn>
-                <v-btn color="error" @click="reset">cancel</v-btn>
+            </v-layout>
+            <!-- technical -->
+            <v-layout class="white" row wrap>
+              <v-flex md12 lg12>
+                <v-layout row wrap>
+                  <v-flex md12>
+                    <div class="text-rr">
+                      <h4 class="black--text pad20">Technicall Feasibility</h4>
+                    </div>
+                  </v-flex>
+                </v-layout>
+                <v-layout row wrap>
+                  <v-flex md3>
+                    <div class="text-rr">
+                      <label class="lab-for black--text">R/Mtrl</label>
+                      <v-select class="field-sp" :items="yn" outline placeholder="Select"></v-select>
+                    </div>
+                  </v-flex>
+                  <v-flex md3>
+                    <div class="text-rr">
+                      <label class="lab-for black--text">M/c</label>
+                      <v-select class="field-sp" :items="yn" outline placeholder="Select"></v-select>
+                    </div>
+                  </v-flex>
+                  <v-flex md3>
+                    <div class="text-rr">
+                      <label class="lab-for black--text">Tools</label>
+                      <v-select class="field-sp" :items="yn" outline placeholder="Select"></v-select>
+                    </div>
+                  </v-flex>
+                  <v-flex md3>
+                    <div class="text-rr">
+                      <label class="lab-for black--text">Spl.Process</label>
+                      <v-select class="field-sp" :items="yn" outline placeholder="Select"></v-select>
+                    </div>
+                  </v-flex>
+                  <v-flex md3>
+                    <div class="text-rr">
+                      <label class="lab-for black--text">Any CAD req</label>
+                      <v-select class="field-sp" :items="yn" outline placeholder="Select"></v-select>
+                    </div>
+                  </v-flex>
+                  <v-flex md3>
+                    <div class="text-rr">
+                      <label class="lab-for black--text">Out source</label>
+                      <v-select class="field-sp" :items="yn" outline placeholder="Select"></v-select>
+                    </div>
+                  </v-flex>
+                  <v-flex md3>
+                    <div class="text-rr">
+                      <label class="lab-for black--text">Suitable man power</label>
+                      <v-text-field label placeholder="Suitable man power" outline></v-text-field>
+                    </div>
+                  </v-flex>
+                  <v-flex md3>
+                    <div class="text-rr">
+                      <label class="lab-for black--text">Risk involved</label>
+                      <v-text-field label placeholder="Risk involved" outline></v-text-field>
+                    </div>
+                  </v-flex>
+                </v-layout>
               </v-flex>
             </v-layout>
+            <!-- Quality-->
+            <v-layout class="white" row wrap>
+              <v-flex md12 lg12>
+                <v-layout row wrap>
+                  <v-flex md12>
+                    <div class="text-rr">
+                      <h4 class="black--text pad20">Quality Feasibility</h4>
+                    </div>
+                  </v-flex>
+                </v-layout>
+                <v-layout row wrap>
+                  <v-flex md4>
+                    <div class="text-rr">
+                      <label class="lab-for black--text">Inst</label>
+                      <v-select class="field-sp" :items="yn" outline placeholder="Select"></v-select>
+                    </div>
+                  </v-flex>
+                  <v-flex md4>
+                    <div class="text-rr">
+                      <label class="lab-for black--text">Gauge</label>
+                      <v-select class="field-sp" :items="yn" outline placeholder="Select"></v-select>
+                    </div>
+                  </v-flex>
+                  <v-flex md4>
+                    <div class="text-rr">
+                      <label class="lab-for black--text">FAI Required</label>
+                      <v-select class="field-sp" :items="yn" outline placeholder="Select"></v-select>
+                    </div>
+                  </v-flex>
+                  <v-flex md4>
+                    <div class="text-rr">
+                      <label class="lab-for black--text">key Chare</label>
+                      <v-select class="field-sp" :items="yn" outline placeholder="Select"></v-select>
+                    </div>
+                  </v-flex>
+                  <v-flex md4>
+                    <div class="text-rr">
+                      <label class="lab-for black--text">Can AQL be Achived</label>
+                      <v-select class="field-sp" :items="yn" outline placeholder="Status"></v-select>
+                    </div>
+                  </v-flex>
+                  <v-flex md4>
+                    <div class="text-rr">
+                      <label class="lab-for black--text">Inspection as per</label>
+                      <v-text-field label placeholder="Inspection as per" outline></v-text-field>
+                    </div>
+                  </v-flex>
+                </v-layout>
+              </v-flex>
+            </v-layout>
+            <!-- marketing feasibility-->
+            <v-layout class="white" row wrap>
+              <v-flex md12 lg12>
+                <v-layout row wrap>
+                  <v-flex md12>
+                    <div class="text-rr">
+                      <h4 class="black--text pad20">Marketing Feasibility</h4>
+                    </div>
+                  </v-flex>
+                </v-layout>
+                <v-layout row wrap>
+                  <v-flex md4>
+                    <div class="text-rr">
+                      <label class="lab-for black--text">Statuatory & Regulatory Required</label>
+                      <v-select class="field-sp" :items="yn" outline placeholder="Select"></v-select>
+                    </div>
+                  </v-flex>
+                  <v-flex md4>
+                    <div class="text-rr">
+                      <label class="lab-for black--text">Delivery Fesibility</label>
+                      <v-select class="field-sp" :items="yn" outline placeholder="Select"></v-select>
+                    </div>
+                  </v-flex>
+                  <v-flex md4>
+                    <div class="text-rr">
+                      <label class="lab-for black--text">NRE Applicable</label>
+                      <v-select class="field-sp" :items="yn" outline placeholder="Select"></v-select>
+                    </div>
+                  </v-flex>
+                </v-layout>
+              </v-flex>
+            </v-layout>
+            <!-- Reviewer-->
+            <v-layout class="white" row wrap>
+              <v-flex md12 lg12>
+                <v-layout row wrap>
+                  <v-flex md12>
+                    <div class="text-rr">
+                      <h4 class="black--text pad20">Reviewer</h4>
+                    </div>
+                  </v-flex>
+                </v-layout>
+                <v-layout row wrap>
+                  <v-flex md3>
+                    <div class="text-rr">
+                      <label class="lab-for black--text">Mkt</label>
+                      <v-select class="field-sp" :items="yn" outline placeholder="Select"></v-select>
+                    </div>
+                  </v-flex>
+                  <v-flex md3>
+                    <div class="text-rr">
+                      <label class="lab-for black--text">QCD</label>
+                      <v-select class="field-sp" :items="yn" outline placeholder="Select"></v-select>
+                    </div>
+                  </v-flex>
+                  <v-flex md3>
+                    <div class="text-rr">
+                      <label class="lab-for black--text">PUR</label>
+                      <v-select class="field-sp" :items="yn" outline placeholder="Select"></v-select>
+                    </div>
+                  </v-flex>
+                  <v-flex md3>
+                    <div class="text-rr">
+                      <label class="lab-for black--text">PRD</label>
+                      <v-select class="field-sp" :items="yn" outline placeholder="Select"></v-select>
+                    </div>
+                  </v-flex>
+                </v-layout>
+              </v-flex>
+            </v-layout>
+            <v-flex md12>
+              <v-btn :disabled="!valid" color="success" @click="validate">Save</v-btn>
+              <v-btn color="error" @click="reset">cancel</v-btn>
+            </v-flex>
           </v-form>
         </v-card>
       </v-flex>
@@ -258,7 +325,8 @@ export default {
       // designation
       designation: ["D1", "D2", "D3", "D4", "D5"],
       // skills
-      s1: ["Not Awarded", "Awarded", "Not In Scope", "Pending"]
+      s1: ["Not Awarded", "Awarded", "Not In Scope", "Pending"],
+      yn: ["Yes", "No"]
     };
   },
   mounted() {
@@ -305,20 +373,24 @@ export default {
 
 <style>
 /*skill-matrix */
+.pad20 {
+  padding-bottom: 20px;
+}
 .text-rr {
   margin: 5px;
 }
 .lab-for {
-  font-weight: 600;
+  font-weight: 400;
 }
 .text-rr input {
-  margin-top: 10px;
-  max-height: 21px;
+  margin-top: 6px;
+  max-height: 20px;
+  font-size: 14px;
 }
 .text-rr .v-input__slot {
-  border: 1px solid rgba(0, 0, 0, 0.54) !important;
-  min-height: 40px !important;
-  margin: 5px 2px;
+  border: 1px solid rgba(180, 180, 180, 0.54) !important;
+
+  min-height: 35px !important;
 }
 .text-rr .v-select__selections {
   padding-top: 0px !important;
