@@ -1,75 +1,51 @@
 <template>
-  <div id="empd">
-    <v-layout row wrap class="action-bar">
-      <v-flex xs6>
-        <h3 class="page-name">Skill Matrix Detail</h3>
+    <div id="empd">
+        <v-layout row wrap class="action-bar">
+            <v-flex xs6>
+            <h3 class="page-name">Skill Matrix Detail</h3>
       </v-flex>
       <v-flex xs6>
         <div class="text-xs-right">
-          <div :class="{dn : !dn}">
-            <v-tooltip v-model="show" bottom>
+          <div>
+            <v-tooltip  bottom>
               <template v-slot:activator="{ on }">
-                <v-btn icon v-on="on" ref="fileInput" @click.stop="dn = !dn">
+                <v-btn icon v-on="on" ref="fileInput" >
                   <v-icon color="info">edit</v-icon>
                 </v-btn>
               </template>
               <span>Edit</span>
             </v-tooltip>
-            <v-tooltip v-model="show" bottom>
+            <v-tooltip  bottom>
               <template v-slot:activator="{ on }">
-                <v-btn icon v-on="on" ref="fileInput" @click="deleteData()">
+                <v-btn icon v-on="on" ref="fileInput" >
                   <v-icon color="red">delete</v-icon>
                 </v-btn>
               </template>
               <span>Delete</span>
             </v-tooltip>
           </div>
-
-          <div :class="{dn : dn}">
-            <v-tooltip v-model="show" bottom>
-              <template v-slot:activator="{ on }">
-                <v-btn icon v-on="on" ref="fileInput" @click.stop="dn = !dn">
-                  <v-icon color="warning">close</v-icon>
-                </v-btn>
-              </template>
-              <span>Cancel</span>
-            </v-tooltip>
-            <v-tooltip v-model="show" bottom>
-              <template v-slot:activator="{ on }">
-                <v-btn icon v-on="on" ref="fileInput" @click="validate()">
-                  <v-icon color="success">check</v-icon>
-                </v-btn>
-              </template>
-              <span>Save</span>
-            </v-tooltip>
-          </div>
         </div>
       </v-flex>
     </v-layout>
-
     <!-- Details-list -->
     <v-layout container>
       <v-flex xs12 sm12 md12>
         <v-card>
-          <v-layout class="lay-des" row wrap>
+          <v-layout class="lay-des heder-card" row wrap>
+            
             <v-flex md3 sm6>
               <p>
-                <strong>Date :</strong> 05-04-2019
+                <strong>Department : </strong> {{ detail.depaertment }}
               </p>
             </v-flex>
             <v-flex md3 sm6>
               <p>
-                <strong>Title :</strong> Testing
+                <strong>Designation : </strong> {{ detail.designation }}
               </p>
             </v-flex>
             <v-flex md3 sm6>
               <p>
-                <strong>Department :</strong> Ui Designer
-              </p>
-            </v-flex>
-            <v-flex md3 sm6>
-              <p>
-                <strong>Designation :</strong> Front End Developer
+                <strong>Date : </strong> {{ detail.created_On }}
               </p>
             </v-flex>
           </v-layout>
@@ -78,32 +54,26 @@
           <v-layout class="lay-des" row wrap>
             <v-flex md6>
               <p>
-                <strong>S No :</strong>001
+                <strong>Employee ID : </strong> {{ detail.empName }}
               </p>
               <p>
-                <strong>Name :</strong>Daniel Martin
+                <strong>Name : </strong> {{ detail.empName }}
               </p>
               <p>
-                <strong>Employee ID :</strong>ID2091019
+                <strong>Department :</strong> {{ detail.depaertment }}
               </p>
               <p>
-                <strong>Department :</strong> Ui Designer
+                <strong>Designation :</strong> {{ detail.designation }}
               </p>
-              <p>
-                <strong>Designation :</strong> Front End Developer
+              <p >
+                <strong>Scroing Crieteria : </strong> 
+                <span v-if="detail.scoring_crieteria == '1'">Need Training</span>
+                <span v-else-if="detail.scoring_crieteria == '2'">Can Work under supervision</span>
+                <span v-else-if="detail.scoring_crieteria == '3'">Can Work alone</span>
+                <span v-else>Can work & Train other</span>
               </p>
             </v-flex>
-            <v-flex md6>
-              <p>
-                <strong>Scroing Crieteria</strong>
-              </p>
-              <ol class="list-scroing">
-                <li>Need Training</li>
-                <li>Can Work under supervision</li>
-                <li>Can Work alone</li>
-                <li>Can work & Train other</li>
-              </ol>
-            </v-flex>
+            
           </v-layout>
           <div class="under-line"></div>
           <v-layout class="lay-des" row wrap>
@@ -115,7 +85,7 @@
             <!--first list-->
             <v-flex md6>
               <v-layout row>
-                <v-flex md10>
+                <v-flex md7>
                   <p>Drawing studing skills</p>
                   <p>Usage of general gauges</p>
                   <p>Usage of general instruments</p>
@@ -138,7 +108,7 @@
             <!--second list-->
             <v-flex md6>
               <v-layout row>
-                <v-flex md10>
+                <v-flex md7>
                   <p>Basic machining knowledge</p>
                   <p>Internal verification skills</p>
                   <p>Inspection skill</p>
@@ -159,7 +129,7 @@
               </v-layout>
             </v-flex>
             <!--total value -->
-            <v-flex xs12>
+            <v-flex xs11>
               <div class="total-value">
                 <p>
                   <strong>TOTAL :</strong>
@@ -175,12 +145,12 @@
                 <span class="ap-sp">
                   <p>
                     <strong>Powred By :</strong>
-                    <spam>Rishi Nath</spam>
+                    <span>Rishi Nath</span>
                   </p>
                 </span>
                 <p>
                   <strong>Approved By :</strong>
-                  <spam>Shahir KM</spam>
+                  <span>Shahir KM</span>
                 </p>
               </div>
             </v-flex>
@@ -199,111 +169,26 @@ import router from "../../router";
 export default {
   data() {
     return {
-      detail: [],
-      dn: true,
-      //  push to database
-      valid: true,
-      // languages
-
-      // form rules or validation
-      positionRules: [v => !!v || "Employee Id is required"],
-      eduBackgRules: [v => !!v || "Employee Id is required"],
-      expRules: [v => !!v || "Employee Id is required"],
-      competencyRules: [v => !!v || "Employee Id is required"]
+        detail:[],
     };
   },
   mounted() {
     this.getdetails();
+    
   },
-  computed: {},
   methods: {
-    getdetails() {
-      var ts = window.location.pathname.split("/");
+     getdetails() {
+      var ts = window.location.pathname.split('/');
       var parQuery = ts[ts.length - 1];
       var self = this;
       axios
-        .get("http://127.0.0.1:8000/api/v1/hr/completency/" + parQuery)
+        .get(this.$apiUrl+'skill-matrix/' + parQuery)
         .then(function(response) {
           self.detail = response.data;
         })
         .catch(function(error) {
           console.log(error.data);
         });
-    },
-    validate: function() {
-      if (this.$refs.form.validate()) {
-        this.snackbar = true;
-        var self = this;
-
-        var ts = window.location.pathname.split("/");
-        var parQuery = ts[ts.length - 1];
-        var self = this;
-
-        axios({
-          method: "put",
-          url: "http://127.0.0.1:8000/api/v1/hr/completency/" + parQuery,
-          data: {
-            position: self.detail.position,
-            education_Background: self.detail.education_Background,
-            experience: self.detail.experience,
-            competency_Requirement: self.detail.competency_Requirement
-          }
-        })
-          .then(function(response) {
-            self.dn = !response.dn;
-            swal({
-              title: "Success",
-              type: "success",
-              text: "Successfully edited",
-              showConfirmButton: false,
-              showCloseButton: false,
-              timer: 3000
-            });
-          })
-          .catch(function(error) {
-            console.log(error);
-          });
-      }
-    },
-    deleteData() {
-      var ts = window.location.pathname.split("/");
-      var parQuery = ts[ts.length - 1];
-      var self = this;
-      swal({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
-        type: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, delete it!"
-      }).then(result => {
-        if (result.value) {
-          axios
-            .delete("http://127.0.0.1:8000/api/v1/hr/completency/" + parQuery)
-            .then(function(response) {
-              swal({
-                title: "Success",
-                text: "Successfully Delete",
-                type: "success",
-                showConfirmButton: false,
-                showCloseButton: false,
-                timer: 3000
-              });
-              router.push("/compentency-matrix");
-            })
-            .catch(function(error) {
-              swal({
-                type: "error",
-                title: "Oops...",
-                text: "Something went wrong!",
-                showConfirmButton: false,
-                showCloseButton: false,
-                timer: 3000
-              });
-            });
-        }
-      });
     }
   }
 };
@@ -319,10 +204,12 @@ export default {
   column-count: 3;
   column-gap: 15px;
 }
-</style>
+.heder-card p{
+    margin: 0px
+}
 
-<style>
 /*skill-matrix */
+
 .lay-des {
   background: #fbfbfb;
   padding: 30px;
@@ -335,7 +222,6 @@ export default {
 }
 .under-line {
   border-bottom: 1px dashed #bdbdbd;
-
   width: 100%;
 }
 .list-scroing {
@@ -367,6 +253,10 @@ export default {
   padding-top: 15px;
 }
 /* end skill-matrix */
+</style> 
+
+<style>
+
 
 .c-title {
   font-size: 20px;
@@ -426,7 +316,9 @@ export default {
   width: 42px;
   opacity: 0;
   transition: 0.3s;
-} /* .c-list:hover .c-list-action{opacity: 1;} */
+}
+/* .c-list:hover .c-list-action{opacity: 1;} */
+
 .c-list-action .v-icon {
   font-size: 17px;
 }
@@ -455,7 +347,9 @@ export default {
 .form-box {
   width: calc(100% -65px);
   width: 90%;
-} /*  input  */
+}
+/*  input  */
+
 .ic-list input,
 .ic-list textarea,
 .ic-list select {
@@ -479,6 +373,7 @@ export default {
   display: none !important;
 }
 /* responsive */
+
 @media (max-width: 768px) {
   .total-value p {
     float: right;

@@ -107,7 +107,7 @@ export default new Router({
     },
     {
       path: '/skill-matrix',
-      name: 'Skill matrix',
+      name: 'Skill matrix list',
       component: skillmatrix,
     },
     {
@@ -148,3 +148,4 @@ export default new Router({
     },
   ],
 });
+
