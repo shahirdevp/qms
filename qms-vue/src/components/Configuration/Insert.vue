@@ -61,26 +61,51 @@
             <v-layout class="white" row wrap>
               <v-flex md3>
                 <div class="text-rr">
-                  <label class="lab-for black--text">Customer Order / Contract</label>
+                  <label class="lab-for black--text">Customer Order</label>
                   <v-text-field placeholder="Enter the value" outline></v-text-field>
                 </div>
               </v-flex>
               <v-flex md3>
                 <div class="text-rr">
-                  <label class="lab-for black--text">Agreed Delivery Date</label>
-                  <v-text-field label placeholder="Agreed Delivery Date" outline></v-text-field>
-                </div>
-              </v-flex>
-              <v-flex md3>
-                <div class="text-rr">
                   <label class="lab-for black--text">Date</label>
-                  <v-text-field label placeholder="Date" outline></v-text-field>
+                  <v-dialog
+                    ref="dialog"
+                    v-model="modal"
+                    :return-value.sync="date"
+                    persistent
+                    lazy
+                    full-width
+                    width="290px"
+                  >
+                    <template v-slot:activator="{ on }">
+                      <v-text-field
+                        v-model="date"
+                        prepend-icon="event"
+                        readonly
+                        v-on="on"
+                        label
+                        placeholder=" Date"
+                        outline
+                      ></v-text-field>
+                    </template>
+                    <v-date-picker v-model="date" scrollable>
+                      <v-spacer></v-spacer>
+                      <v-btn flat color="primary" @click="modal = false">Cancel</v-btn>
+                      <v-btn flat color="primary" @click="$refs.dialog.save(date)">OK</v-btn>
+                    </v-date-picker>
+                  </v-dialog>
                 </div>
               </v-flex>
               <v-flex md3>
                 <div class="text-rr">
-                  <label class="lab-for black--text">Customer</label>
-                  <v-text-field label placeholder="Customer" outline></v-text-field>
+                  <label class="lab-for black--text">Rev No</label>
+                  <v-text-field label placeholder="Rev No" outline></v-text-field>
+                </div>
+              </v-flex>
+              <v-flex md3>
+                <div class="text-rr">
+                  <label class="lab-for black--text">Customer Name</label>
+                  <v-text-field label placeholder="Customer Name" outline></v-text-field>
                 </div>
               </v-flex>
               <v-flex md3>
@@ -97,14 +122,28 @@
               </v-flex>
               <v-flex md3>
                 <div class="text-rr">
-                  <label class="lab-for black--text">Qty</label>
-                  <v-text-field label placeholder="Enter Qty" outline></v-text-field>
+                  <label class="lab-for black--text">Route Card No</label>
+                  <v-text-field label placeholder="Route Card No" outline></v-text-field>
+                </div>
+              </v-flex>
+              
+              <v-flex md3>
+                <div class="text-rr">
+                  <label class="lab-for black--text">Internal Job Order</label>
+                  <v-text-field label placeholder="Internal Job Order" outline></v-text-field>
+                </div>
+              </v-flex>
+              
+              <v-flex md3>
+                <div class="text-rr">
+                  <label class="lab-for black--text">Rev No</label>
+                  <v-text-field label placeholder="Rev No" outline></v-text-field>
                 </div>
               </v-flex>
               <v-flex md3>
                 <div class="text-rr">
-                  <label class="lab-for black--text">Description</label>
-                  <v-text-field label placeholder="Description" outline></v-text-field>
+                  <label class="lab-for black--text">Invoice No</label>
+                  <v-text-field label placeholder="Invoice No" outline></v-text-field>
                 </div>
               </v-flex>
             </v-layout>
@@ -126,6 +165,7 @@ import router from "../../router";
 export default {
   data() {
     return {
+      modal: false,
       // step-form
       e13: 2,
       detail: [],

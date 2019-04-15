@@ -51,7 +51,7 @@
         <v-card>
           <v-layout class="lay-des-pad grey lighten-3" row wrap>
             <v-flex xs12>
-              <h3 class="head black--text">CONFIGURATION MANAGEMENT </h3>
+              <h3 class="head black--text">CONFIGURATION MANAGEMENT</h3>
             </v-flex>
           </v-layout>
           <!-- <div class="under-line"></div> -->
@@ -68,13 +68,13 @@
                 <strong>Customer Order:</strong> Text Dummy
               </p>
               <p>
-                 <strong>Customer Nmae:</strong> Ravi
-              </p>
-              <p>
-                <strong>Part No :</strong> 3421
+                <strong>Customer Nmae:</strong> Ravi
               </p>
             </v-flex>
             <v-flex md4 xs12 sm6>
+              <p>
+                <strong>Part No :</strong> 3421
+              </p>
               <p>
                 <strong>Drawing No:</strong> 09809
               </p>
@@ -84,25 +84,17 @@
               <p>
                 <strong>Route Card No :</strong> 435343
               </p>
-              <p>
-                <strong>Date :</strong> 21-04-2019
-              </p>
-              <p>
-                <strong>Internal Job Order :</strong> 22
-              </p>
             </v-flex>
+
             <v-flex md4 xs12 sm6>
               <p>
-                <strong>Date :</strong> 21-04-2019
+                <strong>Internal Job Order :</strong> 22
               </p>
               <p>
                 <strong>Rev No :</strong> 89
               </p>
               <p>
                 <strong>Invoice No :</strong> 00000
-              </p>
-              <p>
-                <strong>Date :</strong> 21-04-2019
               </p>
             </v-flex>
           </v-layout>
