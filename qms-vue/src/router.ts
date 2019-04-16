@@ -30,6 +30,10 @@ import contractreviewinsert from './views/Marketing/ContractReviewInsert.vue';
 import configurationdetail from './views/Marketing/ConfigurationManagement.vue';
 import configurationinsert from './views/Marketing/ConfigurationManagementInsert.vue';
 import Treeview from './views/Setting/Treeview.vue';
+import masterlist from './views/Master/MasterDetail.vue';
+import masterinsert from './views/Master/MasterInsert.vue';
+
+
 
 
 
@@ -178,6 +182,16 @@ export default new Router({
       path: '/tree-view',
       name: 'Tree View',
       component:Treeview,
+    },
+    {
+      path: '/master-list',
+      name: 'Master List',
+      component:masterlist,
+    },
+    {
+      path: '/master-list-insert',
+      name: 'Master List Insert',
+      component:masterinsert,
     },
   ],
 });
