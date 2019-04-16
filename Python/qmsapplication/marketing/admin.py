@@ -1,3 +1,9 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import *
+admin.site.register(mtk_enquiry_register)
+admin.site.register(tech_feasibility)
+admin.site.register(quality_feasibility)
+admin.site.register(marketing_feasibility)
+admin.site.register(reviewer)
+admin.site.register(configuration_management_report)
