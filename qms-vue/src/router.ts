@@ -17,14 +17,20 @@ import TrrDetails from './views/Hr/TrainingReqDetail.vue';
 import anualtraing from './views/Hr/AnualTraining.vue';
 import anualtraingDetails from './views/Hr/AnualTrainingDetail.vue';
 import trEvalution from './views/Hr/TrainingEvalution.vue';
-import skillmatrix from './views/Hr/SkillMatrix.vue';
-import skillmatrixDetail from './views/Hr/SkillMatrixDetail.vue';
-import skillmatrixInsert from './views/Hr/SkillMatrixInsert.vue';
+
+import skillmatrix from './views/Hr/SkillMatrix/SkillMatrix.vue';
+import skillmatrixDetail from './views/Hr/SkillMatrix/SkillMatrixDetail.vue';
+import skillmatrixInsert from './views/Hr/SkillMatrix/SkillMatrixInsert.vue';
+import skillmatrixEdit from './views/Hr/SkillMatrix/SkillMatrixEdit.vue';
+
 import settingdepartment from './views/Setting/Setting.vue';
+
 import marketingenquiry from './views/Marketing/MarketingEnquiry.vue';
 import marketingenquiryinsert from './views/Marketing/MarketingEnquiryInsert.vue';
+
 import feasibilitydetail from './views/Marketing/FeasibilityDetail.vue';
 import feasibilityinsert from './views/Marketing/FeasibilityInsert.vue';
+
 import contractreview from './views/Marketing/ContractReviewDetail.vue';
 import contractreviewinsert from './views/Marketing/ContractReviewInsert.vue';
 import configurationdetail from './views/Marketing/ConfigurationManagement.vue';
@@ -131,6 +137,11 @@ export default new Router({
       path: '/skill-matrix-insert',
       name: 'Skill matrix insert',
       component: skillmatrixInsert,
+    },
+    {
+      path: '/skill-matrix-edit/:id',
+      name: 'Skill matrix edit',
+      component: skillmatrixEdit,
     },
     {
       path: '/department',

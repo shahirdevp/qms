@@ -1,23 +1,25 @@
 <template>
-    <div id="empd">
-        <v-layout row wrap class="action-bar">
-            <v-flex xs6>
-            <h3 class="page-name">Skill Matrix Detail</h3>
+  <div id>
+    <v-layout row wrap class="action-bar">
+      <v-flex xs6>
+        <h3 class="page-name">Skill Matrix Detail</h3>
       </v-flex>
       <v-flex xs6>
         <div class="text-xs-right">
           <div>
-            <v-tooltip  bottom>
+            <v-tooltip bottom>
               <template v-slot:activator="{ on }">
-                <v-btn icon v-on="on" ref="fileInput" >
+                <router-link :to="{path: '/skill-matrix-edit/'+detail.id }">
+                <v-btn icon v-on="on" ref="fileInput">
                   <v-icon color="info">edit</v-icon>
                 </v-btn>
+                </router-link>
               </template>
               <span>Edit</span>
             </v-tooltip>
-            <v-tooltip  bottom>
+            <v-tooltip bottom>
               <template v-slot:activator="{ on }">
-                <v-btn icon v-on="on" ref="fileInput" >
+                <v-btn icon v-on="on" ref="fileInput">
                   <v-icon color="red">delete</v-icon>
                 </v-btn>
               </template>
@@ -32,20 +34,22 @@
       <v-flex xs12 sm12 md12>
         <v-card>
           <v-layout class="lay-des heder-card" row wrap>
-            
             <v-flex md3 sm6>
               <p>
-                <strong>Department : </strong> {{ detail.depaertment }}
+                <strong>Department :</strong>
+                {{ detail.depaertment }}
               </p>
             </v-flex>
             <v-flex md3 sm6>
               <p>
-                <strong>Designation : </strong> {{ detail.designation }}
+                <strong>Designation :</strong>
+                {{ detail.designation }}
               </p>
             </v-flex>
             <v-flex md3 sm6>
               <p>
-                <strong>Date : </strong> {{ detail.created_On }}
+                <strong>Date :</strong>
+                {{ detail.created_On }}
               </p>
             </v-flex>
           </v-layout>
@@ -54,26 +58,29 @@
           <v-layout class="lay-des" row wrap>
             <v-flex md6>
               <p>
-                <strong>Employee ID : </strong> {{ detail.empName }}
+                <strong>Employee ID :</strong>
+                {{ detail.empName }}
               </p>
               <p>
-                <strong>Name : </strong> {{ detail.empName }}
+                <strong>Name :</strong>
+                {{ detail.empName }}
               </p>
               <p>
-                <strong>Department :</strong> {{ detail.depaertment }}
+                <strong>Department :</strong>
+                {{ detail.depaertment }}
               </p>
               <p>
-                <strong>Designation :</strong> {{ detail.designation }}
+                <strong>Designation :</strong>
+                {{ detail.designation }}
               </p>
-              <p >
-                <strong>Scroing Crieteria : </strong> 
+              <p>
+                <strong>Scroing Crieteria :</strong>
                 <span v-if="detail.scoring_crieteria == '1'">Need Training</span>
                 <span v-else-if="detail.scoring_crieteria == '2'">Can Work under supervision</span>
                 <span v-else-if="detail.scoring_crieteria == '3'">Can Work alone</span>
                 <span v-else>Can work & Train other</span>
               </p>
             </v-flex>
-            
           </v-layout>
           <div class="under-line"></div>
           <v-layout class="lay-des" row wrap>
@@ -95,13 +102,13 @@
                   <p>PP Operating</p>
                 </v-flex>
                 <v-flex md2>
-                  <p>4</p>
-                  <p>4</p>
-                  <p>6</p>
-                  <p>8</p>
-                  <p>8</p>
-                  <p>5</p>
-                  <p>9</p>
+                  <p>{{ detail.drawing_studying_skills }}</p>
+                  <p>{{ detail.usage_of_general_gauges }}</p>
+                  <p>{{ detail.usage_of_general_instruments }}</p>
+                  <p>{{ detail.usage_of_product_specific_gauges }}</p>
+                  <p>{{ detail.quality_documentation }}</p>
+                  <p>{{ detail.cmm_operating }}</p>
+                  <p>{{ detail.pp_operating }}</p>
                 </v-flex>
               </v-layout>
             </v-flex>
@@ -118,13 +125,13 @@
                   <p>Microscope Handeling</p>
                 </v-flex>
                 <v-flex md2>
-                  <p>4</p>
-                  <p>4</p>
-                  <p>6</p>
-                  <p>8</p>
-                  <p>8</p>
-                  <p>5</p>
-                  <p>9</p>
+                  <p>{{ detail.basic_machining_knowledge }}</p>
+                  <p>{{ detail.internal_verification_skills }}</p>
+                  <p>{{ detail.inspection_skill }}</p>
+                  <p>{{ detail.visual_inspection_skill }}</p>
+                  <p>{{ detail.d_height_gauge_operating }}</p>
+                  <p>{{ detail.operating_surface_roughness_tester }}</p>
+                  <p>{{ detail.microscope_handeling }}</p>
                 </v-flex>
               </v-layout>
             </v-flex>
@@ -133,7 +140,24 @@
               <div class="total-value">
                 <p>
                   <strong>TOTAL :</strong>
-                  <span>22</span>
+                  <span>
+                    {{
+                    parseInt(detail.drawing_studying_skills) +
+                    parseInt(detail.usage_of_general_gauges) +
+                    parseInt(detail.usage_of_general_instruments) +
+                    parseInt(detail.usage_of_product_specific_gauges) +
+                    parseInt(detail.quality_documentation) +
+                    parseInt(detail.cmm_operating) +
+                    parseInt(detail.pp_operating) +
+                    parseInt(detail.basic_machining_knowledge) +
+                    parseInt(detail.internal_verification_skills) +
+                    parseInt(detail.inspection_skill) +
+                    parseInt(detail.visual_inspection_skill) +
+                    parseInt(detail.d_height_gauge_operating) +
+                    parseInt(detail.operating_surface_roughness_tester) +
+                    parseInt(detail.microscope_handeling)
+                    }}
+                  </span>
                 </p>
               </div>
             </v-flex>
@@ -141,17 +165,15 @@
             <!--total value -->
             <div class="under-line"></div>
             <v-flex xs12 sm12 md12>
-              <div class="ap-list">
+              <div class="mrt20">
                 <span class="ap-sp">
-                  <p>
-                    <strong>Powred By :</strong>
-                    <span>Rishi Nath</span>
-                  </p>
+                  <strong>Prepred By :</strong>
+                  <span>{{detail.prepredBy}}</span>
                 </span>
-                <p>
+                <span class="right">
                   <strong>Approved By :</strong>
-                  <span>Shahir KM</span>
-                </p>
+                  <span>{{detail.approvedBy}}</span>
+                </span>
               </div>
             </v-flex>
             <!-- end total value -->
@@ -169,20 +191,19 @@ import router from "../../router";
 export default {
   data() {
     return {
-        detail:[],
+      detail: []
     };
   },
   mounted() {
     this.getdetails();
-    
   },
   methods: {
-     getdetails() {
-      var ts = window.location.pathname.split('/');
+    getdetails() {
+      var ts = window.location.pathname.split("/");
       var parQuery = ts[ts.length - 1];
       var self = this;
       axios
-        .get(this.$apiUrl+'skill-matrix/' + parQuery)
+        .get(this.$apiUrl + "skill-matrix/" + parQuery)
         .then(function(response) {
           self.detail = response.data;
         })
@@ -204,8 +225,8 @@ export default {
   column-count: 3;
   column-gap: 15px;
 }
-.heder-card p{
-    margin: 0px
+.heder-card p {
+  margin: 0px;
 }
 
 /*skill-matrix */
@@ -253,126 +274,6 @@ export default {
   padding-top: 15px;
 }
 /* end skill-matrix */
-</style> 
-
-<style>
-
-
-.c-title {
-  font-size: 20px;
-  line-height: 35px;
-  position: relative;
-  margin-bottom: 20px;
-}
-.c-title:after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 1.5px;
-  background-color: #e0e0e0;
-  bottom: -5px;
-  left: 0;
-}
-.c-list-lable {
-  display: inline-block;
-  width: 33%;
-  color: #6f6f6f;
-  padding: 0 5px 0 0px;
-}
-.c-list-content {
-  display: inline-block;
-  width: 67%;
-  padding: 0 5px 0 0px;
-}
-.c-list {
-  margin: 0 10px 25px 10px;
-  padding: 10px 5px;
-  width: calc(100% - 56px);
-  position: relative;
-}
-.c-list::after {
-  content: "";
-  position: absolute;
-  width: calc(100% - 65px);
-  height: 1.5px;
-  background: #dadada;
-  left: 0;
-  bottom: 0;
-}
-.c-list-lable::before {
-  content: "";
-  position: absolute;
-  background: #77b8fb;
-  height: 3px;
-  width: 24%;
-  bottom: -1px;
-  left: 0px;
-  z-index: 1;
-}
-.c-list-action {
-  position: absolute;
-  right: 4px;
-  top: 0;
-  width: 42px;
-  opacity: 0;
-  transition: 0.3s;
-}
-/* .c-list:hover .c-list-action{opacity: 1;} */
-
-.c-list-action .v-icon {
-  font-size: 17px;
-}
-.c-right-date {
-  display: inline-block;
-  /* float: right; */
-  position: absolute;
-  right: 18px;
-  top: 25px;
-}
-.dn {
-  display: none;
-}
-.c-list-content-input input {
-  width: calc(100% - 60px);
-  border-bottom: 1px solid #fff0;
-}
-.c-list-content-input input:focus {
-  border-bottom: 1px solid #77b8fb;
-  box-shadow: 0px 5px 5px -7px #0042ff;
-}
-.block {
-  display: block;
-  width: 100%;
-}
-.form-box {
-  width: calc(100% -65px);
-  width: 90%;
-}
-/*  input  */
-
-.ic-list input,
-.ic-list textarea,
-.ic-list select {
-  border: 1px solid #c6c6c6;
-  width: calc(100% - 105px);
-  padding: 8px 5px;
-  margin-bottom: 15px;
-  border-radius: 3px;
-  margin-top: 3px;
-}
-.ic-list input:focus,
-.ic-list textarea:focus,
-.ic-list select:focus {
-  border-color: #799df5;
-  box-shadow: 0px 0px 3px #799df5;
-}
-.ic-list-lable {
-  color: rgba(114, 114, 114, 1);
-}
-#empd .v-input__prepend-outer {
-  display: none !important;
-}
-/* responsive */
 
 @media (max-width: 768px) {
   .total-value p {
@@ -385,7 +286,12 @@ export default {
     padding: 5px 10px;
   }
 }
-</style>
+.mrt20 {
+  margin-top: 20px;
+}
+</style> 
+
+
 
 
 
