@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import hrlist from "../../components/SkillMatrix/list.vue";
-import tabs from "../../components/Common/TabsBlock.vue";
+import hrlist from "../../../components/SkillMatrix/list.vue";
+import tabs from "../../../components/Common/TabsBlock.vue";
 export default {
   name: "Hr",
   components: {
