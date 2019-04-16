@@ -33,6 +33,12 @@ import feasibilityinsert from './views/Marketing/FeasibilityInsert.vue';
 
 import contractreview from './views/Marketing/ContractReviewDetail.vue';
 import contractreviewinsert from './views/Marketing/ContractReviewInsert.vue';
+import configurationdetail from './views/Marketing/ConfigurationManagement.vue';
+import configurationinsert from './views/Marketing/ConfigurationManagementInsert.vue';
+import Treeview from './views/Setting/Treeview.vue';
+
+
+
 
 
 
@@ -169,7 +175,21 @@ export default new Router({
       name: 'Contract Review Insert',
       component:contractreviewinsert,
     },
-    
+    {
+      path: '/configuration-management',
+      name: 'Contract Review Insert',
+      component:configurationdetail,
+    },
+    {
+      path: '/configuration-management-insert',
+      name: 'Contract Review Insert',
+      component:configurationinsert,
+    },
+    {
+      path: '/tree-view',
+      name: 'Tree View',
+      component:Treeview,
+    },
   ],
 });
 
