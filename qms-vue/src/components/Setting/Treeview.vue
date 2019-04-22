@@ -37,15 +37,16 @@ export default {
         children: [
           { id: 2,
            name: "Dummy text replay",
+           lable:'dasdasd',
            children:[
                {
-                   id: 3,
+                   id: 3,name: "Dummy text replay" 
                }        
 
            ]
            },
-          { id: 3, name: "Dummy text replay" },
-          { id: 4, name: "Dummy text replay" }
+          { id: 4, name: "Dummy text replay" },
+          { id: 5, name: "Dummy text replay" }
         ]
       },
       
