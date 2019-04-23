@@ -17,7 +17,7 @@ class mtk_enquiry_register(models.Model):
     status = models.CharField(max_length=1, choices=STATUS_LIST)
     poNumber = models.IntegerField(blank=True)
     creadedOn = models.DateField(auto_now=True, blank=True, null=True)
-    owner = models.ForeignKey(User,   on_delete=models.CASCADE)
+    owner = models.ForeignKey(User,  blank=True, null=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.customer

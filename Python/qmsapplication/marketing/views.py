@@ -1,4 +1,4 @@
-from marketing.models import * 
+from marketing.models import*
 from marketing.serializers import *
 from rest_framework import mixins, generics
 
@@ -19,7 +19,7 @@ class EqRegister(generics.GenericAPIView,
             return self.list(request)
 
     def post(self, request):
-        # mtk_enquiry_register.owner = self.request.user
+        
         return self.create(request)
 
     def put(self, request, pk=None):

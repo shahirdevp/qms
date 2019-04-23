@@ -5,7 +5,7 @@ class EnqRegisterSerialiser(serializers.ModelSerializer):
     class Meta:
         model = mtk_enquiry_register
         fields = ('id', 'customer', 'date', 'prodeliverDate', 'contact', 'contryCode', 'partNumber', 'description', 'drawingNumber', 'qty', 'quotationRef', 'status', 'poNumber', 'creadedOn', 'owner' )
-        extra_kwargs = {'owner': {'default': serializers.CurrentUserDefault()}}
+        # extra_kwargs = {'owner': {'default': serializers.CurrentUserDefault()}}
 
 class TecFeasSerialiser(serializers.ModelSerializer):
     class Meta:
