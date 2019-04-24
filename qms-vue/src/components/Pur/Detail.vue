@@ -2,7 +2,7 @@
   <div class>
     <v-layout row wrap class="action-bar">
       <v-flex xs6>
-         <h3 class="page-name">Master List Of Internal & External Document</h3>
+        <h3 class="page-name">Supplier Evaluation</h3>
       </v-flex>
       <v-flex xs6>
         <div class="text-xs-right">
@@ -51,7 +51,7 @@
         <v-card>
           <v-layout class="lay-des-pad grey lighten-3" row wrap>
             <v-flex xs12>
-              <h3 class="head black--text">Master List Of Internal & External Document</h3>
+              <h3 class="head black--text">Supplier Evaluation Detail</h3>
             </v-flex>
           </v-layout>
           <!-- <div class="under-line"></div> -->
@@ -59,24 +59,33 @@
           <v-layout class="lay-des1 white" row wrap>
             <v-flex md6 xs12 sm6>
               <p>
-                <strong>SINO :</strong> 1
+                <strong>Supplier :</strong> 1
               </p>
               <p>
-                <strong>Date :</strong> 2-4-2019
+                <strong>Country :</strong> India
               </p>
               <p>
-                <strong>Document Nmae:</strong> Text Dummy
+                <strong>State :</strong> Karnataka
+              </p>
+              <p>
+                <strong>Phone :</strong> 00000000001
+              </p>
+              <p>
+                <strong>Email :</strong> notyet@gmail.com
               </p>
             </v-flex>
             <v-flex md6 xs12 sm6>
               <p>
-                <strong>Type of Document:</strong> Type1
+                <strong>City :</strong> State
               </p>
               <p>
-                <strong>Rev No :</strong> 5
+                <strong>Street :</strong> RR Nagar
               </p>
               <p>
-                <strong>Doc Status :</strong> 435343
+                <strong>Pin :</strong> 56001
+              </p>
+              <p>
+                <strong>website :</strong> qms.com
               </p>
             </v-flex>
           </v-layout>
