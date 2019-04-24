@@ -39,6 +39,8 @@ import Treeview from './views/Setting/Treeview.vue';
 import masterlist from './views/Master/MasterDetail.vue';
 import masterinsert from './views/Master/MasterInsert.vue';
 import suplierevaluation from './views/Pur/PurDetail.vue';
+import suplierevaluationinsert from './views/Pur/PurInsert.vue';
+
 
 
 
@@ -212,6 +214,11 @@ export default new Router({
       path: '/supplier-evaluation',
       name: 'Supplier Evaluation',
       component:suplierevaluation,
+    },
+    {
+      path: '/supplier-evaluation-insert',
+      name: 'Supplier Evaluation Insert',
+      component:suplierevaluationinsert,
     },
   ],
 });
