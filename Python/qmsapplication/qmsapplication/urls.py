@@ -26,7 +26,7 @@ urlpatterns = [
         path('api/v1/auth-verify/', verify_jwt_token),
 
         path('api/v1/',include('hr.urls')),
-        path('api/v1/',include('marketing.urls')),
-        path('api/v1/',include('pur.urls')),
-        path('api/v1/',include('mr.urls')),
+        path('api/v1/mkt/',include('marketing.urls')),
+        path('api/v1/pur/',include('pur.urls')),
+        path('api/v1/mr/',include('mr.urls')),
 ]
