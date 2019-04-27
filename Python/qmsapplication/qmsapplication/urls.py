@@ -28,4 +28,5 @@ urlpatterns = [
         path('api/v1/',include('hr.urls')),
         path('api/v1/',include('marketing.urls')),
         path('api/v1/',include('pur.urls')),
+        path('api/v1/',include('mr.urls')),
 ]

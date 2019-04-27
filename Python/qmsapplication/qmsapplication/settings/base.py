@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'hr',
     'marketing',
     'pur',
+    'mr'
     
 ]
 
