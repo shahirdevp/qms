@@ -27,6 +27,8 @@ import settingdepartment from './views/Setting/Setting.vue';
 
 import marketingenquiry from './views/Marketing/MarketingEnquiry.vue';
 import marketingenquiryinsert from './views/Marketing/MarketingEnquiryInsert.vue';
+import marketingenquiryList from './views/Marketing/marketingenquiryList.vue';
+import marketingEnquiryEdit from './views/Marketing/marketingenquiryEdit.vue';
 
 import feasibilitydetail from './views/Marketing/FeasibilityDetail.vue';
 import feasibilityinsert from './views/Marketing/FeasibilityInsert.vue';
@@ -157,6 +159,11 @@ export default new Router({
     {
       path: '/marketing-enquiry',
       name: 'Marketing Enquiry',
+      component: marketingenquiryList,
+    },
+    {
+      path: '/marketing-enquiry/:id',
+      name: 'Marketing Enquiry Detail',
       component: marketingenquiry,
     },
     {
@@ -164,7 +171,11 @@ export default new Router({
       name: 'Marketing Enquiry Insert',
       component: marketingenquiryinsert,
     },
-    
+    {
+      path: '/marketing-enquiry-edit/:id',
+      name: 'Marketing Enquiry edit',
+      component: marketingEnquiryEdit,
+    },
     {
       path: '/feasibility',
       name: 'Feasibility',
@@ -178,47 +189,47 @@ export default new Router({
     {
       path: '/contract-review',
       name: 'Contract Review',
-      component:contractreview,
+      component: contractreview,
     },
     {
       path: '/contract-review-insert',
       name: 'Contract Review Insert',
-      component:contractreviewinsert,
+      component: contractreviewinsert,
     },
     {
       path: '/configuration-management',
       name: 'Contract Review Insert',
-      component:configurationdetail,
+      component: configurationdetail,
     },
     {
       path: '/configuration-management-insert',
       name: 'Contract Review Insert',
-      component:configurationinsert,
+      component: configurationinsert,
     },
     {
       path: '/tree-view',
       name: 'Tree View',
-      component:Treeview,
+      component: Treeview,
     },
     {
       path: '/master-list',
       name: 'Master List',
-      component:masterlist,
+      component: masterlist,
     },
     {
       path: '/master-list-insert',
       name: 'Master List Insert',
-      component:masterinsert,
+      component: masterinsert,
     },
     {
       path: '/supplier-evaluation',
       name: 'Supplier Evaluation',
-      component:suplierevaluation,
+      component: suplierevaluation,
     },
     {
       path: '/supplier-evaluation-insert',
       name: 'Supplier Evaluation Insert',
-      component:suplierevaluationinsert,
+      component: suplierevaluationinsert,
     },
   ],
 });

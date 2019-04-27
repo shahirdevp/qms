@@ -2,7 +2,7 @@
   <div id="empd">
     <v-layout row wrap class="action-bar">
       <v-flex xs6>
-        <h3 class="page-name">CREATE MARKETING ENQUIRY</h3>
+        <h3 class="page-name">EDIT MARKETING ENQUIRY</h3>
       </v-flex>
       <v-flex xs6>
         <!-- <div class="text-xs-right">
@@ -43,7 +43,7 @@
               <span>Save</span>
             </v-tooltip>
           </div>
-        </div> -->
+        </div>-->
       </v-flex>
     </v-layout>
 
@@ -54,7 +54,7 @@
           <v-form ref="form" v-model="valid" id="emp" lazy-validation>
             <v-layout class="lay-des-pad primary" row wrap>
               <v-flex xs12>
-                <h3 class="head white--text">MARKETING ENQUIRY </h3>
+                <h3 class="head white--text">Edit marketing enquiry</h3>
               </v-flex>
             </v-layout>
             <!-- <div class="under-line"></div> -->
@@ -62,7 +62,7 @@
               <v-flex md3>
                 <div class="text-rr">
                   <label class="lab-for grey--text">Customer Name</label>
-                  <v-text-field v-model="detail.name" placeholder="Customer Name" outline></v-text-field>
+                  <v-text-field v-model="detail.customer" placeholder="Customer Name" outline></v-text-field>
                 </div>
               </v-flex>
               <v-flex md3>
@@ -74,25 +74,25 @@
               <v-flex md3>
                 <div class="text-rr">
                   <label class="lab-for grey--text">Line No</label>
-                  <v-text-field v-model="detail.lineNo" placeholder="Line No" outline></v-text-field>
+                  <v-text-field v-model="detail.line_number" placeholder="Line No" outline></v-text-field>
                 </div>
               </v-flex>
               <v-flex md3>
                 <div class="text-rr">
                   <label class="lab-for grey--text">Part Number</label>
-                  <v-text-field v-model="detail.partNo" placeholder="Part Number" outline></v-text-field>
+                  <v-text-field v-model="detail.partNumber" placeholder="Part Number" outline></v-text-field>
                 </div>
               </v-flex>
               <v-flex md3>
                 <div class="text-rr">
                   <label class="lab-for grey--text">Description</label>
-                  <v-text-field v-model="detail.des" placeholder="Description" outline></v-text-field>
+                  <v-text-field v-model="detail.description" placeholder="Description" outline></v-text-field>
                 </div>
               </v-flex>
               <v-flex md3>
                 <div class="text-rr">
                   <label class="lab-for grey--text">Drawing Number</label>
-                  <v-text-field v-model="detail.drawNo" placeholder="Drawing Number" outline></v-text-field>
+                  <v-text-field v-model="detail.drawingNumber" placeholder="Drawing Number" outline></v-text-field>
                 </div>
               </v-flex>
               <v-flex md3>
@@ -104,7 +104,7 @@
               <v-flex md3>
                 <div class="text-rr">
                   <label class="lab-for grey--text">Quotation Ref</label>
-                  <v-text-field v-model="detail.quotRef" placeholder="Quotation Ref" outline></v-text-field>
+                  <v-text-field v-model="detail.quotationRef" placeholder="Quotation Ref" outline></v-text-field>
                 </div>
               </v-flex>
               <v-flex md3>
@@ -113,10 +113,10 @@
                   <v-text-field v-model="detail.date" placeholder="Date" outline></v-text-field>
                 </div>
               </v-flex>
-			  <v-flex md3>
+              <v-flex md3>
                 <div class="text-rr">
                   <label class="lab-for grey--text">PO NO</label>
-                  <v-text-field v-model="detail.pono" placeholder="PO NO" outline></v-text-field>
+                  <v-text-field v-model="detail.poNumber" placeholder="PO NO" outline></v-text-field>
                 </div>
               </v-flex>
               <v-flex md3>
@@ -152,30 +152,58 @@ export default {
     return {
       valid: true,
       detail: [],
-      s1:['Not Awarded','Awarded','Not In Scope','Pending'],
+      s1: ["Not Awarded", "Awarded", "Not In Scope", "Pending"]
     };
   },
+
+  mounted() {
+    this.getdetails();
+  },
   methods: {
-     validate() {
+    getdetails() {
+      var ts = window.location.pathname.split("/");
+      var parQuery = ts[ts.length - 1];
+      var self = this;
+      axios
+        .get(this.$apiUrl + "mkt/enquery-register/" + parQuery + "/")
+        .then(function(response) {
+          self.detail = response.data;
+        })
+        .catch(function(error) {
+          console.log(error.data);
+        });
+    },
+
+    validate() {
       if (this.$refs.form.validate()) {
+        var ts = window.location.pathname.split("/");
+        var parQuery = ts[ts.length - 1];
         this.snackbar = true;
-        axios.post(this.$apiUrl+'mkt/enquery-register/', {
-            customer : this.detail.name,
+        axios.put(this.$apiUrl+'mkt/enquery-register/' + parQuery + '/' , {
+            customer : this.detail.customer,
             date : this.detail.date,
-            prodeliverDate : this.date,
+            prodeliverDate : this.prodeliverDate,
             contact : this.detail.contact,
             contryCode : '+91',
-            line_number : this.detail.lineNo,
-            partNumber : this.detail.partNo,
-            description : this.detail.des,
-            drawingNumber : this.detail.drawNo,
+            line_number : this.detail.line_number,
+            partNumber : this.detail.partNumber,
+            description : this.detail.description,
+            drawingNumber : this.detail.drawingNumber,
             qty : this.detail.qty,
-            quotationRef : this.detail.quotRef,
+            quotationRef : this.detail.quotationRef,
             status : this.detail.status,
-            poNumber : this.detail.pono,
+            poNumber : this.detail.poNumber,
             owner : this.$owner,
         })
         .then(function (response) {
+            swal({
+                title: "Success",
+                text: "Update Successfully ",
+                type: "success",
+                showConfirmButton: false,
+                showCloseButton: false,
+                timer: 3000
+              });
             router.push("/marketing-enquiry/"+response.data.id);
         })
         .catch(function (error) {
@@ -183,9 +211,11 @@ export default {
         });
       }
     },
+
     reset() {
       this.$refs.form.reset();
     }
+
   }
 };
 </script>

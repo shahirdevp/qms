@@ -24,36 +24,15 @@ main {
 </style>
 
 <style>
-.v-card {
-  -webkit-box-shadow: 0px 0px 5px -2px rgba(0, 0, 0, 0.45),
-    2px 2px 10px 0px rgba(0, 0, 0, 0.14) !important;
-  box-shadow: 0px 0px 5px -2px rgba(0, 0, 0, 0.45),
-    2px 2px 10px 0px rgba(0, 0, 0, 0.14) !important;
-  text-decoration: none !important;
-}
-a {
-  text-decoration: none;
-}
-html,
-body {
-  overflow-y: auto;
-  overflow-x:hidden;
-}
+.v-card { -webkit-box-shadow: 0px 0px 5px -2px rgba(0, 0, 0, 0.45), 2px 2px 10px 0px rgba(0, 0, 0, 0.14) !important; box-shadow: 0px 0px 5px -2px rgba(0, 0, 0, 0.45), 2px 2px 10px 0px rgba(0, 0, 0, 0.14) !important; text-decoration: none !important; }
+a { text-decoration: none; }
+html, body { overflow-y: auto; overflow-x:hidden; }
 /* #app{overflow-y:auto} */
-.page-enter-active, .page-leave-active {
-  transition: opacity 0.6s, transform 0.5s;
-}
-.page-enter, .page-leave-to {
-  opacity: 0;
-  transform: translateX(-5%);
-}
-.action-bar {
-  padding: 6px;
-  border-top: 1px solid #d4d4d4;
-  border-bottom: 1px solid #d4d4d4;
-  background: #f7f7ff;
-}
-.page-name{line-height:48px;}
+.page-enter-active, .page-leave-active { transition: opacity 0.6s, transform 0.5s; }
+.page-enter, .page-leave-to { opacity: 0; transform: translateX(-5%); }
+.action-bar { padding: 6px; border-top: 1px solid #d4d4d4; border-bottom: 1px solid #d4d4d4; background: #f7f7ff; }
+.page-name{line-height:35px;}
+.theme--light.v-btn-toggle .v-btn { color: rgba(0, 0, 0, 0.64); opacity: 1; }
 </style>
 
 
@@ -80,7 +59,7 @@ export default {
   mounted() {
     this.$session.start();
     if (this.$session.has("token")) {
-      console.log(this.$session);
+      // console.log(this.$session);
     }
   }
 };

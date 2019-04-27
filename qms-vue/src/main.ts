@@ -9,6 +9,7 @@ import VueSweetalert2 from 'vue-sweetalert2';
 import VueSession from 'vue-session';
 
 Vue.prototype.$apiUrl = 'http://localhost:8000/api/v1/';
+Vue.prototype.$owner = '1';
 
 // Vue.use(vuetify)
 Vue.use(VueSession);
