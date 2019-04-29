@@ -35,11 +35,10 @@ export default {
         { icon : 'person_outline', title : 'Enquiry Register', link : '/marketing-enquiry' },
         { icon : 'polymer', title : 'Technical Feasibility', link : '/technical-feasiblity' },
         { icon : 'announcement', title : 'Quality Feasibility', link : '/quality-feasibility' },
-        { icon : 'cached', title : 'Training Request register', link : '/trining-request-register' },
-        { icon : 'description', title : 'Annual Training Plan', link : '/anual-training-plan' },
-        // { icon : 'donut_small', title : 'Training Attendance', link : '/training-attendance' },
-        { icon : 'donut_small', title : 'Training Evalution Record', link : '/training-evalution-record' },
-        { icon : 'donut_small', title : 'Skill Matrix', link : '/skill-matrix' },
+        { icon : 'cached', title : 'Marketing Feasibility', link : '/marketing-feasibility' },
+        { icon : 'description', title : 'Reviewer', link : '/reviewer' },
+        { icon : 'description', title : 'Configration Management', link : '/configration-management' },
+       								
       ]
     }
   }

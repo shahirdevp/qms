@@ -35,6 +35,8 @@ import marketingEnquiryEdit from './views/Marketing/marketingenquiryEdit.vue';
 
 import TechfeasibilityList from './views/Marketing/TechFeasibilityList.vue';
 import QualityfeasibilityList from './views/Marketing/QualityFeasibilityList.vue';
+import MarketingfeasibilityList from './views/Marketing/MarketingFeasibilityList.vue';
+import Reviewer from './views/Marketing/Reviewer.vue';
 
 import feasibilityinsert from './views/Marketing/FeasibilityInsert.vue';
 import feasibilitydetail from './views/Marketing/FeasibilityDetail.vue';
@@ -95,8 +97,10 @@ export default new Router({
 
     { path: '/technical-feasiblity', name: 'Technical Feasibility List', component: TechfeasibilityList },
     { path: '/quality-feasibility', name: 'Quality Feasibility List', component: QualityfeasibilityList },
+    { path: '/marketing-feasibility', name: 'Marketing Feasibility List', component: MarketingfeasibilityList },
+    { path: '/reviewer', name: 'Reviewer', component: Reviewer },
 
-   
+    
 
     { path: '/feasibility-insert', name: 'Feasibility Insert', component: feasibilityinsert },
     { path: '/contract-review', name: 'Contract Review', component: contractreview },
