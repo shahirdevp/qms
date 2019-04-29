@@ -14,12 +14,12 @@ urlpatterns = [
     path('technicall-feasiblity/', views.TecFeasiblity.as_view()),
     path('technicall-feasiblity/<int:pk>/', views.TecFeasiblity.as_view()),
 
-    path('quality-feasibility/', views.MktFeasiblity.as_view()),
-    path('quality-feasibility/<int:pk>/', views.MktFeasiblity.as_view()),
+    path('marketing-feasibility/', views.MktFeasiblity.as_view()),
+    path('marketing-feasibility/<int:pk>/', views.MktFeasiblity.as_view()),
 
 
-    path('marketing-feasibility/', views.QltFeasiblity.as_view()),
-    path('marketing-feasibility/<int:pk>/', views.QltFeasiblity.as_view()),
+    path('quality-feasibility/', views.QltFeasiblity.as_view()),
+    path('quality-feasibility/<int:pk>/', views.QltFeasiblity.as_view()),
 
 
     path('reviewer/', views.Review.as_view()),
