@@ -3,11 +3,11 @@
     <v-layout row wrap>
       <v-flex xs12>
         <div class="tabs-block">
-          <v-chip v-model="chip1" close color="green" outline>Dashboard </v-chip>
-          <v-chip v-model="chip2" close color="green" outline>Tab </v-chip>
-          <v-chip v-model="chip3" close color="green" outline>Tab size </v-chip>
-          <v-chip v-model="chip4" close color="green" outline>New tab opend</v-chip>
-          <v-chip v-model="chip5" close color="green" outline>Hr </v-chip>
+          <v-chip v-model="chip1" close color="blue darken-4" label outline>Dashboard </v-chip>
+          <v-chip v-model="chip2" close color="blue darken-4" label outline>Tab </v-chip>
+          <v-chip v-model="chip3" close color="blue darken-4" label outline>Tab size </v-chip>
+          <v-chip v-model="chip4" close color="blue darken-4" label outline>New tab opend</v-chip>
+          <v-chip v-model="chip5" close color="blue darken-4" label outline >Complete</v-chip>
         </div>
       </v-flex>
     </v-layout>

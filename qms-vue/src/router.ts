@@ -32,6 +32,8 @@ import marketingenquiry from './views/Marketing/MarketingEnquiry.vue';
 import marketingenquiryinsert from './views/Marketing/MarketingEnquiryInsert.vue';
 import marketingenquiryList from './views/Marketing/marketingenquiryList.vue';
 import marketingEnquiryEdit from './views/Marketing/marketingenquiryEdit.vue';
+import ConfigrationManagementList from './views/Marketing/ConfigrationManagementList.vue';
+import configurationinsert from './views/Marketing/ConfigurationManagementInsert.vue';
 
 import TechfeasibilityList from './views/Marketing/TechFeasibilityList.vue';
 import QualityfeasibilityList from './views/Marketing/QualityFeasibilityList.vue';
@@ -44,7 +46,6 @@ import feasibilitydetail from './views/Marketing/FeasibilityDetail.vue';
 import contractreview from './views/Marketing/ContractReviewDetail.vue';
 import contractreviewinsert from './views/Marketing/ContractReviewInsert.vue';
 import configurationdetail from './views/Marketing/ConfigurationManagement.vue';
-import configurationinsert from './views/Marketing/ConfigurationManagementInsert.vue';
 import Treeview from './views/Setting/Treeview.vue';
 import masterlist from './views/Master/MasterDetail.vue';
 import masterinsert from './views/Master/MasterInsert.vue';
@@ -99,14 +100,14 @@ export default new Router({
     { path: '/quality-feasibility', name: 'Quality Feasibility List', component: QualityfeasibilityList },
     { path: '/marketing-feasibility', name: 'Marketing Feasibility List', component: MarketingfeasibilityList },
     { path: '/reviewer', name: 'Reviewer', component: Reviewer },
-
+    { path: '/configration-management', name: 'Configration Management', component: ConfigrationManagementList },
     
 
     { path: '/feasibility-insert', name: 'Feasibility Insert', component: feasibilityinsert },
     { path: '/contract-review', name: 'Contract Review', component: contractreview },
     { path: '/contract-review-insert', name: 'Contract Review Insert', component: contractreviewinsert },
     { path: '/configuration-management', name: 'Contract Review Insert', component: configurationdetail },
-    { path: '/configuration-management-insert', name: 'Contract Review Insert', component: configurationinsert },
+    { path: '/configration-management-add', name: 'Contract Review Insert', component: configurationinsert },
     { path: '/tree-view', name: 'Tree View', component: Treeview },
     { path: '/master-list', name: 'Master List', component: masterlist },
     { path: '/master-list-insert', name: 'Master List Insert', component: masterinsert },

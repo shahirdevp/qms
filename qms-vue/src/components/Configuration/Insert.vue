@@ -6,43 +6,7 @@
       </v-flex>
       <v-flex xs6>
         <div class="text-xs-right">
-          <div :class="{dn : !dn}">
-            <v-tooltip bottom>
-              <template v-slot:activator="{ on }">
-                <v-btn icon v-on="on" ref="fileInput" @click.stop="dn = !dn">
-                  <v-icon color="info">edit</v-icon>
-                </v-btn>
-              </template>
-              <span>Edit</span>
-            </v-tooltip>
-            <v-tooltip bottom>
-              <template v-slot:activator="{ on }">
-                <v-btn icon v-on="on" ref="fileInput" @click="deleteData()">
-                  <v-icon color="red">delete</v-icon>
-                </v-btn>
-              </template>
-              <span>Delete</span>
-            </v-tooltip>
-          </div>
-
-          <div :class="{dn : dn}">
-            <v-tooltip bottom>
-              <template v-slot:activator="{ on }">
-                <v-btn icon v-on="on" ref="fileInput" @click.stop="dn = !dn">
-                  <v-icon color="warning">close</v-icon>
-                </v-btn>
-              </template>
-              <span>Cancel</span>
-            </v-tooltip>
-            <v-tooltip bottom>
-              <template v-slot:activator="{ on }">
-                <v-btn icon v-on="on" ref="fileInput" @click="validate()">
-                  <v-icon color="success">check</v-icon>
-                </v-btn>
-              </template>
-              <span>Save</span>
-            </v-tooltip>
-          </div>
+          
         </div>
       </v-flex>
     </v-layout>
@@ -59,6 +23,23 @@
           <v-form ref="form" class="lay-des1 white" v-model="valid" id="emp" lazy-validation>
             <!-- <div class="under-line"></div> -->
             <v-layout class="white" row wrap>
+              <v-flex md2>
+                <label class="lab-for black--text right mr-1">Customer Order</label>
+              </v-flex>
+              <v-flex md3>
+				  <div class="text-rr">
+                  <v-text-field placeholder="Enter the value" outline></v-text-field>
+				  </div>
+              </v-flex>
+
+			  <v-flex md2>
+                <label class="lab-for black--text right mr-1">Customer Order</label>
+              </v-flex>
+              <v-flex md3>
+				  <div class="text-rr">
+                  <v-text-field placeholder="Enter the value" outline></v-text-field>
+				  </div>
+              </v-flex>
               <v-flex md3>
                 <div class="text-rr">
                   <label class="lab-for black--text">Customer Order</label>
