@@ -5,9 +5,7 @@
         <h3 class="page-name">Configuration Management</h3>
       </v-flex>
       <v-flex xs6>
-        <div class="text-xs-right">
-          
-        </div>
+        <div class="text-xs-right"></div>
       </v-flex>
     </v-layout>
 
@@ -23,7 +21,7 @@
           <v-form ref="form" class="lay-des1 white" v-model="valid" id="emp" lazy-validation>
             <!-- <div class="under-line"></div> -->
             <v-layout class="white" row wrap>
-              <v-flex md2>
+              <!-- <v-flex md2>
                 <label class="lab-for black--text right mr-1">Customer Order</label>
               </v-flex>
               <v-flex md3>
@@ -39,11 +37,15 @@
 				  <div class="text-rr">
                   <v-text-field placeholder="Enter the value" outline></v-text-field>
 				  </div>
-              </v-flex>
+              </v-flex>-->
               <v-flex md3>
                 <div class="text-rr">
                   <label class="lab-for black--text">Customer Order</label>
-                  <v-text-field placeholder="Enter the value" outline></v-text-field>
+                  <v-text-field
+                    v-model="detail.customer_order"
+                    placeholder="Enter the value"
+                    outline
+                  ></v-text-field>
                 </div>
               </v-flex>
               <v-flex md3>
@@ -51,7 +53,7 @@
                   <label class="lab-for black--text">Date</label>
                   <v-dialog
                     ref="dialog"
-                    v-model="modal"
+                    v-model="detail.creadedOn"
                     :return-value.sync="date"
                     persistent
                     lazy
@@ -77,54 +79,48 @@
                   </v-dialog>
                 </div>
               </v-flex>
-              <v-flex md3>
-                <div class="text-rr">
-                  <label class="lab-for black--text">Rev No</label>
-                  <v-text-field label placeholder="Rev No" outline></v-text-field>
-                </div>
-              </v-flex>
+
               <v-flex md3>
                 <div class="text-rr">
                   <label class="lab-for black--text">Customer Name</label>
-                  <v-text-field label placeholder="Customer Name" outline></v-text-field>
+                  <v-text-field label v-model="detail.cusomer" placeholder="Customer Name" outline></v-text-field>
                 </div>
               </v-flex>
-              <v-flex md3>
-                <div class="text-rr">
-                  <label class="lab-for black--text">Part Number</label>
-                  <v-text-field label placeholder="Part Number" outline></v-text-field>
-                </div>
-              </v-flex>
-              <v-flex md3>
-                <div class="text-rr">
-                  <label class="lab-for black--text">Drawing Number</label>
-                  <v-text-field label placeholder="Drawing Number" outline></v-text-field>
-                </div>
-              </v-flex>
+
               <v-flex md3>
                 <div class="text-rr">
                   <label class="lab-for black--text">Route Card No</label>
-                  <v-text-field label placeholder="Route Card No" outline></v-text-field>
+                  <v-text-field
+                    label
+                    v-model="detail.route_card_no"
+                    placeholder="Route Card No"
+                    outline
+                  ></v-text-field>
                 </div>
               </v-flex>
-              
+
               <v-flex md3>
                 <div class="text-rr">
                   <label class="lab-for black--text">Internal Job Order</label>
-                  <v-text-field label placeholder="Internal Job Order" outline></v-text-field>
+                  <v-text-field
+                    label
+                    v-modal="detail.internal_job_order"
+                    placeholder="Internal Job Order"
+                    outline
+                  ></v-text-field>
                 </div>
               </v-flex>
-              
+
               <v-flex md3>
                 <div class="text-rr">
                   <label class="lab-for black--text">Rev No</label>
-                  <v-text-field label placeholder="Rev No" outline></v-text-field>
+                  <v-text-field label v-model="detail.rev_no" placeholder="Rev No" outline></v-text-field>
                 </div>
               </v-flex>
               <v-flex md3>
                 <div class="text-rr">
                   <label class="lab-for black--text">Invoice No</label>
-                  <v-text-field label placeholder="Invoice No" outline></v-text-field>
+                  <v-text-field v-modal="detail.invoice_no" label placeholder="Invoice No" outline></v-text-field>
                 </div>
               </v-flex>
             </v-layout>
@@ -151,9 +147,11 @@ export default {
       e13: 2,
       detail: [],
       dn: true,
+      date: "",
       //  push to database
       valid: true,
       // languages
+      creadedOn: "",
       // form rules or validation
       positionRules: [v => !!v || "Employee Id is required"],
       eduBackgRules: [v => !!v || "Employee Id is required"],
@@ -168,27 +166,32 @@ export default {
       yn: ["Yes", "No"]
     };
   },
-  mounted() {
-    this.getdetails();
-  },
-  computed: {},
   methods: {
-    getdetails() {
-      var ts = window.location.pathname.split("/");
-      var parQuery = ts[ts.length - 1];
-      var self = this;
-      axios
-        .get("http://127.0.0.1:8000/api/v1/hr/completency/" + parQuery)
-        .then(function(response) {
-          self.detail = response.data;
-        })
-        .catch(function(error) {
-          console.log(error.data);
-        });
-    },
     validate() {
       if (this.$refs.form.validate()) {
         this.snackbar = true;
+        console.log(this.detail);
+
+        axios
+          .post(this.$apiUrl + "mkt/configuration-management-report/", {
+            cusomer: this.detail.cusomer,
+            owner: this.detail.owner,
+            customer_order: this.customer_order,
+            route_card_no: this.detail.route_card_no,
+            internal_job_order: this.detail.internal_job_order,
+            rev_no: this.detail.rev_no,
+            invoice_no: this.detail.invoice_no,
+            creadedOn: this.detail.creadedOn,
+            owner: this.$owner
+          })
+          .then(function(response) {
+            console.log(response.data);
+
+            // router.push("/configration-management/"+response.data.id);
+          })
+          .catch(function(error) {
+            console.log(error);
+          });
       }
     },
     reset() {
@@ -209,212 +212,3 @@ export default {
   column-gap: 15px;
 }
 </style>
-
-<style>
-/*skill-matrix */
-.pad20 {
-  padding-bottom: 20px;
-}
-.text-rr {
-  margin: 5px;
-}
-.lab-for {
-  font-weight: 400;
-}
-.text-rr input {
-  margin-top: 6px;
-  max-height: 20px;
-  font-size: 14px;
-}
-.text-rr .v-input__slot {
-  border: 1px solid rgba(180, 180, 180, 0.54) !important;
-
-  min-height: 35px !important;
-}
-.text-rr .v-select__selections {
-  padding-top: 0px !important;
-}
-.text-rr .v-input__append-inner {
-  margin-top: 7px !important;
-}
-.under-line {
-  border-bottom: 1px dashed #bdbdbd;
-  width: 100%;
-}
-.radio-list .v-input {
-  margin: 0px;
-  padding-top: 7px;
-}
-.radio-list .v-icon {
-  font-size: 14px;
-}
-.radio-list .v-lable {
-  font-size: 14px;
-}
-.head {
-  padding: 10px;
-}
-.lay-des1 {
-  background: #fbfbfb;
-  padding: 30px;
-}
-.lay-des-pad {
-  padding: 10px 25px 5px;
-}
-.field-sp {
-  padding: 10px;
-}
-.total-value p {
-  float: right;
-  margin-right: 52px;
-  padding: 5px 25px;
-  border-top: 1px solid;
-  border-bottom: 1px solid;
-}
-.ap-list span {
-  float: left;
-  padding-right: 10px;
-}
-::before,
-::after {
-  text-decoration: inherit;
-  vertical-align: inherit;
-}
-::selection {
-  background-color: #b3d4fc;
-  color: #000;
-  text-shadow: none;
-}
-.ap-list {
-  padding-top: 15px;
-}
-/* end skill-matrix */
-
-.c-title {
-  font-size: 20px;
-  line-height: 35px;
-  position: relative;
-  margin-bottom: 20px;
-}
-.c-title:after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 1.5px;
-  background-color: #e0e0e0;
-  bottom: -5px;
-  left: 0;
-}
-.c-list-lable {
-  display: inline-block;
-  width: 33%;
-  color: #6f6f6f;
-  padding: 0 5px 0 0px;
-}
-.c-list-content {
-  display: inline-block;
-  width: 67%;
-  padding: 0 5px 0 0px;
-}
-.c-list {
-  margin: 0 10px 25px 10px;
-  padding: 10px 5px;
-  width: calc(100% - 56px);
-  position: relative;
-}
-.c-list::after {
-  content: "";
-  position: absolute;
-  width: calc(100% - 65px);
-  height: 1.5px;
-  background: #dadada;
-  left: 0;
-  bottom: 0;
-}
-.c-list-lable::before {
-  content: "";
-  position: absolute;
-  background: #77b8fb;
-  height: 3px;
-  width: 24%;
-  bottom: -1px;
-  left: 0px;
-  z-index: 1;
-}
-.c-list-action {
-  position: absolute;
-  right: 4px;
-  top: 0;
-  width: 42px;
-  opacity: 0;
-  transition: 0.3s;
-} /* .c-list:hover .c-list-action{opacity: 1;} */
-.c-list-action .v-icon {
-  font-size: 17px;
-}
-.c-right-date {
-  display: inline-block;
-  /* float: right; */
-  position: absolute;
-  right: 18px;
-  top: 25px;
-}
-.dn {
-  display: none;
-}
-.c-list-content-input input {
-  width: calc(100% - 60px);
-  border-bottom: 1px solid #fff0;
-}
-.c-list-content-input input:focus {
-  border-bottom: 1px solid #77b8fb;
-  box-shadow: 0px 5px 5px -7px #0042ff;
-}
-.block {
-  display: block;
-  width: 100%;
-}
-.form-box {
-  width: calc(100% -65px);
-  width: 90%;
-} /*  input  */
-.ic-list input,
-.ic-list textarea,
-.ic-list select {
-  border: 1px solid #c6c6c6;
-  width: calc(100% - 105px);
-  padding: 8px 5px;
-  margin-bottom: 15px;
-  border-radius: 3px;
-  margin-top: 3px;
-}
-.ic-list input:focus,
-.ic-list textarea:focus,
-.ic-list select:focus {
-  border-color: #799df5;
-  box-shadow: 0px 0px 3px #799df5;
-}
-.ic-list-lable {
-  color: rgba(114, 114, 114, 1);
-}
-#empd .v-input__prepend-outer {
-  display: none !important;
-}
-/* responsive */
-@media (max-width: 768px) {
-  .total-value p {
-    float: right;
-    margin-right: 0px;
-  }
-  .ap-list span {
-    float: unset;
-    padding-right: 0px;
-    padding: 5px 10px;
-  }
-}
-</style>
-
-
-
-
-

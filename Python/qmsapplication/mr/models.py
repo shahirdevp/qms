@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 
 class doc_type(models.Model):
-    doc_type_name =  models.CharField(max_length = 100)
+    doc_type_name =  models.CharField(max_length = 100, unique=True)
     creadedOn = models.DateField(auto_now=True, blank=True, null=True)
 
     def __str__(self):

@@ -4,8 +4,6 @@ import Home from './views/Dashboard/Dashboard.vue';
 import Login from './views/Auth/Login.vue';
 import subcategory from './views/Dashboard/SubCategory.vue';
 
-
-
 //  hr
 import Hrlist from './views/Hr/Hr.vue';
 import Hrdetail from './views/Hr/Hrdetail.vue';
@@ -34,14 +32,17 @@ import marketingenquiryList from './views/Marketing/marketingenquiryList.vue';
 import marketingEnquiryEdit from './views/Marketing/marketingenquiryEdit.vue';
 import ConfigrationManagementList from './views/Marketing/ConfigrationManagementList.vue';
 import configurationinsert from './views/Marketing/ConfigurationManagementInsert.vue';
-
 import TechfeasibilityList from './views/Marketing/TechFeasibilityList.vue';
 import QualityfeasibilityList from './views/Marketing/QualityFeasibilityList.vue';
 import MarketingfeasibilityList from './views/Marketing/MarketingFeasibilityList.vue';
 import Reviewer from './views/Marketing/Reviewer.vue';
-
 import feasibilityinsert from './views/Marketing/FeasibilityInsert.vue';
 import feasibilitydetail from './views/Marketing/FeasibilityDetail.vue';
+
+// mr
+import MrCategory from './views/Dashboard/MrCategory.vue';
+import MrDocType from './views/Mr/DocType.vue';
+
 
 import contractreview from './views/Marketing/ContractReviewDetail.vue';
 import contractreviewinsert from './views/Marketing/ContractReviewInsert.vue';
@@ -53,18 +54,7 @@ import suplierevaluation from './views/Pur/PurDetail.vue';
 import suplierevaluationinsert from './views/Pur/PurInsert.vue';
 
 
-
-
-
-
-
-
-
-
-
-
 Vue.use(Router);
-
 export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
@@ -72,7 +62,7 @@ export default new Router({
     { path: '/', name: 'login', component: Login },
     { path: '/dashboard', name: 'home', component: Home },
     { path: '/hr-list', name: 'hrlist', component: Hrlist },
-
+// hr
     { path: '/hr-detail/:id', name: 'Hrdetail', component: Hrdetail },
     { path: '/hr', name: 'subcategory', component: subcategory },
     { path: '/employee', name: 'EmployeeList', component: EmployeeList },
@@ -89,30 +79,33 @@ export default new Router({
     { path: '/skill-matrix-insert', name: 'Skill matrix insert', component: skillmatrixInsert },
     { path: '/skill-matrix-edit/:id', name: 'Skill matrix edit', component: skillmatrixEdit },
     { path: '/department', name: 'Department', component: settingdepartment },
-
+// mrk
     { path: '/mkt', name: 'Marketing Sub Category', component: mktcategory },
     { path: '/marketing-enquiry', name: 'Marketing Enquiry', component: marketingenquiryList },
     { path: '/marketing-enquiry/:id', name: 'Marketing Enquiry Detail', component: marketingenquiry },
     { path: '/marketing-enquiry-insert', name: 'Marketing Enquiry Insert', component: marketingenquiryinsert },
     { path: '/marketing-enquiry-edit/:id', name: 'Marketing Enquiry edit', component: marketingEnquiryEdit },
-
     { path: '/technical-feasiblity', name: 'Technical Feasibility List', component: TechfeasibilityList },
     { path: '/quality-feasibility', name: 'Quality Feasibility List', component: QualityfeasibilityList },
     { path: '/marketing-feasibility', name: 'Marketing Feasibility List', component: MarketingfeasibilityList },
     { path: '/reviewer', name: 'Reviewer', component: Reviewer },
     { path: '/configration-management', name: 'Configration Management', component: ConfigrationManagementList },
-    
-
+// settings
     { path: '/feasibility-insert', name: 'Feasibility Insert', component: feasibilityinsert },
     { path: '/contract-review', name: 'Contract Review', component: contractreview },
     { path: '/contract-review-insert', name: 'Contract Review Insert', component: contractreviewinsert },
-    { path: '/configuration-management', name: 'Contract Review Insert', component: configurationdetail },
+    { path: '/configuration-management', name: 'Contract Review ', component: configurationdetail },
     { path: '/configration-management-add', name: 'Contract Review Insert', component: configurationinsert },
     { path: '/tree-view', name: 'Tree View', component: Treeview },
     { path: '/master-list', name: 'Master List', component: masterlist },
     { path: '/master-list-insert', name: 'Master List Insert', component: masterinsert },
     { path: '/supplier-evaluation', name: 'Supplier Evaluation', component: suplierevaluation },
     { path: '/supplier-evaluation-insert', name: 'Supplier Evaluation Insert', component: suplierevaluationinsert },
+// Mr
+    { path: '/mr', name: 'Master List category', component: MrCategory },
+    { path: '/mr-doc-type', name: 'MR document type', component: MrDocType },
+
+    
   ],
 });
 

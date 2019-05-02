@@ -10,6 +10,7 @@ class InterExternSerializer(serializers.ModelSerializer):
     class Meta:
         model = internal_external
         fields = ('id', 'doc_number', 'doc_name', 'doc_type', 'rev_no', 'date', 'doc_status', 'owner', 'creadedOn', )
+        depth = 1
 
 class InternalAuditPlanSerializer(serializers.ModelSerializer):
     class Meta:

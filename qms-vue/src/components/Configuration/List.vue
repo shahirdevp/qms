@@ -7,7 +7,7 @@
       <v-flex xs6>
         <div class="text-xs-right">
           <v-btn-toggle class="transparent mr-2" >
-            <router-link :to="{ path: '../configration-management-add'}" replace>
+            <router-link :to="{ path: '/configration-management-add'}" >
               <v-btn flat value="right">
                 <v-icon color="info">add</v-icon>
                 <span>Add New</span>
