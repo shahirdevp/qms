@@ -42,8 +42,9 @@ import feasibilitydetail from './views/Marketing/FeasibilityDetail.vue';
 // mr
 import MrCategory from './views/Dashboard/MrCategory.vue';
 import MrDocType from './views/Mr/DocType.vue';
+import MrInternalExternalDocs from './views/Mr/InternalExternalDocs.vue';
 
-
+// other
 import contractreview from './views/Marketing/ContractReviewDetail.vue';
 import contractreviewinsert from './views/Marketing/ContractReviewInsert.vue';
 import configurationdetail from './views/Marketing/ConfigurationManagement.vue';
@@ -104,6 +105,7 @@ export default new Router({
 // Mr
     { path: '/mr', name: 'Master List category', component: MrCategory },
     { path: '/mr-doc-type', name: 'MR document type', component: MrDocType },
+    { path: '/mr-internal-external-docs', name: 'MR document type', component: MrInternalExternalDocs },
 
     
   ],

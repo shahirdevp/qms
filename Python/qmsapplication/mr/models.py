@@ -15,9 +15,9 @@ class internal_external(models.Model):
     doc_number = models.CharField(max_length = 100)
     doc_name = models.CharField(max_length = 100)
     doc_type = models.CharField(max_length = 100)
-    rev_no  = models.IntegerField()
+    rev_no  = models.CharField(max_length = 100, blank=True, null=True)
     date    = models.DateField(auto_now=True, blank=True, null=True)
-    doc_status = models.CharField(max_length=10, choices=DOC_STATUS)
+    doc_status = models.CharField(max_length=100,blank=True, null=True)
     owner = models.ForeignKey(User,  blank=True, null=True, on_delete=models.CASCADE)
     creadedOn = models.DateField(auto_now=True, blank=True, null=True)
 

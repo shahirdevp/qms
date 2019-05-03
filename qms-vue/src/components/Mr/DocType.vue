@@ -18,9 +18,12 @@
             :append-icon="'send'"
             @click:append="savedoc"
             class="ff cicon"
+            :hint=ere
+            persistent-hint
             required
           ></v-text-field>
           <template slot="append"></template>
+      
         </v-toolbar>
 
         <v-list two-line>
@@ -54,7 +57,7 @@ export default {
       show1: false,
       detail: [],
       todos: [],
-      
+      ere:'',
       todo: "",
       seen: false,
       hide: true,
@@ -79,31 +82,31 @@ export default {
     },
 
     savedoc() {
-        var self = this
-        this.snackbar = true;
-        axios.post(this.$apiUrl+'mr/doc-type/', {
-            doc_type_name : this.todo,
-            
-        })
-        .then(function (response) {
-           self.todos.push({ doc_type_name: self.todo });
-           self.todo = "";
-        })
-        .catch(function (error) {
-              swal({
-                type: "error",
-                title: "Oops...",
-                text: "Document Type already exists",
-                showConfirmButton: false,
-                showCloseButton: false,
-                timer: 3000
-              });
-        });
+      if(!this.todo == '' ){
+          var self = this
+          this.snackbar = true;
+          axios.post(this.$apiUrl+'mr/doc-type/', {
+              doc_type_name : this.todo,
+              
+          })
+          .then(function (response) {
+            self.getdata();
+            self.ere = "";
+          })
+          .catch(function (error) {
+                swal({
+                  type: "error",
+                  title: "Oops...",
+                  text: "Document Type already exists",
+                  showConfirmButton: false,
+                  showCloseButton: false,
+                  timer: 3000
+                });
+          });
+      }else{
+        this.ere = 'Please enter document type';
+      }
       
-    },
-
-    deleteEvents(index) {
-    //   this.todos.splice(index, 1);
     },
 
     deleteEvent(index, id) {
@@ -161,6 +164,9 @@ export default {
  .primary--text, .v-input__icon--append .v-icon {
     color: #fff !important;
     caret-color: #fff !important;
+}
+>>>.v-messages__message {
+    color: #f67676;
 }
 
 </style>
