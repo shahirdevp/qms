@@ -46,7 +46,10 @@ import MrInternalExternalDocs from './views/Mr/InternalExternalDocs.vue';
 import MrInternalAuditPlan from './views/Mr/InternalAuditPlan.vue';
 import MrInternalAuditReport from './views/Mr/InternalAuditReport.vue';
 import MRNonconformanceReport from './views/Mr/MRNonconformanceReport.vue';
-import MRNonconformanceReportAdd from './views/Mr/MRNonconformanceAdd.vue';
+import MRNonconformanceReportAdd from './views/Mr/MrNonconformanceAdd.vue';
+
+// pur
+
 
 // other
 import contractreview from './views/Marketing/ContractReviewDetail.vue';
@@ -114,6 +117,8 @@ export default new Router({
     { path: '/mr-internal-audit-report', name: 'MR Internal audit report', component: MrInternalAuditReport },
     { path: '/mr-non-conformance', name: 'MR IA Nonconformance Report', component: MRNonconformanceReport },
     { path: '/mr-non-conformance-add', name: 'MR IA Nonconformance Add', component: MRNonconformanceReportAdd },
+
+// Pur
 
   ],
 });
