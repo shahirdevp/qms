@@ -43,6 +43,10 @@ import feasibilitydetail from './views/Marketing/FeasibilityDetail.vue';
 import MrCategory from './views/Dashboard/MrCategory.vue';
 import MrDocType from './views/Mr/DocType.vue';
 import MrInternalExternalDocs from './views/Mr/InternalExternalDocs.vue';
+import MrInternalAuditPlan from './views/Mr/InternalAuditPlan.vue';
+import MrInternalAuditReport from './views/Mr/InternalAuditReport.vue';
+import MRNonconformanceReport from './views/Mr/MRNonconformanceReport.vue';
+import MRNonconformanceReportAdd from './views/Mr/MRNonconformanceAdd.vue';
 
 // other
 import contractreview from './views/Marketing/ContractReviewDetail.vue';
@@ -96,7 +100,7 @@ export default new Router({
     { path: '/contract-review', name: 'Contract Review', component: contractreview },
     { path: '/contract-review-insert', name: 'Contract Review Insert', component: contractreviewinsert },
     { path: '/configuration-management', name: 'Contract Review ', component: configurationdetail },
-    { path: '/configration-management-add', name: 'Contract Review Insert', component: configurationinsert },
+    { path: '/configration-management-add', name: 'Contract Review Add', component: configurationinsert },
     { path: '/tree-view', name: 'Tree View', component: Treeview },
     { path: '/master-list', name: 'Master List', component: masterlist },
     { path: '/master-list-insert', name: 'Master List Insert', component: masterinsert },
@@ -105,9 +109,12 @@ export default new Router({
 // Mr
     { path: '/mr', name: 'Master List category', component: MrCategory },
     { path: '/mr-doc-type', name: 'MR document type', component: MrDocType },
-    { path: '/mr-internal-external-docs', name: 'MR document type', component: MrInternalExternalDocs },
+    { path: '/mr-internal-external-docs', name: 'MR Internal External Docs', component: MrInternalExternalDocs },
+    { path: '/mr-internal-audit-plan', name: 'MR Internal audit plan', component: MrInternalAuditPlan },
+    { path: '/mr-internal-audit-report', name: 'MR Internal audit report', component: MrInternalAuditReport },
+    { path: '/mr-non-conformance', name: 'MR IA Nonconformance Report', component: MRNonconformanceReport },
+    { path: '/mr-non-conformance-add', name: 'MR IA Nonconformance Add', component: MRNonconformanceReportAdd },
 
-    
   ],
 });
 
