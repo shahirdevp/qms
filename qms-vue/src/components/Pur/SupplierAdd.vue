@@ -2,7 +2,7 @@
   <div id="empd">
     <v-layout row wrap class="action-bar">
       <v-flex xs6>
-        <h3 class="page-name">IA Nonconformance Report Create</h3>
+        <h3 class="page-name">Add New Suppliers</h3>
       </v-flex>
       <v-flex xs6>
         <div class="text-xs-right"></div>
@@ -15,87 +15,85 @@
         <v-form ref="form" class v-model="valid" id="emp" lazy-validation>
           <v-layout class="white" row wrap>
             <v-flex md2>
-              <label class="lab-for right black--text">Area of audit</label>
+              <label class="lab-for right black--text">Supplier</label>
             </v-flex>
             <v-flex md4>
               <div class="text-rr">
-                <v-select
-                        v-model="detail.area_of_audit"
-                        :items="auditArea"
-                        item-text="area_of_audit"
-                        item-value="id"
-                ></v-select>
+                <v-text-field v-model="detail.supplier" required="" outline></v-text-field>
               </div>
             </v-flex>
 
             <v-flex md2>
-              <label class="lab-for right black--text">Ncr no</label>
+              <label class="lab-for right black--text">Email</label>
             </v-flex>
             <v-flex md4>
               <div class="text-rr">
-                <v-text-field v-model="detail.ncr_no" placeholder="Enter the value" outline></v-text-field>
+                <v-text-field v-model="detail.email" outline type="email"></v-text-field>
+              </div>
+            </v-flex>
+
+             <v-flex md2>
+              <label class="lab-for right black--text" >Phone</label>
+            </v-flex>
+            <v-flex md4>
+              <div class="text-rr">
+                <v-text-field v-model="detail.phone" outline type="number"></v-text-field>
               </div>
             </v-flex>
 
             <v-flex md2>
-              <label class="lab-for right black--text">Objective evidence</label>
+              <label class="lab-for right black--text">Country</label>
             </v-flex>
             <v-flex md4>
               <div class="text-rr">
-                <v-text-field
-                  v-model="detail.objective_evidence"
-                  placeholder="Enter the value"
-                  outline
-                ></v-text-field>
+                <v-text-field v-model="detail.country" outline></v-text-field>
               </div>
             </v-flex>
 
             <v-flex md2>
-              <label class="lab-for right black--text">Root cause</label>
+              <label class="lab-for right black--text">State</label>
             </v-flex>
             <v-flex md4>
               <div class="text-rr">
-                <v-text-field v-model="detail.root_cause" placeholder="Enter the value" outline></v-text-field>
+                <v-text-field v-model="detail.state" outline></v-text-field>
               </div>
             </v-flex>
 
             <v-flex md2>
-              <label class="lab-for right black--text">Correction</label>
+              <label class="lab-for right black--text">City</label>
             </v-flex>
             <v-flex md4>
               <div class="text-rr">
-                <v-text-field v-model="detail.correction" placeholder="Enter the value" outline></v-text-field>
+                <v-text-field v-model="detail.city" outline></v-text-field>
               </div>
             </v-flex>
 
             <v-flex md2>
-              <label class="lab-for right black--text">Correction action</label>
+              <label class="lab-for right black--text">Street</label>
             </v-flex>
             <v-flex md4>
               <div class="text-rr">
-                <v-text-field
-                  v-model="detail.correction_action"
-                  placeholder="Enter the value"
-                  outline
-                ></v-text-field>
+                <v-text-field v-model="detail.street" outline></v-text-field>
               </div>
             </v-flex>
 
             <v-flex md2>
-              <label class="lab-for right black--text">Nc statement</label>
+              <label class="lab-for right black--text">Pin</label>
             </v-flex>
             <v-flex md4>
               <div class="text-rr">
-                <v-textarea v-model="detail.nc_statement" name="input-7-4" outline></v-textarea>
+                <v-text-field v-model="detail.pin" outline type="number"></v-text-field>
               </div>
             </v-flex>
 
+            
+
             <v-flex md2>
-              <label class="lab-for right black--text">Containment action</label>
+              <label class="lab-for right black--text">Website</label>
             </v-flex>
             <v-flex md4>
               <div class="text-rr">
-                <v-textarea outline name="input-7-4" v-model="detail.containment_action"></v-textarea>
+                <v-text-field outline v-model="detail.website" placeholder="http://example.com" type="url"></v-text-field>
               </div>
             </v-flex>
           </v-layout>
@@ -117,7 +115,7 @@ export default {
     return {
       detail: [],
       valid: true,
-      auditArea: [],
+      auditArea: []
     };
   },
   methods: {
@@ -125,21 +123,21 @@ export default {
       if (this.$refs.form.validate()) {
         this.snackbar = true;
         axios
-          .post(this.$apiUrl + "mr/non-conf/", {
-            area_of_audit: this.detail.area_of_audit,
-            ncr_no: this.detail.ncr_no,
-            customer_order: this.customer_order,
-            nc_statement: this.detail.nc_statement,
-            objective_evidence: this.detail.objective_evidence,
-            root_cause: this.detail.root_cause,
-            containment_action: this.detail.containment_action,
-            correction: this.detail.correction,
-            correction_action: this.detail.correction_action,
+          .post(this.$apiUrl + "pur/supplier/", {
+            supplier: this.detail.supplier,
+            country: this.detail.country,
+            state: this.state,
+            city: this.detail.city,
+            street: this.detail.street,
+            pin: this.detail.pin,
+            phone: this.detail.phone,
+            email: this.detail.email,
+            website: this.detail.website,
             owner: this.$owner
           })
           .then(function(response) {
             console.log(response.data);
-            router.push("/mr-non-conformance/" + response.data.id);
+            router.push("/suppliers/" + response.data.id);
           })
           .catch(function(error) {
             console.log(error);
@@ -158,5 +156,8 @@ export default {
 .lab-for {
   line-height: 44px;
   margin-right: 8px;
+}
+input [type="number"] {
+  padding: 0;
 }
 </style>

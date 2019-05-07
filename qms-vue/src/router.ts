@@ -54,6 +54,7 @@ import suplierevaluationinsert from './views/Pur/PurInsert.vue';
 import PurCategory from './views/Dashboard/PurCategory.vue';
 import Suppliers from './views/Pur/Suppliers.vue';
 import SuppliersAdd from './views/Pur/SupplierAdd.vue';
+import SupplierDetail from './views/Pur/SupplierDetail.vue';
 
 
 
@@ -128,6 +129,7 @@ export default new Router({
     { path: '/pur', name: 'Purchase category', component: PurCategory },
     { path: '/suppliers', name: 'Suppliers list', component: Suppliers },
     { path: '/suppliers-add', name: 'Suppliers Add', component: SuppliersAdd },
+    { path: '/suppliers/:id', name: 'Suppliers Detail', component: SupplierDetail },
 
   ],
 });
