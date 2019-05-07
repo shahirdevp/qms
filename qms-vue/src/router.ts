@@ -49,6 +49,12 @@ import MRNonconformanceReport from './views/Mr/MRNonconformanceReport.vue';
 import MRNonconformanceReportAdd from './views/Mr/MrNonconformanceAdd.vue';
 
 // pur
+import suplierevaluation from './views/Pur/PurDetail.vue';
+import suplierevaluationinsert from './views/Pur/PurInsert.vue';
+import PurCategory from './views/Dashboard/PurCategory.vue';
+import Suppliers from './views/Pur/Suppliers.vue';
+import SuppliersAdd from './views/Pur/SupplierAdd.vue';
+
 
 
 // other
@@ -58,8 +64,7 @@ import configurationdetail from './views/Marketing/ConfigurationManagement.vue';
 import Treeview from './views/Setting/Treeview.vue';
 import masterlist from './views/Master/MasterDetail.vue';
 import masterinsert from './views/Master/MasterInsert.vue';
-import suplierevaluation from './views/Pur/PurDetail.vue';
-import suplierevaluationinsert from './views/Pur/PurInsert.vue';
+
 
 
 Vue.use(Router);
@@ -107,8 +112,7 @@ export default new Router({
     { path: '/tree-view', name: 'Tree View', component: Treeview },
     { path: '/master-list', name: 'Master List', component: masterlist },
     { path: '/master-list-insert', name: 'Master List Insert', component: masterinsert },
-    { path: '/supplier-evaluation', name: 'Supplier Evaluation', component: suplierevaluation },
-    { path: '/supplier-evaluation-insert', name: 'Supplier Evaluation Insert', component: suplierevaluationinsert },
+
 // Mr
     { path: '/mr', name: 'Master List category', component: MrCategory },
     { path: '/mr-doc-type', name: 'MR document type', component: MrDocType },
@@ -119,6 +123,11 @@ export default new Router({
     { path: '/mr-non-conformance-add', name: 'MR IA Nonconformance Add', component: MRNonconformanceReportAdd },
 
 // Pur
+    { path: '/supplier-evaluation', name: 'Supplier Evaluation', component: suplierevaluation },
+    { path: '/supplier-evaluation-insert', name: 'Supplier Evaluation Insert', component: suplierevaluationinsert },
+    { path: '/pur', name: 'Purchase category', component: PurCategory },
+    { path: '/suppliers', name: 'Suppliers list', component: Suppliers },
+    { path: '/suppliers-add', name: 'Suppliers Add', component: SuppliersAdd },
 
   ],
 });

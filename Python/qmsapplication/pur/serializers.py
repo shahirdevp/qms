@@ -4,7 +4,7 @@ from pur.models import *
 class SupplierSerialiser(serializers.ModelSerializer):
     class Meta:
         model = supplier
-        fields = ( 'supplier', 'country', 'state', 'city', 'street', 'pin', 'phone', 'email', 'website', 'createdOn', )
+        fields = ( 'id','supplier', 'country', 'state', 'city', 'street', 'pin', 'phone', 'email', 'website', 'createdOn', )
 
 
 class ApproverdSupplierSerialiser(serializers.ModelSerializer):
