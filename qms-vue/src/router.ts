@@ -55,6 +55,12 @@ import PurCategory from './views/Dashboard/PurCategory.vue';
 import Suppliers from './views/Pur/Suppliers.vue';
 import SuppliersAdd from './views/Pur/SupplierAdd.vue';
 import SupplierDetail from './views/Pur/SupplierDetail.vue';
+import PurchaseApprovedSupplier from './views/Pur/ApprovedSupplier.vue';
+import purchaseOrder from './views/Pur/PurchaseOrder.vue';
+import purchaseOrderAdd from './views/Pur/PurchaseOrderAdd.vue';
+import purchaseOrderDetail from './views/Pur/PurchaseOrderDetail.vue';
+import purchaseOrderEdit from './views/Pur/PurchaseOrderEdit.vue';
+import GoodsReciptRegister from './views/Pur/GoodsReciptRegister.vue';
 
 
 
@@ -130,6 +136,12 @@ export default new Router({
     { path: '/suppliers', name: 'Suppliers list', component: Suppliers },
     { path: '/suppliers-add', name: 'Suppliers Add', component: SuppliersAdd },
     { path: '/suppliers/:id', name: 'Suppliers Detail', component: SupplierDetail },
+    { path: '/purchase-approved-supplier', name: 'Purchase Approved Supplier', component: PurchaseApprovedSupplier },
+    { path: '/purchase-order', name: 'Purchase Order', component: purchaseOrder },
+    { path: '/purchase-order-add', name: 'Purchase Order Add', component: purchaseOrderAdd },
+    { path: '/purchase-order/:id', name: 'Purchase Order Detail', component: purchaseOrderDetail },
+    { path: '/purchase-order-edit/:id', name: 'Purchase Order Edit', component: purchaseOrderEdit },
+    { path: '/goods-recipt-register', name: 'Goods Recipt Register', component: GoodsReciptRegister },
 
   ],
 });

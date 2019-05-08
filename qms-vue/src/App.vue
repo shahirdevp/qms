@@ -33,6 +33,9 @@ html, body { overflow-y: auto; overflow-x:hidden; }
 .action-bar { padding: 6px; border-top: 1px solid #d4d4d4; border-bottom: 1px solid #d4d4d4; background: #f7f7ff; }
 .page-name{line-height:35px;}
 .theme--light.v-btn-toggle .v-btn { color: rgba(0, 0, 0, 0.64); opacity: 1; }
+.card-table th{text-align: left; padding: 5px 10px; color: rgba(0,0,0); min-width: 200px; font-weight: 400;}
+.card-table td{padding: 5px 10px;color: rgba(0,0,0,0.7);}
+.custom-card-list{overflow-x: auto}
 </style>
 
 

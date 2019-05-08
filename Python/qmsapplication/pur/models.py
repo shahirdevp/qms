@@ -20,15 +20,15 @@ class supplier(models.Model):
 
 class pur_approved_supplier(models.Model):
     STATUS_CHOICE = (
-        ('1', 'Approved'),
-        ('2', 'Under Evaluation'),
-        ('3', 'Restricted'),
-        ('4', 'Disapproved'),
+        ('Approved', 'Approved'),
+        ('Under Evaluation', 'Under Evaluation'),
+        ('Restricted', 'Restricted'),
+        ('Disapproved', 'Disapproved'),
     )
     date_entered       = models.DateField(auto_now=True)
     supplier 	       = models.ForeignKey(supplier,blank=True, on_delete=models.CASCADE)
     scope   	       = models.CharField(max_length=150, blank=True)
-    status  	       = models.CharField(max_length=1, choices=STATUS_CHOICE, default=1)
+    status  	       = models.CharField(max_length=50, choices=STATUS_CHOICE, default=1)
     next_approved_date = models.DateField(auto_now=False, blank=True)
 
     def __str__(self):
