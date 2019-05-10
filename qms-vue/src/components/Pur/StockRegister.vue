@@ -2,12 +2,12 @@
   <div>
     <v-layout row wrap class="action-bar">
       <v-flex xs6>
-        <h3 class="page-name">Goods Recipt</h3>
+        <h3 class="page-name">Stock Register</h3>
       </v-flex>
       <v-flex xs6>
         <div class="text-xs-right">
           <v-btn-toggle class="transparent mr-2">
-            <router-link :to="{ path: '/goods-recipt-register-add'}">
+            <router-link :to="{ path: '/stock-register-add'}">
               <v-btn flat value="right">
                 <v-icon color="info">add</v-icon>
                 <span>Add New</span>
@@ -25,20 +25,18 @@
       :rows-per-page-items="[10,20,50]"
     >
       <template v-slot:items="props">
-        <td class="text-xs-left">
-          <router-link :to="{ path: 'marketing-enquiry/'+ props.item.id }">{{ props.item.id }}</router-link>
-        </td>
-        <td class="text-xs-left">{{ props.item.grrno }}</td>
+        <td class="text-xs-left">{{ props.item.id }}</td>
+        <td class="text-xs-left">{{ props.item.part_no }}</td>
+        <td class="text-xs-left">{{ props.item.description}}</td>
+        <td class="text-xs-left">{{ props.item.doc_ref }}</td>
+        <td class="text-xs-left">{{ props.item.detail }}</td>
+        <td class="text-xs-left">{{ props.item.recipt }}</td>
+        <td class="text-xs-left">{{ props.item.issue }}</td>
+        <td class="text-xs-left">{{ props.item.balance }}</td>
         <td class="text-xs-left">{{ props.item.date }}</td>
-        <td class="text-xs-left">{{ props.item.supplier }}</td>
-        <td class="text-xs-left">{{ props.item.dc_ref }}</td>
-        <td class="text-xs-left">{{ props.item.po_ref }}</td>
-        <td class="text-xs-left">{{ props.item.part }}</td>
-        <td class="text-xs-left">{{ props.item.inward_qty }}</td>
-        <td class="text-xs-left">{{ props.item.sup_test_report }}</td>
         <td class="text-xs-left">
-          <router-link :to="{ path: '/suppliers/' + props.item.id }">
-            <v-icon small class="mr-3" color="info">visibility</v-icon>
+          <router-link :to="{ path: '/stock-register-edit/' + props.item.id }">
+            <v-icon small class="mr-3" color="info">edit</v-icon>
           </router-link>
           <v-icon small color="red" @click="deleteData(props.item.id)">delete</v-icon>
         </td>
@@ -55,37 +53,29 @@ import router from "../../router";
 export default {
   data() {
     return {
-      // table ist
       headers: [
-        {
-          text: "SL NO",
-          align: "left",
-          value: "id"
-        },
-        { text: "GRR No", value: "grrno" },
-        { text: "Date", value: "date" },
-        { text: "Supplier", value: "supplier" },
-        { text: "Dc ref ", value: "dc_ref" },
-        { text: "Po ref", value: "po_ref" },
-        { text: "Part", value: "part" },
-        { text: "Inward Qty", value: "inward_qty" },
-        { text: "Sup test report", value: "sup_test_report" },
-        { text: "Action", value: "" },
-        
+        { text: "SL NO ", align: "left", value: "id" },
+        { text: "Part no", value: "part_no" },
+        { text: "Description ", value: "description" },
+        { text: "Doc ref", value: "doc_ref" },
+        { text: "Detail", value: "detail" },
+        { text: "Recipt ", value: "recipt" },
+        { text: "Issue ", value: "issue" },
+        { text: "Balance", value: "balance" },
+        { text: "Date ", value: "date" },
+        { text: "Action", value: "" }
       ],
-      tlist: []
+      tlist: [],
     };
   },
-
   mounted() {
     this.getall();
   },
-
   methods: {
     getall() {
       var self = this;
       axios
-        .get(this.$apiUrl + "pur/goods-recipt/")
+        .get(this.$apiUrl + "pur/stock-register/")
         .then(function(response) {
           self.tlist = response.data;
         })
@@ -107,7 +97,7 @@ export default {
       }).then(result => {
         if (result.value) {
           axios
-            .delete(this.$apiUrl + "pur/goods-recipt/" + did)
+            .delete(this.$apiUrl + "pur/stock-register/" + did)
             .then(function(response) {
               swal({
                 title: "Success",
