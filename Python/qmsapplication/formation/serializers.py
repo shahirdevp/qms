@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 
 class CformationSerializer(serializers.ModelSerializer):
-    ceo = serializers.CharField(source = 'User.username', read_only=True)
+    username = serializers.CharField(source= 'User.first_name' , read_only=True)
     class Meta:
         model = Cmp_formation
-        fields = ( 'id', 'CmpName', 'scope', 'policy', 'app_domain', 'SupUser', 'ceo')
+        fields = ( 'id', 'CmpName', 'scope', 'policy', 'app_domain', 'SupUser', 'username',)
