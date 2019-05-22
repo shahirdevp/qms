@@ -75,6 +75,9 @@ import configurationdetail from './views/Marketing/ConfigurationManagement.vue';
 import Treeview from './views/Setting/Treeview.vue';
 import masterlist from './views/Master/MasterDetail.vue';
 import masterinsert from './views/Master/MasterInsert.vue';
+import register from './views/Auth/Register.vue';
+import OrgChart from './views/Auth/OrgChart.vue';
+import OrgSetting from './views/Auth/OrgSetting.vue';
 
 
 
@@ -123,6 +126,10 @@ export default new Router({
         { path: '/tree-view', name: 'Tree View', component: Treeview },
         { path: '/master-list', name: 'Master List', component: masterlist },
         { path: '/master-list-insert', name: 'Master List Insert', component: masterinsert },
+        { path: '/register', name: 'register', component: register },
+        { path: '/policy-settep', name: 'policy update', component: register },
+        { path: '/org-chart', name: 'organization chart', component: OrgChart},
+        { path: '/org-settings', name: 'organization Settings', component: OrgSetting},
 
         // Mr
         { path: '/mr', name: 'Master List category', component: MrCategory },
@@ -150,7 +157,7 @@ export default new Router({
         { path: '/stock-register', name: 'Stock Register', component: StockRegister },
         { path: '/stock-register-add', name: 'Stock Register add', component: StockRegisterAdd },
         { path: '/stock-register-edit/:id', name: 'Stock Register Edit', component: StockRegisterEdit },
-
+        
     ],
 });
 

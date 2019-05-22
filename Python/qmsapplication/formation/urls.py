@@ -11,7 +11,10 @@ urlpatterns = [
     path('cformation/', views.CformationViewset.as_view()),
     path('cformation/<int:pk>/', views.CformationViewset.as_view()),
 
-   
+    path('process/', views.CprocessViewset.as_view()),
+    path('process/<int:pk>/', views.CprocessViewset.as_view()),
+
+    path('policy/', views.PolicyViewset.as_view(), name='file-upload'),
 
    
 ]

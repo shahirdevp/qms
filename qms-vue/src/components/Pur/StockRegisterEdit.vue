@@ -139,6 +139,7 @@ export default {
   methods: {
     validate() {
       if (this.$refs.form.validate()) {
+        
         this.snackbar = true;
         axios
           .put(this.$apiUrl + "pur/stock-register/" +  this.detail.id + '/', {

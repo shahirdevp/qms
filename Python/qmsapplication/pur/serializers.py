@@ -15,10 +15,10 @@ class ApproverdSupplierSerialiser(serializers.ModelSerializer):
 
 
 class SpurOrderSerialiser(serializers.ModelSerializer):
-    country = SupplierSerialiser('country')
+    # country = SupplierSerialiser('country')
     class Meta:
         model = pur_supplier_purchase_order
-        fields = ( 'id', 'supplier', 'product','country', 'unit', 'supplier_ref_no', 'qty', 'po_no', 'po_date', 'requested_date', )
+        fields = ( 'id', 'supplier', 'product', 'unit', 'supplier_ref_no', 'qty', 'po_no', 'po_date', 'requested_date', )
 
 
 class GoodsResiptSerialiser(serializers.ModelSerializer):

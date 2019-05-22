@@ -40,10 +40,16 @@ main {
   .text-rr .v-input__slot{border-radius: 3px;}
   .text-rr .theme--light.v-text-field > .v-input__control > .v-input__slot::before { border-color: transparent; }
   .text-rr .v-input__append-inner { margin-top: -1px !important; }
-  .text-rr input[type="date"], .text-rr input[type="number"] {
-      padding: 0 12px;
-    }
+  .text-rr input[type="date"], .text-rr input[type="number"] { padding: 0 12px; }
+  .responsive-img{max-width: 100%;}
+  /* card style */
+  .card-box { background-color: #fefefe; padding: 15px; margin: 10px; border: 1px solid #f2f2f2; box-shadow: 0px 0px 3px -2px gray; width: calc(100% - 20px); }
+  .card-box-title { color: #4b4b4b; font-size: 19px; margin-bottom: 10px; font-weight: 400; line-height: 1.5; }
+  .cards-table th{ font-size: 14px; font-weight: 500; color: #1b1b1b; width: 150px; text-align: left; padding: 5px; }
 </style>
+
+
+
 
 
 
@@ -59,7 +65,7 @@ export default {
   },
   computed: {
     showMenu() {
-      if (this.$route.name == "login") {
+      if (this.$route.name == "login" || this.$route.name == "register") {
         return false;
       } else {
         return true;
