@@ -78,6 +78,7 @@ import masterinsert from './views/Master/MasterInsert.vue';
 import register from './views/Auth/Register.vue';
 import OrgChart from './views/Auth/OrgChart.vue';
 import OrgSetting from './views/Auth/OrgSetting.vue';
+import Adminregister from './views/Auth/Admin.vue';
 
 
 
@@ -130,7 +131,7 @@ export default new Router({
         { path: '/policy-settep', name: 'policy update', component: register },
         { path: '/org-chart', name: 'organization chart', component: OrgChart},
         { path: '/org-settings', name: 'organization Settings', component: OrgSetting},
-
+        { path: '/admin-register', name: 'Admin register', component: Adminregister},
         // Mr
         { path: '/mr', name: 'Master List category', component: MrCategory },
         { path: '/mr-doc-type', name: 'MR document type', component: MrDocType },

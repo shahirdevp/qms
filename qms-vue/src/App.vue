@@ -65,7 +65,7 @@ export default {
   },
   computed: {
     showMenu() {
-      if (this.$route.name == "login" || this.$route.name == "register") {
+      if (this.$route.name == "login" || this.$route.name == "register" || this.$route.name == "Admin register") {
         return false;
       } else {
         return true;
