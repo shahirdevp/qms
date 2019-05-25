@@ -15,6 +15,9 @@ urlpatterns = [
     path('process/<int:pk>/', views.CprocessViewset.as_view()),
 
     path('policy/', views.PolicyViewset.as_view(), name='file-upload'),
+    path('admin-register/', views.CreateUserView.as_view(), name='Create admin'),
+
+    
 
    
 ]

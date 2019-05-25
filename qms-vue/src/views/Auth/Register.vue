@@ -121,7 +121,7 @@ import jfile from '../../../student.json';
         },
         )
         .then(res => {
-          router.push("policy-settep");
+          router.push("admin-register");
         })
         .catch(err => {
           alert('error')

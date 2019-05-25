@@ -22,8 +22,8 @@
                             <v-text-field 
                                 label="User Name" 
                                 outline
-                                v-model="formation.comapeny"
-                                :rules="rules.comapeny"
+                                v-model="formation.username"
+                                :rules="rules.username"
                                 required
                             ></v-text-field>
                         </v-flex>
@@ -31,19 +31,20 @@
                             <v-text-field 
                                 label="Email" 
                                 outline
-                                v-model="formation.comapeny"
-                                :rules="rules.comapeny"
+                                v-model="formation.email"
+                                :rules="rules.email"
                                 required
+                                type="email"
                             ></v-text-field>
                         </v-flex>
                         <v-flex xs12 sm10 md10>
                             <v-text-field 
                             label="Password" 
                             outline
-                            v-model="formation.url"
-                            :rules="rules.url"
+                            v-model="formation.psw"
+                            :rules="rules.psw"
                             required
-                            type="url"
+                            type="password"
                             placeholder=""
                             ></v-text-field>
                         </v-flex>
@@ -52,17 +53,17 @@
                             <v-text-field 
                             label="Confirm password " 
                             outline
-                            v-model="formation.url"
-                            :rules="rules.url"
+                            v-model="formation.cpsw"
+                            :rules="rules.cpsw"
                             required
-                            type="url"
+                            type="password"
                             placeholder=""
                             ></v-text-field>
                         </v-flex>
                         
                         <v-flex xs12 sm10 md10>
                             <div class="">
-                                <v-btn large :disabled="!valid"  @click="login" block dark color="green darken-3" >submit</v-btn>
+                                <v-btn large :disabled="!valid"  @click="registers" block dark color="green darken-3" >submit</v-btn>
                             </div>
                         </v-flex>
                   </v-layout>
@@ -82,33 +83,47 @@
 import axios from "axios";
 import swal from "sweetalert2";
 import router from "../../router";
-import jsonfile from "jsonfile";
-import jfile from '../../../student.json';
+import jfile from '../../../register.json';
+
+
     export default {
  data: () => ({
     formation: {},
     valid: true,
     loading: false,
+    register: jfile,
     rules: {
-      comapeny: [
+      username: [
         v => !!v || "Company name is required",
         v =>/^[a-z0-9_]+$/.test(v) ||
           "A Company name can only contain letters and digits"
       ],
-      url: [
-        v => !!v || "Url is required",
-        
-      ]
+      email: [
+        v => !!v || 'E-mail is required',
+        v => /.+@.+/.test(v) || 'E-mail must be valid'
+      ],
+      psw: [
+        v => !!v || "confirm password is required",
+        v =>(v && v.length <= 5) || 'Password must be less than 5 characters'
+      ],
+      // cpsw:[
+      //    v => !!v || "Confirm ",
+      //    v =>(v != v.psw) || 'Password must be less than 5 characters'
+      // ]
     }
   }),
+
+  mounted(){
+    this.fetchregister();
+  },
   methods: {
-    login() {
+    registers() {
       // checking if the input is valid
       if (this.$refs.form.validate()) {
         this.loading = true;
         axios({
           method: "post",
-          url: this.$apiUrl+"organization/cformation/",
+          url: this.$apiUrl+"organization/admin-register//",
           data: {
             CmpName: this.formation.comapeny,
             app_domain: this.formation.url
@@ -116,8 +131,7 @@ import jfile from '../../../student.json';
         })
           .then(res => {
            console.log(res.data)
-           this.saveTest(res.data)
-            // router.push("");
+          
           })
           .catch(e => {
 
@@ -134,24 +148,14 @@ import jfile from '../../../student.json';
           });
       }
     },
-    saveTest(respond){
-      
-       
-        axios.post('http://5ineprojects.com/json-create/register.php',{
-         register:respond,
-        },
-        )
-        .then(res => {
-          router.push("policy-settep");
-        })
-        .catch(err => {
-          alert('error')
-          console.error(err); 
-        })
 
-     
-        
-    }
+    fetchregister(){
+      var comanyname = this.register.CmpName;
+      if(comanyname == ''){
+        router.push("/register");
+      }
+    },
+   
   }
     };
 </script>

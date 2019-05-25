@@ -5,6 +5,16 @@ from rest_framework.views import APIView
 from rest_framework.parsers import  FileUploadParser, MultiPartParser, FormParser
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework import permissions
+from django.contrib.auth.models import User
+
+class CreateUserView(generics.CreateAPIView):
+    model = User()
+    permission_classes = [
+        permissions.AllowAny
+    ]
+    serializer_class = UserSerializer
+
 
 class CformationViewset(generics.GenericAPIView,
                  mixins.CreateModelMixin,

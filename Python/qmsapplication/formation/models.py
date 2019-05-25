@@ -6,7 +6,7 @@ class Cmp_formation(models.Model):
 
     CmpName  = models.CharField(max_length=100)
     scope  = models.TextField(blank=True, null=True)
-    policy = models.FileField( upload_to='doc/', blank=True, null=True)
+    policy = models.FileField(upload_to='doc/', blank=True, null=True)
     app_domain = models.URLField(max_length=200, blank=True, null=True)
     SupUser =  models.ForeignKey(User,  on_delete=models.CASCADE, blank=True, null=True)
     Cunique = get_random_string(length=64)
