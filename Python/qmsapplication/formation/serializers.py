@@ -35,4 +35,21 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         # Tuple of serialized model fields (see link [2])
-        fields = ( "id", "username", "password", "is_superuser", "email" )
+        fields = ("id", "username", "password", "is_superuser", "email",)
+
+
+class OrgProcessChartSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = OrgProcessChart
+        fields =('id', 'parentid', 'parent', 'child', 'orgName')
+
+
+class OrgchartTest(serializers.ModelSerializer):
+    class Meta:
+        model = OrgTestprocess
+        fields =('id', 'orgName', 'created_at', 'chart',)
+
+
+
+
+

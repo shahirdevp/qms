@@ -46,6 +46,22 @@ class RolesAuthorised(models.Model):
         return self.CmpName
 
 
+class OrgProcessChart(models.Model):
+    parentid = models.CharField(blank=True, null=True, max_length=150)
+    parent = models.CharField(blank=True, null=True, max_length=150)
+    child = models.CharField(max_length=150)
+    created_at = models.ForeignKey(User, on_delete=models.CASCADE)
+    orgName = models.ForeignKey(Cmp_formation,  on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.parent
 
 
 
+class OrgTestprocess(models.Model):
+    orgName = models.ForeignKey(Cmp_formation, on_delete=models.CASCADE, blank=True, null=True)
+    created_at = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
+    chart = models.TextField()
+
+    def __str__(self):
+        return self.orgName
