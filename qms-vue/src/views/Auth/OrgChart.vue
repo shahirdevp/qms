@@ -6,7 +6,12 @@
         <h3 class="page-name">Organization Chart</h3>
       </v-flex>
       <v-flex xs6>
-        <div class="text-xs-right"></div>
+        <div class="text-xs-right">
+          <v-btn depressed  @click="saveTree"  value="left">
+            <v-icon color="info" class="mr-1">save</v-icon>
+            <span>Save</span>
+          </v-btn>
+        </div>
       </v-flex>
     </v-layout>
     <!-- <button @click="addNode">Add Node</button> -->
@@ -37,7 +42,11 @@
     </div>
 
     <div class="tree-box card-box">
-      <button @click="getNewTree">View Chart</button>
+      <button @click="getNewTree">Get new tree</button>
+      <pre>
+          {{newTree}}
+      </pre>
+
       <div class="tf-tree example">
         <ul>
           <li>
@@ -87,6 +96,7 @@
     </div>
   </div>
 </template>
+
 <script>
 import { VueTreeList, Tree, TreeNode } from "vue-tree-list";
 import TabBlock from "../../components/Common/TabsBlock.vue";
@@ -113,32 +123,37 @@ export default {
       ])
     };
   },
+  mounted(){
+    this.getchart();
+  },
+
   methods: {
+    //delete node
     onDel(node) {
       console.log(node);
       node.remove();
     },
-
+    //update name
     onChangeName(params) {
       console.log(params);
     },
-
+    //add node
     onAddNode(params) {
       console.log(params);
     },
-
     onClick(params) {
       console.log(params);
     },
 
     addNode() {
-      var node = new TreeNode({ name: "new node", isLeaf: false });
+      var node = new TreeNode({name: "new node", isLeaf: false});
       if (!this.data.children) this.data.children = [];
       this.data.addChildren(node);
     },
 
     getNewTree() {
       var vm = this;
+
       function _dfs(oldNode) {
         var newNode = {};
 
@@ -147,7 +162,6 @@ export default {
             newNode[k] = oldNode[k];
           }
         }
-
         if (oldNode.children && oldNode.children.length > 0) {
           newNode.children = [];
           for (var i = 0, len = oldNode.children.length; i < len; i++) {
@@ -162,10 +176,34 @@ export default {
 
     onClick(model) {
       console.log(model);
+    },
+
+    //  save to database
+    saveTree() {
+      this.getNewTree();
+      axios.post(this.$apiUrl + "organization/org-process-chart", {
+        chart: this.newTree
+      }).then(function (response) {
+        console.log(response)
+      }).catch(function (error) {
+        console.log(error);
+      });
+    },
+
+  //  get data from api
+    getchart(){
+      var self = this;
+      axios.get(this.$apiUrl + "organization/org-process-chart/3").then(function (response) {
+        self.newTree = response.data.chart
+      }).catch(function (error) {
+        console.log(error);
+      });
     }
   }
 };
 </script>
+
+
 <style>
 .vtl .vtl-drag-disabled {
   background-color: #d0cfcf;
@@ -177,7 +215,6 @@ export default {
   background-color: #d0cfcf;
 }
 </style>
-
 <style  scoped>
 .slot-icon i:hover {
   cursor: pointer;

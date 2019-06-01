@@ -66,8 +66,6 @@ import StockRegister from './views/Pur/StockRegister.vue';
 import StockRegisterAdd from './views/Pur/StockRegisterAdd.vue';
 import StockRegisterEdit from './views/Pur/StockRegisterEdit.vue';
 
-
-
 // other
 import contractreview from './views/Marketing/ContractReviewDetail.vue';
 import contractreviewinsert from './views/Marketing/ContractReviewInsert.vue';

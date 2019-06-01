@@ -45,6 +45,8 @@ class OrgProcessChartSerializer(serializers.ModelSerializer):
 
 
 class OrgchartTest(serializers.ModelSerializer):
+    chart = serializers.JSONField()
+
     class Meta:
         model = OrgTestprocess
         fields =('id', 'orgName', 'created_at', 'chart',)
