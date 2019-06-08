@@ -340,7 +340,7 @@ export default {
       var parQuery = ts[ts.length - 1];
       var self = this;
       axios
-        .get("http://localhost:8000/api/v1/hr/" + parQuery)
+        .get(this.$apiUrl+"hr/" + parQuery)
         .then(function(response) {
           self.detail = response.data;
         })
@@ -354,7 +354,7 @@ export default {
       var self = this;
       axios({
         method: "put",
-        url: "http://localhost:8000/api/v1/hr/" + parQuery + "/",
+        url: this.$apiUrl+"hr/" + parQuery + "/",
         data: {
           arrovedBy: this.detail.arrovedBy,
           hr_required_deg: this.detail.hr_required_deg,
@@ -394,7 +394,7 @@ export default {
       }).then(result => {
         if (result.value) {
           axios
-            .delete("http://localhost:8000/api/v1/hr/" + parQuery + "/")
+            .delete(this.$apiUrl+"hr/" + parQuery + "/")
             .then(function(response) {
               swal({
                 title: "Success",
@@ -404,7 +404,7 @@ export default {
                 showCloseButton: false,
                 timer: 3000
               });
-              router.push("/hr");
+              router.push("/hr-list");
             })
             .catch(function(error) {
               swal({

@@ -44,7 +44,7 @@ export default {
       if (this.$refs.form.validate()) {
         this.snackbar = true;
         
-        axios.post('http://localhost:8000/api/v1/hr/', {
+        axios.post(this.$apiUrl+'hr/', {
             hr_required_deg: this.hrd,
             requestedby: this.reason,
             reson_new_hire: this.reason,
@@ -54,7 +54,7 @@ export default {
         })
         .then(function (response) {
             console.log(response);
-            router.push("/dashboard");
+            router.push("/hr-list/"+response.id);
         })
         .catch(function (error) {
             console.log(error);

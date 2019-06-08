@@ -2,7 +2,7 @@
   <div>
     <v-layout row wrap class="action-bar">
       <v-flex xs6>
-        <h3 class="page-name">HR REQUIRMENT REGISTER</h3>
+        <h3 class="page-name">HR Requirement Register</h3>
       </v-flex>
       <v-flex xs6>
         <div class="text-xs-right">
@@ -44,7 +44,7 @@
       <div class="post-form-container">
         <div class="post-form">
           <!-- post form -->
-          <h3>Add HR Requirment Register</h3>
+          <h3>Add HR Requirement Register</h3>
           <br>
           <v-form ref="form" v-model="valid" lazy-validation>
             <v-text-field
@@ -150,7 +150,7 @@ export default {
     getall() {
       var self = this;
       axios
-        .get("http://localhost:8000/api/v1/hr/")
+        .get(this.$apiUrl+"hr/")
         .then(function(response) {
           self.tlist = response.data;
         })
@@ -164,7 +164,7 @@ export default {
         this.snackbar = true;
         var self = this;
         axios
-          .post("http://localhost:8000/api/v1/hr/", {
+          .post(this.$apiUrl+"hr/", {
             hr_required_deg: this.hrd,
             requestedby: this.reason,
             reson_new_hire: this.reason,
@@ -174,9 +174,9 @@ export default {
           })
           .then(function(response) {
             console.log(response);
-            self.$refs.fileInput.click();
-
-            // getall();
+            // self.$refs.fileInput.click();
+            self.drawer = !self.drawer;
+            self.getall();
           })
           .catch(function(error) {
             console.log(error);

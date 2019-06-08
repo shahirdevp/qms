@@ -52,9 +52,9 @@
 export default {
   data() {
     return {
-      clipped: false,
+      clipped: true,
       drawer: true,
-      fixed: false,
+      fixed: true,
       items: [
                 {
           icon: "dashboard",
@@ -114,8 +114,8 @@ export default {
           
         },
       ],
-      miniVariant: true,
-      right: true,
+      miniVariant: false,
+      right: false,
       rightDrawer: false,
       title: "Vuetify.js"
     };

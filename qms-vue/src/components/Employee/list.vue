@@ -20,17 +20,24 @@
       class="elevation-1"
       :rows-per-page-items="[10,20,50]"
     >
+
       <template v-slot:items="props">
+
+        <router-link :to="{ path: 'employee/'+ props.item.id }">
+          <tr>
         <td class="text-xs-left">
-          <router-link
-            :to="{ path: 'employee/'+ props.item.id }"
-          >{{ props.item.employee_ID }}</router-link>
+
+            {{ props.item.employee_ID }}
         </td>
         <td class="text-xs-left">{{ props.item.name_of_the_Employee }}</td>
         <td class="text-xs-left">{{ props.item.position }}</td>
         <td class="text-xs-left">{{ props.item.date_of_join }}</td>
         <td class="text-xs-left">{{ props.item.qualification }}</td>
+        </tr>
+        </router-link>
+
       </template>
+
     </v-data-table>
 
     <v-navigation-drawer
@@ -245,7 +252,7 @@ export default {
     getall() {
       var self = this;
       axios
-        .get(this.$apiUrl+"employee")
+        .get(this.$apiUrl+"employee/")
         .then(function(response) {
           self.tlist = response.data;
         })
@@ -264,7 +271,7 @@ export default {
         });
           axios({
               method: "post",
-              url: this.$apiUrl+"employee",
+              url: this.$apiUrl+"employee/",
               data: {
                 name_of_the_Employee: this.ename,
                 address: this.addess,
