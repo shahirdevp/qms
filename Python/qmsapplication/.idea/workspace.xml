@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d880345-9a60-46d0-b1ec-357fe77a5875" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mr/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mr/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mr/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/mr/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pur/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/pur/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pur/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/pur/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pur/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/pur/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qmsapplication/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qmsapplication/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/qmsapplication/settings/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qms-vue/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../qms-vue/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qms-vue/src/components/AnualTraining/Detail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../qms-vue/src/components/AnualTraining/Detail.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qms-vue/src/components/Common/Toolbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../qms-vue/src/components/Common/Toolbar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qms-vue/src/components/Mr/InternalAuditPlan.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../qms-vue/src/components/Mr/InternalAuditPlan.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qms-vue/src/components/Mr/InternalExternal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../qms-vue/src/components/Mr/InternalExternal.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qms-vue/src/components/Mr/NonConfAdd.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../qms-vue/src/components/Mr/NonConfAdd.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qms-vue/src/components/Mr/NonConfList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../qms-vue/src/components/Mr/NonConfList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qms-vue/src/components/Pur/ApprovedSupplier.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../qms-vue/src/components/Pur/ApprovedSupplier.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qms-vue/src/components/Pur/PurchaseOrderAdd.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../qms-vue/src/components/Pur/PurchaseOrderAdd.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qms-vue/src/components/Pur/SupplierAdd.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../qms-vue/src/components/Pur/SupplierAdd.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qms-vue/src/components/Pur/SupplierDetail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../qms-vue/src/components/Pur/SupplierDetail.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qms-vue/src/router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../qms-vue/src/router.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,13 +39,18 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pur/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="143" column="44" selection-start-line="143" selection-start-column="44" selection-end-line="143" selection-end-column="44" />
+            <state relative-caret-position="255">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hr/apps.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -117,7 +103,7 @@
   <component name="MacroExpansionManager">
     <option name="directoryName" value="YBcLLYYJ" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1377" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
@@ -129,7 +115,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -145,12 +130,18 @@
             <path>
               <item name="qmsapplication" type="b2602c69:ProjectViewProjectNode" />
               <item name="qmsapplication" type="462c0819:PsiDirectoryNode" />
+              <item name="hr" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qmsapplication" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qmsapplication" type="462c0819:PsiDirectoryNode" />
               <item name="quality" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -224,6 +215,7 @@
       <workItem from="1560242614701" duration="2853000" />
       <workItem from="1560322109789" duration="10805000" />
       <workItem from="1560409507564" duration="437000" />
+      <workItem from="1560416015727" duration="1570000" />
     </task>
     <task id="LOCAL-00001" summary="new test">
       <created>1559308578151</created>
@@ -257,12 +249,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34219000" />
+    <option name="totallyTimeSpent" value="35789000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49756098" visible="true" weight="0.17473525" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49756098" visible="true" weight="0.17700455" />
       <window_info id="Structure" order="1" sideWeight="0.502439" side_tool="true" weight="0.15204236" />
       <window_info id="Favorites" order="2" sideWeight="0.502439" side_tool="true" weight="0.15204236" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -276,7 +269,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49924356" weight="0.3289689" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50075644" side_tool="true" weight="0.3289689" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49924356" visible="true" weight="0.5188216" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49924356" weight="0.5188216" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -390,33 +383,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hr/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3126">
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/marketing/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2412">
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mr/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1885">
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/quality/views.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -424,13 +390,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="867">
           <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pur/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -451,10 +410,65 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pur/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mr/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1885">
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/marketing/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/marketing/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1275">
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hr/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-151">
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hr/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3126">
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hr/apps.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/pur/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="143" column="44" selection-start-line="143" selection-start-column="44" selection-end-line="143" selection-end-column="44" />
+        <state relative-caret-position="255">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>

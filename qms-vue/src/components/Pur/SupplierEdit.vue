@@ -125,8 +125,11 @@ export default {
     validate() {
       if (this.$refs.form.validate()) {
         this.snackbar = true;
+        var ts = window.location.pathname.split("/");
+        var parQuery = ts[ts.length - 1];
+        var self = this;
         axios
-          .post(this.$apiUrl + "pur/supplier/", {
+          .put (this.$apiUrl + "pur/supplier/" + parQuery + '/', {
             supplier: this.detail.supplier,
             country: this.detail.country,
             state: this.detail.state,
