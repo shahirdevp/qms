@@ -24,7 +24,7 @@
                         :items="auditArea"
                         item-text="area_of_audit"
                         item-value="id"
-                        label="Month"
+                        label=""
                 ></v-select>
               </div>
             </v-flex>

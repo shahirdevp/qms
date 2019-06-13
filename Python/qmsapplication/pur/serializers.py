@@ -33,3 +33,10 @@ class StockRegisterSerialiser(serializers.ModelSerializer):
         fields = ( 'id', 'part_no', 'description', 'doc_ref', 'detail', 'recipt', 'issue', 'balance', 'date', )
 
 
+class purchaseapprovedSuppier(serializers.ModelSerializer):
+    # supplier = SupplierSerialiser('supplier.supplier')
+    supname =  serializers.CharField(source="supplier.supplier", read_only=True)
+
+    class Meta:
+        model = pur_approved_supplier
+        fields = ('id', 'supname', 'supplier', )

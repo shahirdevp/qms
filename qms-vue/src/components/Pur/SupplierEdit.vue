@@ -2,7 +2,7 @@
   <div id="empd">
     <v-layout row wrap class="action-bar">
       <v-flex xs6>
-        <h3 class="page-name">Add New Suppliers</h3>
+        <h3 class="page-name">Edit Suppliers</h3>
       </v-flex>
       <v-flex xs6>
         <div class="text-xs-right"></div>
@@ -118,6 +118,9 @@ export default {
       auditArea: []
     };
   },
+  mounted() {
+    this.getData()
+  },
   methods: {
     validate() {
       if (this.$refs.form.validate()) {
@@ -146,7 +149,22 @@ export default {
     },
     reset() {
       this.$refs.form.reset();
-    }
+    },
+    getData(){
+      var ts = window.location.pathname.split("/");
+      var parQuery = ts[ts.length - 1];
+      var self = this;
+      axios
+              .get(this.$apiUrl + "pur/supplier/" + parQuery + '/')
+              .then(function(response) {
+                self.detail = response.data;
+                console.log(response.data)
+              })
+              .catch(function(error) {
+                console.log(error.data);
+              });
+    },
+    
   }
 };
 </script>

@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 
 class doc_type(models.Model):
-    doc_type_name =  models.CharField(max_length = 100, unique=True)
+    doc_type_name =  models.CharField(max_length=100, unique=True)
     creadedOn = models.DateField(auto_now=True, blank=True, null=True)
 
     def __str__(self):
@@ -11,13 +11,14 @@ class doc_type(models.Model):
 
 
 class internal_external(models.Model):
-    DOC_STATUS = (('Active','Active'),('Obsolete','Obsolete'))
-    doc_number = models.CharField(max_length = 100)
-    doc_name = models.CharField(max_length = 100)
-    doc_type = models.CharField(max_length = 100)
-    rev_no  = models.CharField(max_length = 100, blank=True, null=True)
+    DOC_STATUS = (('Active', 'Active'), ('Obsolete', 'Obsolete'))
+    doc_number = models.CharField(max_length=100)
+    doc_name = models.CharField(max_length=100, blank=True, null=True)
+    doc_type = models.CharField(max_length=100, blank=True, null=True)
+    type_of_doc = models.CharField(max_length=100, blank=True, null=True, default=0 )
+    rev_no  = models.CharField(max_length=100, blank=True, null=True)
     date    = models.DateField(auto_now=True, blank=True, null=True)
-    doc_status = models.CharField(max_length=100,blank=True, null=True)
+    doc_status = models.CharField(max_length=100, blank=True, null=True)
     owner = models.ForeignKey(User,  blank=True, null=True, on_delete=models.CASCADE)
     creadedOn = models.DateField(auto_now=True, blank=True, null=True)
 

@@ -23,6 +23,7 @@ urlpatterns = [
     path('stock-register/', views.StockRegister.as_view()),
     path('stock-register/<int:pk>/', views.StockRegister.as_view()),
 
-   
+    path('approved-suppliers/', views.ApprovedSupplierPurchase.as_view()),
+
 ]
 

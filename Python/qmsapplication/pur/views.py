@@ -1,7 +1,9 @@
 from pur.models import*
 from pur.serializers import *
 from rest_framework import mixins, generics
-
+import django_filters.rest_framework
+from rest_framework.response import Response
+from rest_framework import status
 
 class Supplier(generics.GenericAPIView,
                  mixins.CreateModelMixin,
@@ -131,3 +133,16 @@ class StockRegister(generics.GenericAPIView,
 
     def delete(self, request, pk=None):
         return self.destroy(request, pk)
+
+
+class ApprovedSupplierPurchase(generics.ListAPIView):
+
+    serializer_class = purchaseapprovedSuppier
+
+    def get_queryset(self, *args, **kwargs):
+        queryset = pur_approved_supplier.objects.all()
+        serializer = purchaseapprovedSuppier
+        if self.request.method == 'GET':
+           qlist = pur_approved_supplier.objects.filter(status="Approved")
+           return qlist
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

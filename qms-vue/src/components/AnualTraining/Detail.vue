@@ -2,7 +2,7 @@
   <div id="empd">
     <v-layout row wrap class="action-bar">
       <v-flex xs6>
-        <h3 class="page-name">Compentency Matrix</h3>
+        <h3 class="page-name">Annual training plan</h3>
       </v-flex>
       <v-flex xs6>
         <div class="text-xs-right">
@@ -149,6 +149,7 @@ export default {
         .get(this.$apiUrl+"annual-trainnig" + parQuery)
         .then(function(response) {
           self.detail = response.data;
+          console.log(response.data)
         })
         .catch(function(error) {
           console.log(error.data);

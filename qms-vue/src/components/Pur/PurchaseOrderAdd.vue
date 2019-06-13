@@ -22,8 +22,8 @@
                <v-select
                   v-model="detail.supplier"
                   :items="supplier"
-                  item-text="supplier"
-                  item-value="id"
+                  item-text="supname"
+                  item-value="supplier"
                 ></v-select>
               </div>
             </v-flex>
@@ -47,7 +47,7 @@
             </v-flex>
 
             <v-flex md2>
-              <label class="lab-for right black--text">Supplier ref no</label>
+              <label class="lab-for right black--text">Supplier Ref No</label>
             </v-flex>
             <v-flex md4>
               <div class="text-rr">
@@ -65,7 +65,7 @@
             </v-flex>
 
             <v-flex md2>
-              <label class="lab-for right black--text">Po no</label>
+              <label class="lab-for right black--text">Po No</label>
             </v-flex>
             <v-flex md4>
               <div class="text-rr">
@@ -74,7 +74,7 @@
             </v-flex>
 
             <v-flex md2>
-              <label class="lab-for right black--text">Po date</label>
+              <label class="lab-for right black--text">Po Date</label>
             </v-flex>
             <v-flex md4>
               <div class="text-rr">
@@ -83,7 +83,7 @@
             </v-flex>
 
             <v-flex md2>
-              <label class="lab-for right black--text">Requested date</label>
+              <label class="lab-for right black--text">Requested Date</label>
             </v-flex>
             <v-flex md4>
               <div class="text-rr">
@@ -93,7 +93,7 @@
           </v-layout>
           <v-flex md12 offset-md2>
             <v-btn :disabled="!valid" color="success" @click="validate">Save</v-btn>
-            <v-btn color="error" @click="reset">cancel</v-btn>
+            <v-btn color="error" @click="reset">Reset</v-btn>
           </v-flex>
         </v-form>
       </v-flex>
@@ -109,7 +109,8 @@ export default {
     return {
       detail: [],
       valid: true,
-      auditArea: []
+      auditArea: [],
+      supplier:[],
     };
   },
   mounted() {
@@ -143,9 +144,10 @@ export default {
     getSupplier() {
       var self = this;
       axios
-        .get(this.$apiUrl + "pur/supplier/")
+        .get(this.$apiUrl + "pur/approved-suppliers/")
         .then(function(response) {
           self.supplier = response.data;
+          console.log(self.supplier)
         })
         .catch(function(error) {
           console.log(error.data);
@@ -166,5 +168,8 @@ export default {
 }
 >>>input[type="date"] {
   padding: 0;
+}
+>>>.v-select__slot{
+  padding: 0 7px;
 }
 </style>

@@ -54,6 +54,7 @@ import suplierevaluationinsert from './views/Pur/PurInsert.vue';
 import PurCategory from './views/Dashboard/PurCategory.vue';
 import Suppliers from './views/Pur/Suppliers.vue';
 import SuppliersAdd from './views/Pur/SupplierAdd.vue';
+import SuppliersEdit from './views/Pur/SupplierEdit.vue';
 import SupplierDetail from './views/Pur/SupplierDetail.vue';
 import PurchaseApprovedSupplier from './views/Pur/ApprovedSupplier.vue';
 import purchaseOrder from './views/Pur/PurchaseOrder.vue';
@@ -65,7 +66,6 @@ import GoodsReciptRegisterAdd from './views/Pur/GoodsReciptRegisterAdd.vue';
 import StockRegister from './views/Pur/StockRegister.vue';
 import StockRegisterAdd from './views/Pur/StockRegisterAdd.vue';
 import StockRegisterEdit from './views/Pur/StockRegisterEdit.vue';
-
 // other
 import contractreview from './views/Marketing/ContractReviewDetail.vue';
 import contractreviewinsert from './views/Marketing/ContractReviewInsert.vue';
@@ -128,7 +128,8 @@ export default new Router({
         { path: '/register', name: 'register', component: register },
         { path: '/policy-settep', name: 'policy update', component: register },
         { path: '/org-chart', name: 'organization chart', component: OrgChart},
-        { path: '/org-settings', name: 'organization Settings', component: OrgSetting},
+        { path: '/compentency-matrix', name: 'organization Settings', component: OrgSetting},
+        { path: '/compentency-matrix/id:', name: 'organization Settings', component: compentencyDetail},
         { path: '/admin-register', name: 'Admin register', component: Adminregister},
         // Mr
         { path: '/mr', name: 'Master List category', component: MrCategory },
@@ -146,6 +147,7 @@ export default new Router({
         { path: '/suppliers', name: 'Suppliers list', component: Suppliers },
         { path: '/suppliers-add', name: 'Suppliers Add', component: SuppliersAdd },
         { path: '/suppliers/:id', name: 'Suppliers Detail', component: SupplierDetail },
+        { path: '/suppliers-edit/:id', name: 'Suppliers Edit', component: SuppliersEdit },
         { path: '/purchase-approved-supplier', name: 'Purchase Approved Supplier', component: PurchaseApprovedSupplier},
         { path: '/purchase-order', name: 'Purchase Order', component: purchaseOrder },
         { path: '/purchase-order-add', name: 'Purchase Order Add', component: purchaseOrderAdd },

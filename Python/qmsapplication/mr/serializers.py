@@ -1,16 +1,19 @@
 from rest_framework import serializers
 from mr.models import *
 
+
 class DocTypeSerializer(serializers.ModelSerializer):
     class Meta:
         model = doc_type
         fields = ('id', 'doc_type_name')
 
+
 class InterExternSerializer(serializers.ModelSerializer):
     class Meta:
         model = internal_external
-        fields = ('id', 'doc_number', 'doc_name', 'doc_type', 'rev_no', 'date', 'doc_status', 'owner', 'creadedOn', )
+        fields = ('id', 'doc_number', 'doc_name', 'doc_type', 'rev_no', 'date', 'doc_status', 'owner', 'creadedOn', 'type_of_doc')
         depth = 1
+
 
 class InternalAuditPlanSerializer(serializers.ModelSerializer):
     # status = serializers.SerializerMethodField()

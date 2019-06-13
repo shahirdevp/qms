@@ -30,9 +30,9 @@
         <td class="text-xs-left">{{ props.item.ncr_no}}</td>
         <td class="text-xs-left">{{ props.item.nc_statement }}</td>
         <td class="text-xs-left">{{ props.item.objective_evidence }}</td>
-        <td class="text-xs-left">{{ props.item.root_cause }}</td>
         <td class="text-xs-left">{{ props.item.containment_action }}</td>
         <td class="text-xs-left">{{ props.item.correction }}</td>
+        <td class="text-xs-left">{{ props.item.root_cause }}</td>
         <td class="text-xs-left">{{ props.item.correction_action }}</td>
         <td class="text-xs-left">
           <router-link :to="{ path: '/mr-non-conformance/' + props.item.id }">
@@ -60,9 +60,9 @@ export default {
         { text: "Ncr no", value: "ncr_no" },
         { text: "Nc statement", value: "nc_statement" },
         { text: "Objective evidence", value: "objective_evidence" },
-        { text: "Root cause", value: "root_cause" },
         { text: "Containment action", value: "containment_action" },
         { text: "Correction", value: "correction" },
+        { text: "Root cause", value: "root_cause" },
         { text: "Correction action ", value: "correction_action" },
         { text: "Action", value: "" }
       ],

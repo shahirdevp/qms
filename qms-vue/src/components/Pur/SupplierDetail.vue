@@ -7,7 +7,7 @@
       <v-flex xs6>
         <div class="text-xs-right">
           <v-btn-toggle class="transparent">
-            <router-link :to="{ path: '../marketing-enquiry-edit/' + detail.id }" replace>
+            <router-link :to="{ path: '../suppliers-edit/' + detail.id }" replace>
               <v-btn flat value="left">
                 <span>Edit</span>
                 <v-icon color="info">edit</v-icon>
@@ -22,72 +22,54 @@
       </v-flex>
     </v-layout>
     <!-- detail -->
-    <v-layout>
-      <v-flex xs12 sm12 md8  offset-md2>
-          
-            <v-card class="mt-3 ml-3 mr-3 custom-card-list">
-                
-                <v-card-text>
-                    <div>
-                        <h3 class=" mb-0">Supplier</h3>
-                        <div>{{ detail.supplier }}</div>
-                        <v-divider></v-divider>
-                    </div>
 
-                     <div>
-                        <h3 class=" mb-0">Phone</h3>
-                        <div>{{ detail.phone }}</div>
-                        <v-divider></v-divider>
-                    </div>
 
-                    <div>
-                        <h3 class=" mb-0">Email</h3>
-                        <div>{{ detail.email }}</div>
-                        <v-divider></v-divider>
-                    </div>
+      <div class="card-box">
+          <h4 class="card-box-title">Supplier Detail</h4>
+          <table class="cards-table">
+              <tr>
+                  <th>Supplier</th>
+                  <td>{{ detail.supplier }}</td>
+              </tr>
+              <tr>
+                  <th>Phone</th>
+                  <td>
+                      <a :href="'tel:' + detail.phone">{{ detail.phone }}</a>
+                  </td>
+              </tr>
+              <tr>
+                  <th>Email</th>
+                  <td><a :href="'mailto:'+  detail.email"  >{{ detail.email }}</a></td>
+              </tr>
+              <tr>
+                  <th>Website</th>
+                  <td><a target="_blank"  :href="detail.website" >{{ detail.website }}</a></td>
+              </tr>
+              <tr>
+                  <th>Country</th>
+                  <td>{{ detail.country }}</td>
+              </tr>
+              <tr>
+                  <th>State</th>
+                  <td>{{ detail.state }}</td>
+              </tr>
 
-                     <div>
-                        <h3 class=" mb-0">Country</h3>
-                        <div>{{ detail.country }}</div>
-                        <v-divider></v-divider>
-                    </div>
+              <tr>
+                  <th>City</th>
+                  <td>{{ detail.city }}</td>
+              </tr>
 
-                    <div>
-                        <h3 class=" mb-0">State</h3>
-                        <div>{{ detail.state }}</div>
-                        <v-divider></v-divider>
-                    </div>
+              <tr>
+                  <th>Street</th>
+                  <td>{{ detail.street }}</td>
+              </tr>
 
-                     <div>
-                        <h3 class=" mb-0">City</h3>
-                        <div>{{ detail.city }}</div>
-                        <v-divider></v-divider>
-                    </div>
-
-                    <div>
-                        <h3 class=" mb-0">Street</h3>
-                        <div>{{ detail.street }}</div>
-                        <v-divider></v-divider>
-                    </div>
-
-                     <div>
-                        <h3 class=" mb-0">Pin</h3>
-                        <div>{{ detail.pin }}</div>
-                        <v-divider></v-divider>
-                    </div>
-
-                    <div>
-                        <h3 class=" mb-0">Website</h3>
-                        <div>{{ detail.website }}</div>
-                    </div>
-
-                   
-                </v-card-text>
-                
-            </v-card>
-          
-      </v-flex>
-    </v-layout>
+              <tr>
+                  <th>Pin</th>
+                  <td>{{ detail.pin }}</td>
+              </tr>
+          </table>
+      </div>
   </div>
 </template>
 
@@ -114,6 +96,7 @@ export default {
         .get(this.$apiUrl + "pur/supplier/" + parQuery + '/')
         .then(function(response) {
           self.detail = response.data;
+          console.log(response.data)
         })
         .catch(function(error) {
           console.log(error.data);

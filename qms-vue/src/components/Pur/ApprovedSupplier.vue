@@ -45,7 +45,7 @@
                       ></v-select>
                     </v-flex>
                     <v-flex xs12>
-                      <v-text-field v-model="tlist.next_approved_date" label="Next approved date "></v-text-field>
+                      <v-text-field type="date" v-model="tlist.next_approved_date" label="Next approved date "></v-text-field>
                     </v-flex>
                   </v-layout>
                 </v-container>

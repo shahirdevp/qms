@@ -6,7 +6,7 @@
       </v-flex>
       <v-flex xs6>
         <div class="text-xs-right">
-          <v-dialog v-model="dialog" max-width="500px">
+          <v-dialog v-model="dialog" max-width="600px">
             <template v-slot:activator="{ on }">
               <v-btn-toggle class="transparent mr-2">
                   <v-btn flat  v-on="on" value="right">
@@ -16,13 +16,13 @@
               </v-btn-toggle>
             </template>
             <v-card>
-              <v-card-title>
-                <span class="headline">{{ formTitle }} Internal Audit Plan</span>
-              </v-card-title>
 
               <v-card-text>
                 <v-container grid-list-md>
                   <v-layout wrap>
+                    <v-flex xs12 >
+                      <span class="headline">{{ formTitle }} Internal Audit Plan</span>
+                    </v-flex>
                     <v-flex xs12 sm6 md6>
                       <v-select v-model="tlist.year" :items="years" label="Year"></v-select>
                     </v-flex>
@@ -91,6 +91,61 @@
         </td>
       </template>
     </v-data-table>
+
+    <v-dialog v-model="editdialog" max-width="600px">
+
+      <v-card>
+        <v-card-text>
+          <v-container grid-list-md>
+            <v-layout wrap>
+              <v-flex xs12 >
+                <span class="headline">{{ formTitle }} Internal Audit Plan</span>
+              </v-flex>
+              <v-flex xs12 sm6 md6>
+                <v-select v-model="editedItem.year" :items="years" label="Year"></v-select>
+              </v-flex>
+
+              <v-flex xs12 sm6 md6>
+                <v-select
+                        v-model="editedItem.month"
+                        :items="$month"
+                        item-text="title"
+                        item-value="value"
+                        label="Month"
+                ></v-select>
+              </v-flex>
+              <v-flex xs12 sm6 md6>
+                <v-text-field v-model="editedItem.area_of_audit" label="Area of Audit	"></v-text-field>
+              </v-flex>
+              <v-flex xs12 sm6 md6>
+                <v-text-field v-model="editedItem.auditee" label="Auditee"></v-text-field>
+              </v-flex>
+              <v-flex xs12 sm6 md6>
+                <v-text-field v-model="editedItem.auditor" label="Auditor"></v-text-field>
+              </v-flex>
+              <v-flex xs12 sm6 md6>
+                <v-text-field v-model="editedItem.as_clauses" label="AS9100 Clauses"></v-text-field>
+              </v-flex>
+              <v-flex xs12 sm6 md6>
+                <v-select
+                        v-model="editedItem.status"
+                        :items="status"
+                        item-text="text"
+                        item-value="value"
+                        label="Status"
+                ></v-select>
+              </v-flex>
+            </v-layout>
+          </v-container>
+        </v-card-text>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="blue darken-1" flat @click="editdialog = false">Cancel</v-btn>
+          <v-btn color="blue darken-1" flat @click="save">Save</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </div>
 </template>
 
@@ -117,13 +172,16 @@ export default {
       tlist: [],
       years: [],
       dialog: false,
+      editdialog: false,
       editedIndex: -1,
       editedItem: {
-        doc_number: "",
-        doc_name: "",
-        doc_type: "",
-        rev_no: "",
-        doc_status: ""
+        year: "",
+        month: "",
+        area_of_audit: "",
+        auditee: "",
+        auditor: "",
+        as_clauses: "",
+        status: "",
       }
     };
   },
@@ -155,7 +213,27 @@ export default {
     },
     save() {
       if (this.editedIndex > -1) {
-        Object.assign(this.tlist[this.editedIndex], this.editedItem);
+        // Object.assign(this.tlist[this.editedIndex], this.editedItem);
+        var self = this;
+        axios
+                .put(this.$apiUrl + "mr/internal-audit-plan/" + this.editedItem.id + "/", {
+                  area_of_audit: this.editedItem.area_of_audit,
+                  auditee: this.editedItem.auditee,
+                  auditor: this.editedItem.auditor,
+                  as_clauses: this.editedItem.as_clauses,
+                  year: this.editedItem.year,
+                  month: this.editedItem.month,
+                  status: this.editedItem.status,
+                  owner: this.$owner
+                })
+                .then(function(response) {
+                  self.getall();
+                })
+                .catch(function(error) {
+                  console.log(error);
+                });
+          self.getall();
+          this.editdialog = false;
       } else {
         var self = this;
         axios
@@ -175,8 +253,9 @@ export default {
           .catch(function(error) {
             console.log(error);
           });
+        this.close();
       }
-      this.close();
+
     },
     deleteData(did) {
       var self = this;
@@ -220,7 +299,8 @@ export default {
     editItem(item) {
       this.editedIndex = this.tlist.indexOf(item);
       this.editedItem = Object.assign({}, item);
-      this.dialog = true;
+      this.editdialog = true;
+      console.log(this.editedItem)
     },
     close() {
       this.dialog = false;
