@@ -146,3 +146,11 @@ class ApprovedSupplierPurchase(generics.ListAPIView):
            qlist = pur_approved_supplier.objects.filter(status="Approved")
            return qlist
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class purOrderCmpView(generics.GenericAPIView, mixins.ListModelMixin):
+    serializer_class =  purOrderCmp
+    queryset = pur_supplier_purchase_order.objects.all()
+
+    def get(self, request):
+        return self.list(request)

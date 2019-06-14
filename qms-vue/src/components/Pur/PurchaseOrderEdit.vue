@@ -2,7 +2,7 @@
   <div id="empd">
     <v-layout row wrap class="action-bar">
       <v-flex xs6>
-        <h3 class="page-name">Add New Purchase Order</h3>
+        <h3 class="page-name">Edit Purchase Order</h3>
       </v-flex>
       <v-flex xs6>
         <div class="text-xs-right"></div>
@@ -22,8 +22,8 @@
                <v-select
                   v-model="detail.supplier"
                   :items="supplier"
-                  item-text="supplier"
-                  item-value="id"
+                  item-text="supname"
+                  item-value="supplier"
                 ></v-select>
               </div>
             </v-flex>
@@ -120,6 +120,8 @@ export default {
   methods: {
     validate() {
       if (this.$refs.form.validate()) {
+        console.log(this.detail.supplier);
+        
         this.snackbar = true;
         axios
           .put(this.$apiUrl + "pur/purchase-order/" +  this.detail.id + '/', {
@@ -134,7 +136,6 @@ export default {
             owner: this.$owner
           })
           .then(function(response) {
-            console.log(response.data);
             router.push("/purchase-order/" + response.data.id);
           })
           .catch(function(error) {
@@ -145,9 +146,10 @@ export default {
     getSupplier() {
       var self = this;
       axios
-        .get(this.$apiUrl + "pur/supplier/")
+        .get(this.$apiUrl + "pur/approved-suppliers/")
         .then(function(response) {
           self.supplier = response.data;
+          
         })
         .catch(function(error) {
           console.log(error.data);

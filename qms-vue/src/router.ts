@@ -129,7 +129,7 @@ export default new Router({
         { path: '/policy-settep', name: 'policy update', component: register },
         { path: '/org-chart', name: 'organization chart', component: OrgChart},
         { path: '/compentency-matrix', name: 'organization Settings', component: OrgSetting},
-        { path: '/compentency-matrix/id:', name: 'organization Settings', component: compentencyDetail},
+        { path: '/compentency-matrix/id:', name: 'organization Settings edit', component: compentencyDetail},
         { path: '/admin-register', name: 'Admin register', component: Adminregister},
         // Mr
         { path: '/mr', name: 'Master List category', component: MrCategory },

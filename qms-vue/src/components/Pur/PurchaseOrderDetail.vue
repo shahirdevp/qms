@@ -41,7 +41,7 @@
                       </tr>
                       <tr>
                         <th>Supplier</th>
-                        <td>{{ detail.supplier }}</td>
+                        <td>{{ detail.supplierName }}</td>
                       </tr>
                       <tr>
                         <th>Product</th>

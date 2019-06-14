@@ -8,17 +8,20 @@ class SupplierSerialiser(serializers.ModelSerializer):
 
 
 class ApproverdSupplierSerialiser(serializers.ModelSerializer):
-    suppliers = serializers.CharField(source = 'supplier.supplier', read_only=True)
+    supplierName= serializers.CharField(source='supplier.supplier', read_only=True)
+
     class Meta:
         model = pur_approved_supplier
-        fields = ( 'id', 'date_entered', 'suppliers', 'supplier', 'scope', 'status', 'next_approved_date', )
+        fields = ( 'id', 'date_entered', 'supplierName', 'supplier', 'scope', 'status', 'next_approved_date', )
 
 
 class SpurOrderSerialiser(serializers.ModelSerializer):
     # country = SupplierSerialiser('country')
+    supplierName = serializers.CharField(source='supplier.supplier', read_only=True)
+
     class Meta:
         model = pur_supplier_purchase_order
-        fields = ( 'id', 'supplier', 'product', 'unit', 'supplier_ref_no', 'qty', 'po_no', 'po_date', 'requested_date', )
+        fields = ('id', 'supplier', 'product', 'unit', 'supplier_ref_no', 'qty', 'po_no', 'po_date', 'requested_date', 'supplierName',)
 
 
 class GoodsResiptSerialiser(serializers.ModelSerializer):
@@ -40,3 +43,12 @@ class purchaseapprovedSuppier(serializers.ModelSerializer):
     class Meta:
         model = pur_approved_supplier
         fields = ('id', 'supname', 'supplier', )
+
+
+# purchase order supplier list
+class purOrderCmp(serializers.ModelSerializer):
+    supname = serializers.CharField(source="supplier.supplier", read_only=True)
+
+    class Meta:
+        model = pur_supplier_purchase_order
+        fields = ('id', 'supname', 'supplier',)

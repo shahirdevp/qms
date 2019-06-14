@@ -2,6 +2,7 @@
   <div>
     <v-layout row wrap>
       <v-flex xs12>
+        <tabs />
         <skills/>
       </v-flex>
     </v-layout>

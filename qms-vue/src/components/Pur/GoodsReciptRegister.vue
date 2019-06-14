@@ -2,7 +2,7 @@
   <div>
     <v-layout row wrap class="action-bar">
       <v-flex xs6>
-        <h3 class="page-name">Goods Recipt</h3>
+        <h3 class="page-name">Goods Recipt Register</h3>
       </v-flex>
       <v-flex xs6>
         <div class="text-xs-right">

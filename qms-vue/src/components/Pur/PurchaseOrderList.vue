@@ -26,9 +26,9 @@
     >
       <template v-slot:items="props">
         <td class="text-xs-left">
-          <router-link :to="{ path: 'marketing-enquiry/'+ props.item.id }">{{ props.item.id }}</router-link>
+          <router-link :to="{ path: 'purchase-order/'+ props.item.id }">{{ props.item.id }}</router-link>
         </td>
-        <td class="text-xs-left">{{ props.item.supplier }}</td>
+        <td class="text-xs-left">{{ props.item.supplierName }}</td>
         <td class="text-xs-left">{{ props.item.product }}</td>
         <td class="text-xs-left">{{ props.item.unit }}</td>
         <td class="text-xs-left">{{ props.item.supplier_ref_no }}</td>
@@ -37,7 +37,7 @@
         <td class="text-xs-left">{{ props.item.po_date }}</td>
         <td class="text-xs-left">{{ props.item.requested_date }}</td>
         <td class="text-xs-left">
-          <router-link :to="{ path: '/suppliers/' + props.item.id }">
+          <router-link :to="{ path: 'purchase-order/' + props.item.id }">
             <v-icon small class="mr-3" color="info">visibility</v-icon>
           </router-link>
           <v-icon small color="red" @click="deleteData(props.item.id)">delete</v-icon>
@@ -62,7 +62,7 @@ export default {
           align: "left",
           value: "id"
         },
-        { text: "Supplier", value: "supplier" },
+        { text: "Supplier", value: "supplierName" },
         { text: "Product", value: "product" },
         { text: "Unit", value: "unit" },
         { text: "Supplier ref no ", value: "supplier_ref_no" },

@@ -24,6 +24,9 @@ urlpatterns = [
     path('stock-register/<int:pk>/', views.StockRegister.as_view()),
 
     path('approved-suppliers/', views.ApprovedSupplierPurchase.as_view()),
+    path('pur-order-suppliers/', views.purOrderCmpView.as_view()),
+
+
 
 ]
 

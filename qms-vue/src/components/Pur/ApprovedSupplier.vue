@@ -70,7 +70,7 @@
     >
       <template v-slot:items="props">
         <td class="text-xs-left">{{ props.item.id }}</td>
-        <td class="text-xs-left">{{ props.item.supplier }}</td>
+        <td class="text-xs-left">{{ props.item.supplierName }}</td>
         <td class="text-xs-left">{{ props.item.scope}}</td>
         <td class="text-xs-left">{{ props.item.status }}</td>
         <td class="text-xs-left">{{ props.item.next_approved_date}}</td>
@@ -138,7 +138,7 @@ export default {
     return {
       headers: [
         { text: "SL NO ", align: "left", value: "id" },
-        { text: "Supplier", value: "supplier" },
+        { text: "Supplier", value: "supplierName" },
         { text: "Scope", value: "scope" },
         { text: "Status", value: "status" },
         { text: "Next approved date ", value: "next_approved_date" },
