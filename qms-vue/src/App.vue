@@ -47,6 +47,7 @@ main {
   .card-box-title { color: #4b4b4b; font-size: 19px; margin-bottom: 10px; font-weight: 400; line-height: 1.5; }
   .cards-table th{ font-size: 14px; font-weight: 500; color: #1b1b1b; width: 150px; text-align: left; padding: 5px; }
   .v-table__overflow{scrollbar-width: thin;}
+  .v-dialog{scrollbar-width: thin;}
 </style>
 
 

@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d880345-9a60-46d0-b1ec-357fe77a5875" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/pur/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/pur/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pur/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/pur/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pur/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/pur/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qmsapplication/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/qmsapplication/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../qms-vue/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../qms-vue/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../qms-vue/src/components/Common/Toolbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../qms-vue/src/components/Common/Toolbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../qms-vue/src/components/Marketing/list.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../qms-vue/src/components/Marketing/list.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,7 +25,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/qmsapplication/settings/base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="867">
               <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
             </state>
           </provider>
@@ -33,7 +34,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pur/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
+            <state relative-caret-position="391">
               <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
@@ -45,7 +46,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pur/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
+            <state relative-caret-position="247">
               <caret line="155" column="32" selection-start-line="155" selection-start-column="32" selection-end-line="155" selection-end-column="32" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
@@ -57,7 +58,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pur/serializers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
+            <state relative-caret-position="799">
               <caret line="48" column="16" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
@@ -69,8 +70,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pur/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="37" column="21" lean-forward="true" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
+            <state relative-caret-position="629">
+              <caret line="37" column="21" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -104,8 +105,8 @@
   <component name="MacroExpansionManager">
     <option name="directoryName" value="YBcLLYYJ" />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1377" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1358" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
     <option name="height" value="744" />
@@ -116,6 +117,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -132,7 +134,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -207,6 +208,13 @@
       <workItem from="1560322109789" duration="10805000" />
       <workItem from="1560409507564" duration="437000" />
       <workItem from="1560416015727" duration="5338000" />
+      <workItem from="1560491592472" duration="773000" />
+      <workItem from="1560508380281" duration="1229000" />
+      <workItem from="1560769059262" duration="272000" />
+      <workItem from="1560772053279" duration="1764000" />
+      <workItem from="1560844224451" duration="988000" />
+      <workItem from="1560863978746" duration="598000" />
+      <workItem from="1560925659127" duration="686000" />
     </task>
     <task id="LOCAL-00001" summary="new test">
       <created>1559308578151</created>
@@ -240,12 +248,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39557000" />
+    <option name="totallyTimeSpent" value="45867000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1377" y="-8" width="1382" height="744" extended-state="0" />
+    <frame x="1358" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49756098" visible="true" weight="0.17700455" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49756098" visible="true" weight="0.14372164" />
       <window_info id="Structure" order="1" sideWeight="0.502439" side_tool="true" weight="0.15204236" />
       <window_info id="Favorites" order="2" sideWeight="0.502439" side_tool="true" weight="0.15204236" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -259,7 +267,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49924356" weight="0.3289689" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50075644" side_tool="true" weight="0.3289689" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49924356" weight="0.5188216" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49924356" visible="true" weight="0.3502455" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -376,13 +384,6 @@
     <entry file="file://$PROJECT_DIR$/quality/views.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/qmsapplication/settings/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mr/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1885">
@@ -431,26 +432,16 @@
     <entry file="file://$PROJECT_DIR$/hr/apps.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/pur/models.py">
+    <entry file="file://$PROJECT_DIR$/qmsapplication/settings/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="37" column="21" lean-forward="true" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pur/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="48" column="16" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="867">
+          <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pur/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
+        <state relative-caret-position="391">
           <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
@@ -458,9 +449,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pur/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="48" column="16" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pur/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" column="21" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pur/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
+        <state relative-caret-position="247">
           <caret line="155" column="32" selection-start-line="155" selection-start-column="32" selection-end-line="155" selection-end-column="32" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />

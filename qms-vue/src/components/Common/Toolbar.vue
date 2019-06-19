@@ -185,8 +185,8 @@ export default {
 
 <style>
 .hov-back:hover {
-    background: #eaeaea;
-}
+    background: #eaeaea;}
+/* }
 .v-toolbar {
   -webkit-box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.07),
     0px 4px 5px 0px rgba(0, 0, 0, 0), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
@@ -209,7 +209,7 @@ export default {
 
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
-}
+} */
 
 .v-navigation-drawer{
     scrollbar-width:thin;
