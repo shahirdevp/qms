@@ -13,31 +13,10 @@
     <v-layout container>
       <v-flex xs12 sm12 md12>
         <v-card>
-          <v-layout class="lay-des-pad grey lighten-3" row wrap>
-            <v-flex xs12>
-              <h3 class="head black--text">CONFIGURATION MANAGEMNET</h3>
-            </v-flex>
-          </v-layout>
+         
           <v-form ref="form" class="lay-des1 white" v-model="valid" id="emp" lazy-validation>
-            <!-- <div class="under-line"></div> -->
             <v-layout class="white" row wrap>
-              <!-- <v-flex md2>
-                <label class="lab-for black--text right mr-1">Customer Order</label>
-              </v-flex>
-              <v-flex md3>
-				  <div class="text-rr">
-                  <v-text-field placeholder="Enter the value" outline></v-text-field>
-				  </div>
-              </v-flex>
-
-			  <v-flex md2>
-                <label class="lab-for black--text right mr-1">Customer Order</label>
-              </v-flex>
-              <v-flex md3>
-				  <div class="text-rr">
-                  <v-text-field placeholder="Enter the value" outline></v-text-field>
-				  </div>
-              </v-flex>-->
+              
               <v-flex md3>
                 <div class="text-rr">
                   <label class="lab-for black--text">Customer Order</label>
@@ -48,6 +27,7 @@
                   ></v-text-field>
                 </div>
               </v-flex>
+
               <v-flex md3>
                 <div class="text-rr">
                   <label class="lab-for black--text">Date</label>
@@ -87,6 +67,54 @@
                 </div>
               </v-flex>
 
+               <v-flex md3>
+                <div class="text-rr">
+                  <label class="lab-for black--text">Part No</label>
+                  <v-text-field
+                    label
+                    v-model="detail.route_card_no"
+                    placeholder="Route Card No"
+                    outline
+                  ></v-text-field>
+                </div>
+              </v-flex>
+
+              <v-flex md3>
+                <div class="text-rr">
+                  <label class="lab-for black--text">Rev No</label>
+                  <v-text-field
+                    label
+                    v-model="detail.route_card_no"
+                    placeholder="Route Card No"
+                    outline
+                  ></v-text-field>
+                </div>
+              </v-flex>
+
+              <v-flex md3>
+                <div class="text-rr">
+                  <label class="lab-for black--text">Drawing No</label>
+                  <v-text-field
+                    label
+                    v-model="detail.route_card_no"
+                    placeholder="Route Card No"
+                    outline
+                  ></v-text-field>
+                </div>
+              </v-flex>
+
+              <v-flex md3>
+                <div class="text-rr">
+                  <label class="lab-for black--text">Drawing Rev No</label>
+                  <v-text-field
+                    label
+                    v-model="detail.route_card_no"
+                    placeholder="Route Card No"
+                    outline
+                  ></v-text-field>
+                </div>
+              </v-flex>
+
               <v-flex md3>
                 <div class="text-rr">
                   <label class="lab-for black--text">Route Card No</label>
@@ -96,6 +124,38 @@
                     placeholder="Route Card No"
                     outline
                   ></v-text-field>
+                </div>
+              </v-flex>
+
+              <v-flex md3>
+                <div class="text-rr">
+                  <label class="lab-for black--text">Date</label>
+                  <v-dialog
+                    ref="dialog"
+                    v-model="detail.creadedOn"
+                    :return-value.sync="date"
+                    persistent
+                    lazy
+                    full-width
+                    width="290px"
+                  >
+                    <template v-slot:activator="{ on }">
+                      <v-text-field
+                        v-model="date"
+                        prepend-icon="event"
+                        readonly
+                        v-on="on"
+                        label
+                        placeholder=" Date"
+                        outline
+                      ></v-text-field>
+                    </template>
+                    <v-date-picker v-model="date" scrollable>
+                      <v-spacer></v-spacer>
+                      <v-btn flat color="primary" @click="modal = false">Cancel</v-btn>
+                      <v-btn flat color="primary" @click="$refs.dialog.save(date)">OK</v-btn>
+                    </v-date-picker>
+                  </v-dialog>
                 </div>
               </v-flex>
 
@@ -113,21 +173,133 @@
 
               <v-flex md3>
                 <div class="text-rr">
-                  <label class="lab-for black--text">Rev No</label>
+                  <label class="lab-for black--text">Date</label>
+                  <v-dialog
+                    ref="dialog"
+                    v-model="detail.creadedOn"
+                    :return-value.sync="date"
+                    persistent
+                    lazy
+                    full-width
+                    width="290px"
+                  >
+                    <template v-slot:activator="{ on }">
+                      <v-text-field
+                        v-model="date"
+                        prepend-icon="event"
+                        readonly
+                        v-on="on"
+                        label
+                        placeholder=" Date"
+                        outline
+                      ></v-text-field>
+                    </template>
+                    <v-date-picker v-model="date" scrollable>
+                      <v-spacer></v-spacer>
+                      <v-btn flat color="primary" @click="modal = false">Cancel</v-btn>
+                      <v-btn flat color="primary" @click="$refs.dialog.save(date)">OK</v-btn>
+                    </v-date-picker>
+                  </v-dialog>
+                </div>
+              </v-flex>
+
+              <v-flex md3>
+                <div class="text-rr">
+                  <label class="lab-for black--text">Control Plan</label>
                   <v-text-field label v-model="detail.rev_no" placeholder="Rev No" outline></v-text-field>
                 </div>
               </v-flex>
+
+              <v-flex md3>
+                <div class="text-rr">
+                  <label class="lab-for black--text">Control Plan Rev No</label>
+                  <v-text-field label v-model="detail.rev_no" placeholder="Rev No" outline></v-text-field>
+                </div>
+              </v-flex>
+
+              <v-flex md3>
+                <div class="text-rr">
+                  <label class="lab-for black--text">Stage Drawing</label>
+                  <v-text-field label v-model="detail.rev_no" placeholder="Rev No" outline></v-text-field>
+                </div>
+              </v-flex>
+
+              <v-flex md3>
+                <div class="text-rr">
+                  <label class="lab-for black--text">Stage Drawing Rev No</label>
+                  <v-text-field label v-model="detail.rev_no" placeholder="Rev No" outline></v-text-field>
+                </div>
+              </v-flex>
+
+              <v-flex md3>
+                <div class="text-rr">
+                  <label class="lab-for black--text">Machine used</label>
+                  <v-text-field label v-model="detail.rev_no" placeholder="Rev No" outline></v-text-field>
+                </div>
+              </v-flex>
+
+              <v-flex md3>
+                <div class="text-rr">
+                  <label class="lab-for black--text">Operator</label>
+                  <v-text-field label v-model="detail.rev_no" placeholder="Rev No" outline></v-text-field>
+                </div>
+              </v-flex>
+
+              <v-flex md3>
+                <div class="text-rr">
+                  <label class="lab-for black--text">Tool List</label>
+                  <v-text-field label v-model="detail.rev_no" placeholder="Rev No" outline></v-text-field>
+                </div>
+              </v-flex>
+
               <v-flex md3>
                 <div class="text-rr">
                   <label class="lab-for black--text">Invoice No</label>
                   <v-text-field v-modal="detail.invoice_no" label placeholder="Invoice No" outline></v-text-field>
                 </div>
               </v-flex>
+
+              <v-flex md3>
+                <div class="text-rr">
+                  <label class="lab-for black--text">Invoice Date</label>
+                  <v-dialog
+                    ref="dialog"
+                    v-model="detail.creadedOn"
+                    :return-value.sync="date"
+                    persistent
+                    lazy
+                    full-width
+                    width="290px"
+                  >
+                    <template v-slot:activator="{ on }">
+                      <v-text-field
+                        v-model="date"
+                        prepend-icon="event"
+                        readonly
+                        v-on="on"
+                        label
+                        placeholder=" Date"
+                        outline
+                      ></v-text-field>
+                    </template>
+                    <v-date-picker v-model="date" scrollable>
+                      <v-spacer></v-spacer>
+                      <v-btn flat color="primary" @click="modal = false">Cancel</v-btn>
+                      <v-btn flat color="primary" @click="$refs.dialog.save(date)">OK</v-btn>
+                    </v-date-picker>
+                  </v-dialog>
+                </div>
+              </v-flex>
+
             </v-layout>
+
+
             <v-flex md12>
               <v-btn :disabled="!valid" color="success" @click="validate">Save</v-btn>
               <v-btn color="error" @click="reset">cancel</v-btn>
             </v-flex>
+
+
           </v-form>
         </v-card>
       </v-flex>

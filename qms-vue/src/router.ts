@@ -38,6 +38,7 @@ import MarketingfeasibilityList from './views/Marketing/MarketingFeasibilityList
 import Reviewer from './views/Marketing/Reviewer.vue';
 import feasibilityinsert from './views/Marketing/FeasibilityInsert.vue';
 import feasibilitydetail from './views/Marketing/FeasibilityDetail.vue';
+import feasibilitystudy from './views/Marketing/feasibilitystudy.vue';
 
 // mr
 import MrCategory from './views/Dashboard/MrCategory.vue';
@@ -116,6 +117,8 @@ export default new Router({
         { path: '/marketing-feasibility', name: 'Marketing Feasibility List', component: MarketingfeasibilityList },
         { path: '/reviewer', name: 'Reviewer', component: Reviewer },
         { path: '/configration-management', name: 'Configration Management', component: ConfigrationManagementList },
+        { path: '/feasibility-study', name: 'feasibilitystudy', component: feasibilitystudy },
+        
         // settings
         { path: '/feasibility-insert', name: 'Feasibility Insert', component: feasibilityinsert },
         { path: '/contract-review', name: 'Contract Review', component: contractreview },
