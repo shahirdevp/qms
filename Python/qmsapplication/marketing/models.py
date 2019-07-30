@@ -94,3 +94,30 @@ class configuration_management_report(models.Model):
 
     def __str__(self):
         return self.cusomer
+
+
+class feasibility_study(models.Model):
+    customer = models.ForeignKey(mtk_enquiry_register, on_delete=models.CASCADE)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, blank=True)
+    createdOn = models.DateField(auto_now=True, blank=True, null=True)
+
+    statutory = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return self.customer
+
+    @property
+    def feasibility_study_list(self):
+        return self.feasibility_study_list_set.all()
+
+
+class feasibility_study_list(models.Model):
+    slNo = models.FloatField(blank=True, null=True)
+    company_capability = models.CharField(max_length=500, blank=True, null=True)
+    customer_requirement = models.TextField(blank=True, null=True)
+    remarks = models.TextField(blank=True, null=True)
+    feasibility = models.ForeignKey(feasibility_study, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.feasibility
+

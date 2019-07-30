@@ -27,5 +27,9 @@ urlpatterns = [
 
     path('configuration-management-report/', views.ConfMR.as_view()),
     path('configuration-management-report/<int:pk>/', views.ConfMR.as_view()),
+
+    path('customer-list/', views.customerList.as_view()),
+    path('feasiblity-study/', views.FeasiblityViewset.as_view()),
+    path('feasiblity-study/<int:pk>/', views.FeasiblityViewset.as_view()),
 ]
 

@@ -167,3 +167,37 @@ class  ConfMR(generics.GenericAPIView,
 
 
 
+# supplier list
+
+class customerList(generics.GenericAPIView, mixins.ListModelMixin):
+    queryset = mtk_enquiry_register.objects.all()
+    serializer_class = customeListrerialiser
+
+    def get(self, request, pk=None):
+        return self.list(request)
+
+
+
+class  FeasiblityViewset(generics.GenericAPIView,
+                 mixins.CreateModelMixin,
+                 mixins.ListModelMixin,
+                 mixins.DestroyModelMixin,
+                 mixins.UpdateModelMixin,
+                 mixins.RetrieveModelMixin):
+    queryset  = feasibility_study.objects.all()
+    serializer_class = feasiblitySerializer
+
+    def get(self, request, pk=None):
+        if pk:
+            return self.retrieve(request, pk)
+        else:
+            return self.list(request)
+
+    def post(self, request):
+        return self.create(request)
+
+    def put(self, request, pk=None):
+        return self.update(request, pk)
+
+    def delete(self, request, pk=None):
+        return self.destroy(request, pk)
