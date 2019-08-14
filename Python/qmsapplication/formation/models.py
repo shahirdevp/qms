@@ -65,3 +65,16 @@ class OrgTestprocess(models.Model):
 
     def __str__(self):
         return self.orgName
+
+
+class MeetingMinuts(models.Model):
+    title = models.CharField(max_length=250, blank=True, null=True)
+    subTitle = models.TextField(blank=True, null=True)
+    post =  models.TextField(blank=True, null=True)
+    orgName = models.ForeignKey(Cmp_formation, on_delete=models.CASCADE, blank=True, null=True)
+    created_at = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
+    created_on = models.DateField(auto_now_add=True)
+    modify_on = models.DateField(auto_now=True)
+
+    def __str__(self):
+        return self.orgName

@@ -52,6 +52,10 @@ class OrgchartTest(serializers.ModelSerializer):
         fields =('id', 'orgName', 'created_at', 'chart',)
 
 
-
+# meeting minuts
+class MeetingMinutsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = MeetingMinuts
+        fields =('id', 'title', 'subTitle', 'post', 'orgName', 'created_at', 'created_on',)
 
 

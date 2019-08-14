@@ -245,7 +245,7 @@ export default {
     getall() {
       var self = this;
       axios
-        .get(this.$apiUrl + "mkt/enquery-register/")
+        .get(this.$apiUrl + "mkt/enquery-register/?ordering=-creadedOn")
         .then(function(response) {
           self.tlist = response.data;
         })

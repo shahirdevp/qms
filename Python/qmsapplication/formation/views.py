@@ -114,3 +114,30 @@ class OrgProcessChartViewset(generics.GenericAPIView,
 
     def delete(self, request, pk=None):
         return self.destroy(request, pk)
+
+# meeting minuts
+class MeetingMinutsViewset(generics.GenericAPIView,
+                             mixins.ListModelMixin,
+                             mixins.CreateModelMixin,
+                             mixins.DestroyModelMixin,
+                             mixins.RetrieveModelMixin,
+                             mixins.UpdateModelMixin):
+
+    queryset = MeetingMinuts.objects.all()
+    serializer_class = MeetingMinutsSerializer
+
+    def get(self, request, pk=None):
+        if pk:
+            return self.retrieve(request, pk)
+        else:
+            return self.list(request)
+
+    def post(self, request):
+        # print(request.data)
+        return self.create(request)
+
+    def put(self, request, pk=None):
+        return self.update(request, pk)
+
+    def delete(self, request, pk=None):
+        return self.destroy(request, pk)

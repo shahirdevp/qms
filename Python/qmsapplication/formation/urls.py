@@ -18,8 +18,12 @@ urlpatterns = [
     path('policy/', views.PolicyViewset.as_view(), name='file-upload'),
     path('admin-register/', views.CreateUserView.as_view(), name='Create admin'),
 
-   path('org-process-chart', views.OrgProcessChartViewset.as_view(), name="org process chart"),
-   path('org-process-chart/<int:pk>', views.OrgProcessChartViewset.as_view(), name="single org process chart "),
+    path('org-process-chart', views.OrgProcessChartViewset.as_view(), name="org process chart"),
+    path('org-process-chart/<int:pk>', views.OrgProcessChartViewset.as_view(), name="single org process chart "),
+    # Meeting minuts
+    path('meeting-minuts', views.MeetingMinutsViewset.as_view(), name="Meeting Minuts"),
+    path('meeting-minuts/<int:pk>', views.MeetingMinutsViewset.as_view(), name="Meeting Minuts"),
+        
 
 ]
 

@@ -1,7 +1,7 @@
 from marketing.models import*
 from marketing.serializers import *
 from rest_framework import mixins, generics
-
+from rest_framework import filters
 
 class EqRegister(generics.GenericAPIView,
                  mixins.CreateModelMixin,
@@ -11,11 +11,15 @@ class EqRegister(generics.GenericAPIView,
                  mixins.RetrieveModelMixin):
     queryset  = mtk_enquiry_register.objects.all()
     serializer_class = EnqRegisterSerialiser
-
+    filter_backends = [filters.OrderingFilter]
+    ordering_fields = ['creadedOn']
     def get(self, request, pk=None):
+        
+        # ordering = ['username']
         if pk:
             return  self.retrieve(request, pk)
         else:
+            
             return self.list(request)
 
     def post(self, request):
